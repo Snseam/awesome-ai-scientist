@@ -1,0 +1,215 @@
+topic: Awesome AI Scientist
+field_schema_version: '0.1'
+generated_at: '2026-05-28'
+field_categories:
+- category: identity
+  description: Stable identifiers and basic metadata for each ecosystem item.
+  detail_level: moderate
+  fields:
+  - name: id
+    description: Machine-readable slug used for cross-links.
+    detail_level: brief
+  - name: name
+    description: Canonical public name.
+    detail_level: brief
+  - name: aliases
+    description: Alternate names, abbreviations, product names, or paper titles.
+    detail_level: moderate
+  - name: organization
+    description: Primary organization, lab, company, or authorship group.
+    detail_level: brief
+  - name: first_public_release
+    description: 'Earliest verified public release date: paper, blog, code, dataset, or product launch.'
+    detail_level: moderate
+  - name: current_status
+    description: Active, archived, preview, private beta, open-source, commercial, or superseded.
+    detail_level: moderate
+- category: taxonomy
+  description: Placement in the AI Scientist landscape.
+  detail_level: detailed
+  fields:
+  - name: category
+    description: 'One of: end_to_end_ai_scientist, research_workflow_agent, domain_scientific_discovery_agent, science_product_suite,
+      deep_research_product, literature_review_product, benchmark, dataset, open_source_implementation.'
+    detail_level: brief
+  - name: type
+    description: 'Artifact types: paper, codebase, product, benchmark, dataset, leaderboard, research demo, survey, infrastructure.'
+    detail_level: moderate
+  - name: domains
+    description: Scientific or technical domains targeted.
+    detail_level: moderate
+  - name: positioning
+    description: 'How the item frames itself: assistant, co-scientist, autonomous scientist, benchmark, platform, tool, or
+      infrastructure.'
+    detail_level: moderate
+  - name: boundary_notes
+    description: Why the item is included and what would exclude adjacent non-research agents.
+    detail_level: detailed
+- category: capabilities
+  description: Research lifecycle functions and technical capabilities.
+  detail_level: detailed
+  fields:
+  - name: lifecycle_coverage
+    description: 'Covered stages: problem framing, literature search, hypothesis generation, experiment design, code writing,
+      lab execution, data analysis, visualization, manuscript writing, peer review, deployment.'
+    detail_level: detailed
+  - name: tool_access
+    description: Search, APIs, code interpreter, shell, browser, lab robotics, scientific databases, simulators, cloud infrastructure,
+      or domain tools.
+    detail_level: detailed
+  - name: execution_environment
+    description: Local sandbox, cloud runner, browser agent, robotic lab, benchmark environment, or product-hosted environment.
+    detail_level: moderate
+  - name: artifact_outputs
+    description: Papers, code, figures, reports, hypotheses, experiment plans, datasets, lab protocols, or pull requests.
+    detail_level: moderate
+  - name: human_roles
+    description: Where humans set goals, approve experiments, review claims, supply data, or perform wet-lab validation.
+    detail_level: detailed
+- category: autonomy
+  description: Autonomy classification and operational limits.
+  detail_level: detailed
+  fields:
+  - name: autonomy_level
+    description: L0-L5 scale defined in outline.yaml.
+    detail_level: brief
+  - name: autonomy_rationale
+    description: Evidence-based explanation for the assigned autonomy level.
+    detail_level: detailed
+  - name: iteration_loop
+    description: Whether the system self-iterates over hypotheses, code, experiments, reviews, or external feedback.
+    detail_level: moderate
+  - name: stopping_and_guardrails
+    description: Budget limits, sandboxing, human approvals, web restrictions, safety filters, and rollback controls.
+    detail_level: detailed
+  - name: known_failure_modes
+    description: Hallucinated citations, invalid experiments, overfitting to benchmarks, unsafe code execution, false novelty,
+      weak evaluation, lab safety risks.
+    detail_level: detailed
+- category: evaluation
+  description: How claims are measured, validated, and compared.
+  detail_level: detailed
+  fields:
+  - name: benchmarks_used
+    description: Benchmarks, leaderboards, held-out tasks, or human-review protocols used to evaluate the item.
+    detail_level: moderate
+  - name: metrics
+    description: Task success, replication score, citation accuracy, acceptance score, expert rating, runtime cost, reproducibility,
+      lab yield, or biological validation.
+    detail_level: detailed
+  - name: baselines
+    description: Compared systems, model-only baselines, human baselines, or previous versions.
+    detail_level: moderate
+  - name: validation_strength
+    description: Ranked as anecdotal, benchmarked, human-reviewed, peer-reviewed, reproduced, or real-world validated.
+    detail_level: moderate
+  - name: evaluation_limitations
+    description: Known weaknesses in benchmark scope, grading, contamination, private data, or reproducibility.
+    detail_level: detailed
+- category: links_and_provenance
+  description: Source graph linking claims to primary artifacts.
+  detail_level: detailed
+  fields:
+  - name: paper_url
+    description: Primary paper URL, preferably arXiv, DOI, official PDF, or proceedings.
+    detail_level: brief
+  - name: code_url
+    description: Official source repository or benchmark implementation.
+    detail_level: brief
+  - name: dataset_url
+    description: Dataset page, benchmark release, Hugging Face dataset, or archived artifacts.
+    detail_level: brief
+  - name: product_url
+    description: Official product, launch, or documentation URL.
+    detail_level: brief
+  - name: leaderboard_url
+    description: Official public leaderboard when available.
+    detail_level: brief
+  - name: source_quality
+    description: Primary, official secondary, independent secondary, community, or unverified.
+    detail_level: moderate
+  - name: last_verified_at
+    description: Date on which each URL and claim was checked.
+    detail_level: brief
+- category: relationships
+  description: How systems, papers, codebases, products, and benchmarks connect.
+  detail_level: detailed
+  fields:
+  - name: predecessors
+    description: Earlier systems, papers, or methods that directly influenced the item.
+    detail_level: moderate
+  - name: successors
+    description: Later systems, products, or versions that build on this item.
+    detail_level: moderate
+  - name: components
+    description: Named internal agents, tools, models, datasets, or modules.
+    detail_level: detailed
+  - name: evaluated_by
+    description: Benchmarks or review processes that evaluate this item.
+    detail_level: moderate
+  - name: evaluates
+    description: 'For benchmarks: systems, capabilities, or domains evaluated.'
+    detail_level: moderate
+  - name: competes_with_or_complements
+    description: Adjacent systems with overlapping workflows or different scope.
+    detail_level: moderate
+- category: timeline
+  description: Chronology and milestone tracking.
+  detail_level: moderate
+  fields:
+  - name: milestones
+    description: Major paper, code, product, benchmark, result, or validation milestones.
+    detail_level: detailed
+  - name: version_history
+    description: Important version changes, model upgrades, or benchmark revisions.
+    detail_level: moderate
+  - name: adoption_signals
+    description: Stars, citations, user counts, product availability, institutional adoption, or integrations.
+    detail_level: moderate
+  - name: supersession_notes
+    description: Whether the item has been replaced by a newer version or benchmark.
+    detail_level: moderate
+- category: applications
+  description: Real-world use cases and deployment contexts.
+  detail_level: moderate
+  fields:
+  - name: real_world_applications
+    description: Scientific use cases such as biomedical hypothesis generation, chemical synthesis, ML paper replication,
+      algorithm discovery, or literature review.
+    detail_level: detailed
+  - name: users
+    description: 'Target users: academic researchers, wet-lab scientists, ML engineers, R&D teams, students, policy analysts,
+      or product teams.'
+    detail_level: moderate
+  - name: deployment_constraints
+    description: Compute, GPU, API, lab automation, data access, licensing, privacy, safety, or sandbox requirements.
+    detail_level: detailed
+  - name: cost_and_runtime
+    description: Reported or estimated cost, wall-clock time, API dependence, and scaling behavior.
+    detail_level: moderate
+- category: governance_and_risk
+  description: Scientific integrity, safety, and policy issues.
+  detail_level: detailed
+  fields:
+  - name: scientific_integrity_risks
+    description: Fabricated citations, false novelty, irreproducible claims, benchmark gaming, authorship ambiguity, or peer-review
+      burden.
+    detail_level: detailed
+  - name: security_and_safety_risks
+    description: Unsafe code execution, cyberbiosecurity, chemical misuse, uncontrolled web access, or self-modifying behavior.
+    detail_level: detailed
+  - name: mitigations
+    description: Sandboxing, human approval, provenance tracking, controlled labs, red-teaming, eval gates, or disclosure
+      requirements.
+    detail_level: detailed
+  - name: policy_relevance
+    description: Connections to responsible AI, publication policy, laboratory governance, or dual-use risk.
+    detail_level: moderate
+uncertain:
+- Current availability, pricing, and feature boundaries of commercial products should be rechecked during deep research.
+- Some emerging 2025-2026 systems have papers before mature code releases; mark code availability as verified only after repository
+  inspection.
+- Benchmark leaderboards and model rankings change quickly; store exact access date and benchmark version.
+- Claims of peer-review acceptance, real-world validation, or superhuman performance require primary-source confirmation.
+- Relationships such as component lineage or product inheritance should be treated as inferred unless explicitly stated by
+  primary sources.

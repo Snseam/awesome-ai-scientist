@@ -1,0 +1,185 @@
+{
+  "id": "google_ai_co_scientist",
+  "name": "AI Co-Scientist / Co-Scientist",
+  "aliases": [
+    "AI co-scientist",
+    "Co-Scientist",
+    "Towards an AI co-scientist"
+  ],
+  "organization": [
+    "Google Research",
+    "Google DeepMind"
+  ],
+  "first_public_release": "2025-02-19",
+  "current_status": "Research system with Trusted Tester early access; not publicly self-serve as of 2026-05-28.",
+  "category": "hypothesis_and_research_planning_system",
+  "type": [
+    "paper",
+    "product"
+  ],
+  "domains": [
+    "biomedicine",
+    "biology",
+    "general_science"
+  ],
+  "positioning": "Collaborative co-scientist for scientist-in-the-loop hypothesis generation and research planning.",
+  "boundary_notes": "Included because it produces novel, literature-grounded hypotheses and research plans with real-world validation, but it is not framed as a fully autonomous end-to-end lab or publication agent. Its scope is collaborative discovery support rather than independent scientific authorship.",
+  "lifecycle_coverage": [
+    "literature_reasoning",
+    "hypothesis_generation",
+    "research_plan_generation",
+    "self_evaluation",
+    "scientist_collaboration"
+  ],
+  "tool_access": [
+    "Web search",
+    "Literature reasoning over papers and large context inputs",
+    "Specialized AI models through APIs",
+    "Persistent context memory",
+    "Natural-language scientist interface"
+  ],
+  "execution_environment": "Product-hosted multi-agent Gemini 2.0 environment with asynchronous task execution, persistent memory, and a scientist-facing natural-language interface.",
+  "artifact_outputs": [
+    "Novel hypotheses",
+    "Research overviews",
+    "Experimental protocols",
+    "Cited literature summaries",
+    "Ranked and refined proposals"
+  ],
+  "human_roles": [
+    "Scientists specify goals, constraints, and preferences",
+    "Scientists provide natural-language feedback and seed ideas",
+    "Domain experts evaluate output quality",
+    "Human research teams perform the downstream wet-lab or in vitro validation"
+  ],
+  "autonomy_level": "L3",
+  "autonomy_rationale": "It autonomously searches, reasons, debates, ranks, and refines hypotheses and research plans, but it is explicitly framed as a collaborative scientist-in-the-loop system rather than a fully autonomous research executor.",
+  "iteration_loop": "Specialized agents continuously generate, critique, rank, evolve, and meta-review hypotheses within an asynchronous tournament loop backed by persistent context memory.",
+  "stopping_and_guardrails": [
+    "Scientists remain in the loop and can steer goals or constraints in natural language",
+    "The system is explicitly not meant to automate the full scientific process",
+    "Safety is one of the default evaluation criteria for generated outputs",
+    "Access was gated through a Trusted Tester Program at launch"
+  ],
+  "known_failure_modes": [
+    "Auto-Elo scores are not independent ground truth",
+    "Incorrect or weakly grounded biological hypotheses still require expert validation",
+    "Novelty and impact judgments may be biased by the available literature or model limitations",
+    "General-purpose claims are stronger than the currently disclosed validation breadth"
+  ],
+  "benchmarks_used": [
+    "15 expert-curated open research goals with best-guess solutions",
+    "GPQA diamond concordance analysis for Elo auto-ratings",
+    "Expert assessment on a subset of 11 research goals",
+    "Real-world validation in acute myeloid leukemia drug repurposing, liver fibrosis target discovery, and antimicrobial-resistance mechanism explanation"
+  ],
+  "metrics": [
+    "Elo auto-ratings from tournament comparisons",
+    "Higher Elo correlated with higher GPQA diamond accuracy",
+    "Experts preferred the system's outputs for novelty and impact over relevant baselines on a smaller subset",
+    "In vitro validation for AML repurposing candidates at clinically relevant concentrations",
+    "Human hepatic organoid validation for anti-fibrotic target suggestions"
+  ],
+  "baselines": [
+    "Reference Gemini 2.0 responses",
+    "Other state-of-the-art agentic and reasoning models",
+    "Unassisted human experts on expert-curated goals"
+  ],
+  "validation_strength": "Peer-reviewed and real-world validated.",
+  "evaluation_limitations": [
+    "Most disclosed validation is in biomedicine even though the framing is general-purpose",
+    "Elo is an auto-evaluation rather than independent ground truth",
+    "The expert-preference subset was small",
+    "Some validation details are deferred to co-timed or upcoming reports"
+  ],
+  "paper_url": "https://www.nature.com/articles/s41586-026-10644-y",
+  "code_url": "None publicly released as of 2026-05-28.",
+  "dataset_url": "None.",
+  "product_url": "https://blog.google/feed/google-research-ai-co-scientist/",
+  "leaderboard_url": "None.",
+  "source_quality": "Primary journal article and official Google launch and research posts.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [],
+  "successors": [],
+  "components": [
+    "Supervisor agent",
+    "Generation agent",
+    "Reflection agent",
+    "Ranking agent",
+    "Evolution agent",
+    "Proximity agent",
+    "Meta-review agent",
+    "Context memory",
+    "Gemini 2.0"
+  ],
+  "evaluated_by": [
+    "Nature peer review",
+    "Expert-curated goal evaluations",
+    "Expert preference studies",
+    "Wet-lab and in vitro validations"
+  ],
+  "evaluates": [],
+  "competes_with_or_complements": [
+    "The AI Scientist family",
+    "Deep research tools",
+    "Domain-specific biomedical discovery systems"
+  ],
+  "milestones": [
+    "2025-02-19: Google announced AI co-scientist and Trusted Tester access",
+    "2025-02: 'Towards an AI co-scientist' preprint circulated publicly",
+    "2026-05-19: Nature published 'Accelerating scientific discovery with Co-Scientist'"
+  ],
+  "version_history": [
+    "2025-02 launch on top of Gemini 2.0",
+    "2026-05 Nature publication with broader validation evidence"
+  ],
+  "adoption_signals": [
+    "Trusted Tester early-access program was announced at launch",
+    "When checked on 2026-05-28, the Nature page showed about 125k accesses and 345 Altmetric",
+    "The system received prominent Google Research and Google blog coverage"
+  ],
+  "supersession_notes": "No public successor was verified as of 2026-05-28.",
+  "real_world_applications": [
+    "Drug repurposing for acute myeloid leukemia",
+    "Novel treatment-target discovery for liver fibrosis",
+    "Mechanistic hypothesis generation for antimicrobial resistance",
+    "Collaborative scientific research planning"
+  ],
+  "users": [
+    "Biomedical scientists",
+    "Research teams",
+    "Translational medicine groups",
+    "General scientists needing collaborative hypothesis support"
+  ],
+  "deployment_constraints": [
+    "Trusted Tester or internal access rather than public self-serve availability",
+    "Scientist input and validation remain necessary",
+    "Wet-lab or clinical validation capacity is needed for high-stakes claims",
+    "Frontier-model infrastructure and literature access are required"
+  ],
+  "cost_and_runtime": "No public pricing or runtime schedule was disclosed. Official sources emphasize flexible asynchronous compute allocation and better outputs with more test-time compute. [uncertain]",
+  "scientific_integrity_risks": [
+    "Weakly grounded or fabricated hypotheses if expert review is skipped",
+    "Overclaiming novelty relative to the underlying literature",
+    "Authorship and credit ambiguity around AI-generated proposals",
+    "Misinterpretation of preliminary model suggestions as validated science"
+  ],
+  "security_and_safety_risks": [
+    "Dual-use biomedical reasoning",
+    "Unsafe or unethical experimental suggestions without expert oversight",
+    "Potential over-trust in model-generated plans",
+    "Sensitive unpublished research context entering the system [uncertain]"
+  ],
+  "mitigations": [
+    "Scientist-in-the-loop collaboration",
+    "Safety as a default evaluation criterion",
+    "Natural-language constraints and feedback from experts",
+    "Wet-lab or in vitro validation before strong claims",
+    "Access gating through a Trusted Tester Program"
+  ],
+  "policy_relevance": "Highly relevant to responsible release of AI discovery systems, cyberbiosecurity, human oversight in scientific automation, and governance of AI-generated hypotheses in biomedicine.",
+  "uncertain": [
+    "cost_and_runtime",
+    "security_and_safety_risks"
+  ]
+}

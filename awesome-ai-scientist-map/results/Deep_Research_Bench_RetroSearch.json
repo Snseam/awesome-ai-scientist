@@ -1,0 +1,190 @@
+{
+  "id": "futuresearch_deep_research_bench",
+  "name": "Deep Research Bench / RetroSearch",
+  "aliases": [
+    "Deep Research Bench",
+    "DRB",
+    "RetroSearch"
+  ],
+  "organization": "FutureSearch",
+  "first_public_release": "2025-05",
+  "current_status": "Active public benchmark and leaderboard hosted by FutureSearch.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "leaderboard",
+    "benchmark_environment"
+  ],
+  "domains": [
+    "web research",
+    "open-web retrieval",
+    "multi-domain factual synthesis",
+    "tool-using agents"
+  ],
+  "positioning": "Open-web deep research benchmark with a frozen-web retrieval environment for reproducible agent evaluation.",
+  "boundary_notes": "Included because it directly benchmarks web research agents and introduces RetroSearch, a frozen-web environment intended to make open-web agent evaluation reproducible over time.",
+  "lifecycle_coverage": [
+    "multistep web search",
+    "retrieval over archived webpages",
+    "evidence synthesis",
+    "long-form answer generation",
+    "agent-trace evaluation"
+  ],
+  "tool_access": [
+    "RetroSearch frozen-web search environment",
+    "archived webpage corpus",
+    "public leaderboard infrastructure",
+    "trace-based evaluation tooling",
+    "retro and live evaluation modes"
+  ],
+  "execution_environment": "FutureSearch-hosted benchmark and leaderboard environment where agents operate against RetroSearch, a frozen approximation of web search backed by archived pages.",
+  "artifact_outputs": [
+    "leaderboard scores",
+    "cost estimates",
+    "runtime estimates",
+    "task-category scores",
+    "trace-level evaluations for hallucination, tool use, and forgetting"
+  ],
+  "human_roles": [
+    "Skilled humans worked out benchmark answers and curated task instances.",
+    "Benchmark maintainers scrape and freeze web content, maintain RetroSearch, and update the leaderboard.",
+    "Developers or product teams submit models and agents for evaluation."
+  ],
+  "autonomy_level": "L2",
+  "autonomy_rationale": "The benchmark targets bounded, tool-using web research agents that autonomously search, read, and synthesize information for a user task, but not open-ended self-directed scientific systems or physical-world agents.",
+  "iteration_loop": "Yes. FutureSearch continuously evaluates newly released models and agents, and the benchmark supports repeatable retro runs as the live web changes.",
+  "stopping_and_guardrails": [
+    "RetroSearch freezes page candidates to improve reproducibility over time.",
+    "Carefully curated answers ground objective scoring.",
+    "The benchmark tracks cost and runtime alongside quality.",
+    "Automated trace analysis explicitly monitors hallucination, tool use, and forgetting."
+  ],
+  "known_failure_modes": [
+    "Agents may hallucinate unsupported claims.",
+    "Agents may forget earlier evidence in long traces.",
+    "Tool misuse can degrade performance even with good base models.",
+    "Benchmark-specific strategies may overfit to RetroSearch behavior instead of the live web.",
+    "Frozen corpora can omit pages that a real-time agent would have found."
+  ],
+  "benchmarks_used": [
+    "89 multi-step web research task instances in the paper",
+    "8 diverse task categories",
+    "RetroSearch frozen-web retrieval environment",
+    "retro versus live-agent comparison protocols"
+  ],
+  "metrics": [
+    "task success on curated-answer research tasks",
+    "category-level scores",
+    "hallucination progress over traces",
+    "tool-use progress over traces",
+    "forgetting progress over traces",
+    "cost",
+    "runtime"
+  ],
+  "baselines": [
+    "major LLMs released around the paper period, including thinking models such as o3 and Gemini 2.5 Pro",
+    "commercial deep-research products such as OpenAI Deep Research and Perplexity",
+    "retro versus live versions of web research agents"
+  ],
+  "validation_strength": "Benchmarked with human-worked-out answers, a public leaderboard, an explicit reproducibility environment, and an arXiv paper; still a preprint rather than a peer-reviewed archival publication in the checked sources.",
+  "evaluation_limitations": [
+    "RetroSearch approximates live search rather than reproducing it perfectly.",
+    "The public website and paper refer to slightly different task counts, indicating a moving benchmark target.",
+    "Public leaderboard rankings can change as new models are added.",
+    "No public self-hostable code repository was identified in the primary sources checked."
+  ],
+  "paper_url": "https://arxiv.org/abs/2506.06287",
+  "code_url": "[uncertain] No public code repository was identified in the primary sources checked on 2026-05-28.",
+  "dataset_url": "[uncertain] No public standalone dataset URL was identified in the primary sources checked on 2026-05-28.",
+  "product_url": "https://futuresearch.ai/deep-research-bench/index.html",
+  "leaderboard_url": "https://drb.futuresearch.ai/",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "[uncertain] The paper contrasts DRB with prior open-web evaluations that lacked frozen-web control, but it does not name a single canonical predecessor benchmark as the direct ancestor."
+  ],
+  "successors": [
+    "[uncertain] No separately named successor to DRB itself was identified in the primary sources checked on 2026-05-28."
+  ],
+  "components": [
+    "Deep Research Bench task set",
+    "RetroSearch frozen-web search system",
+    "archived webpage corpus with 10-100k pages per task on the public site description",
+    "public leaderboard",
+    "trace-evaluation pipeline for hallucination, tool use, and forgetting"
+  ],
+  "evaluated_by": [
+    "A public FutureSearch leaderboard.",
+    "Community scrutiny through a public benchmark website and paper.",
+    "Comparisons between retro and live evaluation modes described by FutureSearch."
+  ],
+  "evaluates": [
+    "web research agents",
+    "frozen-web retrieval",
+    "tool use",
+    "hallucination",
+    "forgetting",
+    "commercial deep-research products"
+  ],
+  "competes_with_or_complements": [
+    "Complements DeepResearch Bench by emphasizing reproducible frozen-web evaluation and leaderboard tracking for web research agents.",
+    "Directly compares branded commercial research products and research-agent configurations on the same benchmark."
+  ],
+  "milestones": [
+    "2025-05-06: arXiv paper for Deep Research Bench was released.",
+    "2025-05: Public DRB leaderboard and RetroSearch framing were launched by FutureSearch.",
+    "2025-05: The benchmark evaluated several live commercial research products on the May 2025 DRB version.",
+    "2026-05-28: FutureSearch continued to host the benchmark and leaderboard publicly."
+  ],
+  "version_history": [
+    "The paper describes 89 task instances across 8 categories.",
+    "[uncertain] FutureSearch's public site later refers to 91 real-world tasks and continuous leaderboard updates, so the task count appears to have changed after the paper release."
+  ],
+  "adoption_signals": [
+    "FutureSearch maintains a public leaderboard for DRB.",
+    "The benchmark page says DRB is featured on Epoch's Benchmark Hub.",
+    "FutureSearch continues to publish benchmark-related analyses and cost tradeoff posts using DRB."
+  ],
+  "supersession_notes": "Not superseded in the checked sources; FutureSearch presents DRB as an actively maintained benchmark within its benchmark portfolio.",
+  "real_world_applications": [
+    "Evaluating commercial and research-grade web research agents under stable retrieval conditions.",
+    "Tracking whether progress comes from better reasoning, better tool use, or reduced hallucination and forgetting.",
+    "Comparing live-web and frozen-web performance for open-web agent products."
+  ],
+  "users": [
+    "web research agent developers",
+    "frontier model evaluators",
+    "benchmark researchers",
+    "teams comparing commercial deep-research products"
+  ],
+  "deployment_constraints": [
+    "Benchmark access is centered on FutureSearch-hosted infrastructure rather than a public self-hosted code release in the checked sources.",
+    "RetroSearch depends on frozen archived pages and search emulation infrastructure.",
+    "Leaderboard participation appears to require contacting FutureSearch."
+  ],
+  "cost_and_runtime": "FutureSearch tracks both cost and runtime on DRB. The public leaderboard notes that runtime is estimated from ReAct steps rather than wall-clock time, and FutureSearch also publishes Pareto analyses of accuracy versus dollar cost.",
+  "scientific_integrity_risks": [
+    "A frozen web snapshot can diverge from what users experience on the live web.",
+    "Carefully curated answers still reflect benchmark-author assumptions about correctness.",
+    "Model providers may optimize for the benchmark without improving general research reliability."
+  ],
+  "security_and_safety_risks": [
+    "Open-web research agents can ingest misleading, malicious, or unsafe content.",
+    "Benchmarking archived web content still exposes systems to untrusted text and links.",
+    "Public comparison pressure can incentivize opaque product-specific tuning."
+  ],
+  "mitigations": [
+    "RetroSearch freezes the candidate web corpus to reduce drift.",
+    "Human-worked-out answers anchor evaluation targets.",
+    "Trace-level analysis surfaces hallucination, tool-use, and forgetting behaviors.",
+    "Cost and runtime reporting help contextualize leaderboard scores."
+  ],
+  "policy_relevance": "Relevant to reproducibility standards for open-web agent evaluation and to responsible claims about commercial deep-research system performance.",
+  "uncertain": [
+    "code_url",
+    "dataset_url",
+    "predecessors",
+    "successors",
+    "version_history"
+  ]
+}

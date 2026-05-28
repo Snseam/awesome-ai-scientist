@@ -1,0 +1,168 @@
+{
+  "id": "futurehouse_platform_agents",
+  "name": "FutureHouse Platform Agents",
+  "aliases": [
+    "FutureHouse Platform",
+    "FutureHouse Platform: Superintelligent AI Agents for Scientific Discovery"
+  ],
+  "organization": "FutureHouse",
+  "first_public_release": "2025-05-01",
+  "current_status": "Active public science product suite with web interface and API",
+  "category": "science_product_suite",
+  "type": [
+    "product",
+    "agent_suite"
+  ],
+  "domains": [
+    "biology",
+    "chemistry",
+    "biomedicine"
+  ],
+  "positioning": "Scientific agent platform",
+  "boundary_notes": "Included because it offers a suite of specialized agents for literature search, synthesis, chemistry planning, and data analysis through a product platform. It is broader than a single research assistant and narrower than a fully autonomous end-to-end scientist.",
+  "lifecycle_coverage": [
+    "literature_search",
+    "literature_synthesis",
+    "research_gap_analysis",
+    "chemistry_planning",
+    "data_analysis"
+  ],
+  "tool_access": [
+    "web interface",
+    "API",
+    "open-access paper corpus",
+    "specialized scientific databases including OpenTargets",
+    "specialized chemistry tools"
+  ],
+  "execution_environment": "Product-hosted environment accessible through a web interface and API",
+  "artifact_outputs": [
+    "scholarly answers",
+    "deep literature reviews",
+    "prior-art checks",
+    "chemistry experiment plans",
+    "data-analysis outputs"
+  ],
+  "human_roles": "Researchers choose the agent, provide the scientific question, interpret results, and decide whether to act on outputs. Downstream experiments and scientific decisions remain human responsibilities.",
+  "autonomy_level": "L2",
+  "autonomy_rationale": "The platform automates specialized research subtasks with strong retrieval and synthesis capabilities, but it does not independently run a full closed-loop discovery process without user orchestration or later composition into a system such as Robin.",
+  "iteration_loop": "Limited. Individual agents support iterative querying and source review, and the platform can be chained by users, but the launch announcement does not present a fully autonomous end-to-end research loop.",
+  "stopping_and_guardrails": "Guardrails described in the launch materials include transparent reasoning, source-quality evaluation, human-facing delivery through a web interface and API, and an explicit warning that Phoenix is experimental and may make more mistakes.",
+  "known_failure_modes": [
+    "literature retrieval mistakes",
+    "incorrect synthesis or gap analysis",
+    "unsafe or weak chemistry planning",
+    "overreliance on platform outputs without experimental review"
+  ],
+  "benchmarks_used": [
+    "LitQA precision and accuracy comparisons",
+    "head-to-head literature search tasks against PhD-level researchers",
+    "retrieval precision and accuracy comparisons against frontier search models"
+  ],
+  "metrics": [
+    "retrieval precision",
+    "accuracy",
+    "head-to-head literature search precision versus PhD-level researchers"
+  ],
+  "baselines": [
+    "major frontier search models with a search tool",
+    "PhD-level researchers in literature search tasks"
+  ],
+  "validation_strength": "Benchmarked and experimentally validated",
+  "evaluation_limitations": "The launch post states that Phoenix is less deeply benchmarked than the other agents, and the reviewed sources do not provide a single unified benchmark covering every agent in the suite.",
+  "paper_url": "No single paper URL is provided for the full platform launch in the reviewed primary sources [uncertain]",
+  "code_url": "No single official open-source repository for the full platform suite is provided in the reviewed primary sources [uncertain]",
+  "dataset_url": "No dedicated dataset URL is provided for the full suite in the reviewed primary sources [uncertain]",
+  "product_url": "https://www.futurehouse.org/research-announcements/launching-futurehouse-platform-ai-agents",
+  "leaderboard_url": "No standalone public leaderboard URL is linked in the reviewed primary sources [uncertain]",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "ChemCrow for the Phoenix deployment",
+    "earlier FutureHouse literature agents and evaluation work [uncertain]"
+  ],
+  "successors": [
+    "Robin"
+  ],
+  "components": [
+    "Crow",
+    "Falcon",
+    "Owl",
+    "Phoenix",
+    "Finch"
+  ],
+  "evaluated_by": [
+    "LitQA-style evaluation",
+    "retrieval precision and accuracy comparisons",
+    "head-to-head literature search tasks"
+  ],
+  "evaluates": "Not a benchmark; it does not primarily evaluate other systems.",
+  "competes_with_or_complements": [
+    "Robin",
+    "literature review products",
+    "deep research products",
+    "autonomous scientific workflow systems [uncertain]"
+  ],
+  "milestones": [
+    "2025-05-01: FutureHouse platform launch announcement published",
+    "2025-05-01: public web interface and API announced",
+    "2025-05-20: Robin announcement described Crow, Falcon, Owl, Phoenix, and Finch as specialized agents feeding a unified workflow"
+  ],
+  "version_history": [
+    "Initial launch with Crow, Falcon, Owl, and Phoenix on 2025-05-01",
+    "Finch publicly referenced as a specialized data-analysis agent by 2025-05-20",
+    "No formal versioned release history was provided in the reviewed primary sources [uncertain]"
+  ],
+  "adoption_signals": [
+    "Public launch with free access via web interface at announcement time",
+    "API availability announced for researcher workflows",
+    "FutureHouse positioned the suite as publicly available to scientists everywhere"
+  ],
+  "supersession_notes": "Not superseded in the reviewed primary sources. Robin is presented as a downstream orchestration of specialized platform agents rather than a replacement for the suite.",
+  "real_world_applications": [
+    "scientific literature search",
+    "deep literature review and synthesis",
+    "prior-art checking",
+    "chemistry experiment planning",
+    "scientific data analysis"
+  ],
+  "users": [
+    "academic researchers",
+    "biomedical scientists",
+    "chemists",
+    "R&D teams"
+  ],
+  "deployment_constraints": [
+    "platform account access",
+    "API integration for programmatic use",
+    "dependence on FutureHouse-hosted infrastructure",
+    "human review for chemistry and downstream experimental decisions"
+  ],
+  "cost_and_runtime": "The launch announcement said researchers could try the platform for free via the web interface. The longer-term pricing or credit model for broader API usage is not fully specified in the reviewed primary sources [uncertain].",
+  "scientific_integrity_risks": [
+    "incorrect literature synthesis at scale",
+    "source-quality errors that shape scientific conclusions",
+    "benchmark overclaiming from narrow task coverage"
+  ],
+  "security_and_safety_risks": [
+    "chemistry-planning misuse",
+    "unsafe downstream action on unverified agent advice",
+    "platform concentration risk if users overtrust hosted agents"
+  ],
+  "mitigations": [
+    "transparent reasoning visible to users",
+    "source-quality evaluation methods",
+    "benchmarking against frontier models and human experts",
+    "explicit warning that Phoenix is experimental"
+  ],
+  "policy_relevance": "The platform is relevant to governance because it operationalizes high-capability scientific agents behind a hosted interface and API, raising issues around access control, evidence standards, chemical dual use, and responsible deployment.",
+  "uncertain": [
+    "paper_url",
+    "code_url",
+    "dataset_url",
+    "leaderboard_url",
+    "predecessors",
+    "competes_with_or_complements",
+    "version_history",
+    "cost_and_runtime"
+  ]
+}

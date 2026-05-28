@@ -1,0 +1,186 @@
+{
+  "id": "scicode",
+  "name": "SciCode",
+  "aliases": [
+    "SciCode: A Research Coding Benchmark Curated by Scientists"
+  ],
+  "organization": "Multi-institution academic collaboration led by University of Illinois Urbana-Champaign, Argonne National Laboratory, and Carnegie Mellon University",
+  "first_public_release": "2024-07-18",
+  "current_status": "Active public benchmark with an arXiv paper, GitHub evaluation code, a public Hugging Face dataset, and a public leaderboard.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "dataset",
+    "codebase"
+  ],
+  "domains": [
+    "scientific coding",
+    "mathematics",
+    "physics",
+    "chemistry",
+    "biology",
+    "materials science"
+  ],
+  "positioning": "Scientist-curated benchmark for realistic research coding in the natural sciences.",
+  "boundary_notes": "Included because SciCode evaluates realistic scientific problem solving through code synthesis, decomposition into subproblems, and automatic execution-based checking. It is broader than a narrow code-generation benchmark but narrower than a full end-to-end autonomous scientist system.",
+  "lifecycle_coverage": [
+    "scientific problem understanding",
+    "subproblem decomposition",
+    "code writing",
+    "scientific reasoning",
+    "execution-based verification"
+  ],
+  "tool_access": [
+    "Python evaluation package",
+    "automatic test cases",
+    "inspect_ai integration",
+    "OpenCompass integration",
+    "model API access for benchmark runs"
+  ],
+  "execution_environment": "Benchmark-hosted evaluation code run by users locally against the SciCode package, optional inspect_ai workflows, and benchmark test assets.",
+  "artifact_outputs": [
+    "generated code solutions",
+    "subproblem predictions",
+    "main-problem predictions",
+    "pass@1 scores",
+    "leaderboard submissions"
+  ],
+  "human_roles": "Scientists curated the problems, background descriptions, gold solutions, and tests. Users configure models, run evaluations, and interpret benchmark scores.",
+  "autonomy_level": "L1-L3 [uncertain]",
+  "autonomy_rationale": "SciCode can evaluate anything from direct model code generation to bounded tool-using coding agents, but all systems operate inside a fixed benchmark with predefined problems, tests, and scoring.",
+  "iteration_loop": "The benchmark supports iterative agent-style evaluation, but each run remains bounded by predefined scientific coding tasks, optional background text, and automatic tests.",
+  "stopping_and_guardrails": "Execution is bounded by predefined benchmark tasks, gold-standard tests, dev/test splits, optional background settings, and user-controlled evaluation infrastructure such as inspect_ai.",
+  "known_failure_modes": [
+    "failing to integrate multiple subproblem solutions into one working main solution",
+    "weak scientific knowledge recall",
+    "incorrect numerical reasoning or simulation code",
+    "overfitting to benchmark-specific patterns [uncertain]",
+    "passing some subproblems while still failing the end-to-end main problem"
+  ],
+  "benchmarks_used": "SciCode itself across subproblem and main-problem evaluation, with standard and background-assisted settings.",
+  "metrics": [
+    "subproblem pass@1 rate",
+    "main-problem pass@1 rate",
+    "main problem resolve rate on the public leaderboard",
+    "comparison between standard and background-assisted settings"
+  ],
+  "baselines": [
+    "Claude 3.5 Sonnet",
+    "GPT-4o",
+    "GPT-4-Turbo",
+    "Gemini 1.5 Pro",
+    "Claude 3 Opus",
+    "DeepSeek-Coder-v2",
+    "DeepSeek-R1",
+    "Qwen2-72B-Instruct",
+    "OpenAI o1-preview",
+    "OpenAI o3-mini variants"
+  ],
+  "validation_strength": "Benchmarked with scientist-curated tasks, gold-standard solutions, automatic test cases, a public leaderboard, and a public dataset release.",
+  "evaluation_limitations": "SciCode covers 80 main problems across five natural-science domains rather than the full space of scientific coding. It focuses on computation and simulation code, and benchmark scores may not capture broader scientific judgment or downstream wet-lab usefulness.",
+  "paper_url": "https://arxiv.org/abs/2407.13168",
+  "code_url": "https://github.com/scicode-bench/SciCode",
+  "dataset_url": "https://huggingface.co/datasets/SciCode1/SciCode",
+  "product_url": "https://scicode-bench.github.io/",
+  "leaderboard_url": "https://scicode-bench.github.io/leaderboard/",
+  "source_quality": "Primary sources: official arXiv paper, official GitHub repository, official benchmark website, and the official Hugging Face dataset linked from the repository.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": "[uncertain] No explicit predecessor benchmark is named in the consulted primary sources.",
+  "successors": "[uncertain] No formal successor benchmark was identified in the consulted primary sources.",
+  "components": [
+    "80 main problems",
+    "338 subproblems",
+    "15-problem development split",
+    "65-problem test split",
+    "scientist-authored background descriptions",
+    "gold-standard solutions",
+    "automatic test cases",
+    "inspect_ai integration",
+    "OpenCompass integration",
+    "public leaderboard"
+  ],
+  "evaluated_by": "[uncertain] No separate external benchmark evaluating SciCode itself was identified in the consulted sources.",
+  "evaluates": [
+    "scientific coding",
+    "research problem solving",
+    "natural-science computation",
+    "code synthesis",
+    "scientific reasoning under realistic task structure"
+  ],
+  "competes_with_or_complements": [
+    "AinsteinBench",
+    "PaperBench",
+    "MLAgentBench",
+    "other scientific and research-coding benchmarks [uncertain]"
+  ],
+  "milestones": [
+    "2024-07-18: arXiv paper released.",
+    "2024-07-24: scientist-annotated background support added for background-assisted evaluation.",
+    "2024-08-22: benchmark integrated into OpenCompass.",
+    "2024-09-26: benchmark accepted at the NeurIPS 2024 Datasets and Benchmarks Track.",
+    "2024-11-04: public leaderboard launched.",
+    "2025-01-24: inspect_ai integration announced.",
+    "2025-02-17: Hugging Face dataset release announced."
+  ],
+  "version_history": [
+    "Initial arXiv release on 2024-07-18",
+    "background-assisted evaluation support added on 2024-07-24",
+    "OpenCompass integration announced on 2024-08-22",
+    "leaderboard launched on 2024-11-04",
+    "inspect_ai became the recommended evaluation path on 2025-01-24",
+    "public Hugging Face dataset announced on 2025-02-17"
+  ],
+  "adoption_signals": [
+    "199 GitHub stars at verification time",
+    "public leaderboard",
+    "OpenCompass integration",
+    "public Hugging Face dataset",
+    "NeurIPS 2024 Datasets and Benchmarks Track acceptance"
+  ],
+  "supersession_notes": "No supersession was identified in the consulted primary sources.",
+  "real_world_applications": [
+    "benchmarking scientific coding assistants",
+    "comparing models for computational research support",
+    "measuring progress on multi-step natural-science coding tasks",
+    "testing whether coding agents can translate scientific concepts into executable computation"
+  ],
+  "users": [
+    "AI-for-science researchers",
+    "benchmark designers",
+    "scientific coding agent developers",
+    "language-model evaluators"
+  ],
+  "deployment_constraints": "Running new evaluations requires the SciCode package, benchmark test assets including numeric test data, compatible model APIs, and local execution permissions for the evaluation workflow.",
+  "cost_and_runtime": "Runtime and cost depend on the chosen model APIs and evaluation framework. The official materials do not give one single fixed budget for benchmark runs [uncertain].",
+  "scientific_integrity_risks": [
+    "benchmark overfitting",
+    "training-data contamination on public benchmark tasks [uncertain]",
+    "mistaking passing tests for full scientific understanding",
+    "overgeneralizing from computational tasks to broader scientific autonomy"
+  ],
+  "security_and_safety_risks": [
+    "execution of model-generated code during evaluation",
+    "API-key exposure if evaluation environments are misconfigured",
+    "unsafe external downloads or dependency handling during custom benchmark runs [uncertain]"
+  ],
+  "mitigations": [
+    "scientist curation of tasks",
+    "gold-standard solutions and automatic tests",
+    "development and test split separation",
+    "bounded benchmark tasks",
+    "inspect_ai and public evaluation tooling"
+  ],
+  "policy_relevance": "SciCode is relevant to governance of scientific AI because it measures realistic scientific coding ability in a bounded, transparent benchmark and helps track progress toward more capable research agents.",
+  "uncertain": [
+    "autonomy_level",
+    "known_failure_modes",
+    "predecessors",
+    "successors",
+    "evaluated_by",
+    "competes_with_or_complements",
+    "cost_and_runtime",
+    "scientific_integrity_risks",
+    "security_and_safety_risks"
+  ]
+}

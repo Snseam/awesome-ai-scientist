@@ -1,0 +1,203 @@
+{
+  "id": "ainsteinbench",
+  "name": "AInsteinBench",
+  "aliases": [
+    "AInsteinBench: Benchmarking Coding Agents on Scientific Repositories"
+  ],
+  "organization": "ByteDance Seed and Princeton University",
+  "first_public_release": "2025-12-24",
+  "current_status": "Active public benchmark with an arXiv paper, a public GitHub project page, and a public Hugging Face dataset.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "dataset",
+    "codebase"
+  ],
+  "domains": [
+    "scientific computing",
+    "quantum chemistry",
+    "quantum computing",
+    "molecular dynamics",
+    "numerical relativity",
+    "fluid dynamics",
+    "cheminformatics"
+  ],
+  "positioning": "Benchmark for scientific computing code agents operating on real scientific repositories and executable development tasks.",
+  "boundary_notes": "Included because it evaluates repository-scale scientific software maintenance, bug fixing, and feature implementation in executable environments rather than only closed-form science QA or generic programming tasks. It sits at the intersection of scientific reasoning and real pull-request-style coding work.",
+  "lifecycle_coverage": [
+    "repository navigation",
+    "issue understanding",
+    "feature implementation",
+    "bug fixing",
+    "code writing",
+    "test execution",
+    "evaluation"
+  ],
+  "tool_access": [
+    "containerized shell access",
+    "file inspection",
+    "code editing",
+    "package installation",
+    "repository test execution",
+    "Docker images"
+  ],
+  "execution_environment": "Each benchmark instance runs in an isolated Docker container with the appropriate repository snapshot, dependencies, and a restricted command-line interface. The public repository provides a unified evaluator and scripts for preparing benchmark images and running tests.",
+  "artifact_outputs": [
+    "patches",
+    "implemented source files",
+    "evaluation_results.json outputs",
+    "question files",
+    "difficulty annotations",
+    "pass/fail benchmark scores"
+  ],
+  "human_roles": "Benchmark creators select repositories, curate tasks, reconstruct environments, and recruit domain experts to verify scientific meaning, test quality, and difficulty. Users run agents against the benchmark and interpret the resulting scores and trajectories.",
+  "autonomy_level": "L2-L3",
+  "autonomy_rationale": "AInsteinBench targets agents that can independently inspect repositories, edit code, run tests, install dependencies, and iterate on failures inside a sandboxed environment, but still operate within benchmark-provided infrastructure, task definitions, and evaluation harnesses.",
+  "iteration_loop": "The evaluated CodeAct-based agent follows a plan-act loop: it searches the codebase, inspects failures, proposes edits, reruns reproduction scripts and tests, and iteratively refines patches. The paper reports that virtually all problems take at least 20 iterations and that many successful trajectories accumulate within 20-60 steps.",
+  "stopping_and_guardrails": "Guardrails include isolated Docker containers, fixed repository snapshots, curated fail-to-pass instances, maintainer-linked pull requests, expert review, and test-driven acceptance. Evaluation stops when the agent reaches a terminal success or failure outcome under the benchmark harness.",
+  "known_failure_modes": [
+    "scientifically invalid but locally plausible fixes",
+    "mathematical precision errors",
+    "violated physical or conservation invariants",
+    "cross-file reasoning failures",
+    "spatial reasoning failures on cheminformatics tasks",
+    "false positives from under-covered tests",
+    "false negatives from over-prescriptive tests"
+  ],
+  "benchmarks_used": "AInsteinBench itself is the primary benchmark. Its construction and positioning are explicitly compared against SWE-Bench, SWE-Bench Verified, SWE-Gym, and Multi-SWE-Bench.",
+  "metrics": [
+    "problem resolution rate",
+    "difficulty-stratified pass rate",
+    "domain-specific pass rate",
+    "issue-localization score",
+    "efficiency measured by iteration count"
+  ],
+  "baselines": [
+    "CodeAct agent with Claude 4.5 Opus",
+    "CodeAct agent with Gemini 3 Pro",
+    "CodeAct agent with DeepSeek V3.2",
+    "CodeAct agent with Doubao Seed 1.8",
+    "CodeAct agent with GPT-5-high",
+    "CodeAct agent with Claude 4.5 Sonnet",
+    "CodeAct agent with GPT-5.1",
+    "CodeAct agent with Kimi K2",
+    "CodeAct agent with GLM 4.6",
+    "CodeAct agent with Gemini 2.5 Pro",
+    "CodeAct agent with GPT-4o",
+    "CodeAct agent with Grok-4"
+  ],
+  "validation_strength": "Benchmarked in executable environments with test-driven verification, multi-stage filtering, reconstructed historical environments, and domain-expert human review. The benchmark is publicly documented in an arXiv paper and released with code and dataset artifacts.",
+  "evaluation_limitations": "The paper's main evaluation covers 244 maintainer-validated problems across six repositories, but the public repository and dataset also expose Einstein Toolkit-formatted synthesized questions, so the exact boundary between the core paper evaluation set and the broader released artifacts requires care when comparing numbers [uncertain].",
+  "paper_url": "https://arxiv.org/abs/2512.21373",
+  "code_url": "https://github.com/ByteDance-Seed/AInsteinBench",
+  "dataset_url": "https://huggingface.co/datasets/ByteDance-Seed/AInsteinBench",
+  "product_url": "https://github.com/ByteDance-Seed/AInsteinBench",
+  "leaderboard_url": "[uncertain] No public standalone leaderboard URL was identified in the paper, GitHub repository, or Hugging Face dataset as of 2026-05-28.",
+  "source_quality": "Primary sources: official arXiv paper, official GitHub repository, and official Hugging Face dataset page.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "SWE-Bench",
+    "SWE-Bench Verified",
+    "SWE-Gym",
+    "Multi-SWE-Bench"
+  ],
+  "successors": "[uncertain] No formal successor benchmark was identified in the consulted primary sources as of 2026-05-28.",
+  "components": [
+    "244 maintainer-validated benchmark problems in the paper evaluation",
+    "repo-crawled questions",
+    "synthesized Einstein Toolkit questions",
+    "isolated Docker execution environments",
+    "fail-to-pass filtering",
+    "expert verification pipeline",
+    "difficulty annotations",
+    "CodeAct-based evaluation harness",
+    "Hugging Face dataset subsets for msb_type, difficulty_tag, and et_type"
+  ],
+  "evaluated_by": "[uncertain] No separate external benchmark evaluating AInsteinBench itself was identified in the consulted sources.",
+  "evaluates": [
+    "scientific_repository_maintenance",
+    "scientific_computing_code_agents",
+    "real_PR_tasks",
+    "feature implementation",
+    "bug fixing",
+    "issue localization"
+  ],
+  "competes_with_or_complements": [
+    "SciCode",
+    "PaperBench",
+    "SWE-Bench",
+    "SWE-Bench Verified",
+    "SWE-Gym",
+    "Multi-SWE-Bench"
+  ],
+  "milestones": [
+    "2025-12-24: arXiv v1 submitted.",
+    "2025-12-29: Paper dated December 29, 2025 and linked to the public GitHub project page.",
+    "2026-05-28: Public GitHub repository available with evaluator, scripts, tests, and Docker-based setup instructions.",
+    "2026-05-28: Public Hugging Face dataset available under CC0-1.0 with msb_type, difficulty_tag, and et_type subsets."
+  ],
+  "history": {
+    "milestones": [
+      "2025-12-24: arXiv v1 submitted.",
+      "2025-12-29: Paper dated December 29, 2025 and linked to the public GitHub project page.",
+      "2026-05-28: Public GitHub repository available with evaluator, scripts, tests, and Docker-based setup instructions.",
+      "2026-05-28: Public Hugging Face dataset available under CC0-1.0 with msb_type, difficulty_tag, and et_type subsets."
+    ]
+  },
+  "version_history": [
+    "arXiv v1 released on 2025-12-24",
+    "public GitHub repository exposes unified question formats for Einstein Toolkit and Multi-SWE-Bench-style tasks",
+    "public dataset page exposes benchmark artifacts through Hugging Face datasets"
+  ],
+  "adoption_signals": [
+    "Public arXiv paper",
+    "Public GitHub repository",
+    "Public Hugging Face dataset",
+    "GitHub repository showed 8 stars on 2026-05-28",
+    "Hugging Face dataset page showed 4 likes on 2026-05-28"
+  ],
+  "supersession_notes": "No supersession was identified in the consulted primary sources.",
+  "real_world_applications": [
+    "benchmarking autonomous scientific coding agents",
+    "measuring ability to maintain scientific repositories",
+    "evaluating real pull-request-style issue resolution in scientific software",
+    "studying feature implementation and bug fixing in computational research codebases"
+  ],
+  "users": [
+    "AI agent researchers",
+    "scientific software maintainers",
+    "benchmark designers",
+    "LLM evaluation teams",
+    "computational science researchers"
+  ],
+  "deployment_constraints": "Full evaluation requires Python 3.8+, Docker, prebuilt benchmark images, and significant disk space. The repository notes that pulling all images may take minutes or hours and requires more than 50GB of free storage. Some question types additionally require Multi-SWE-Bench installation or Einstein Toolkit setup.",
+  "cost_and_runtime": "Runtime depends on image downloads, repository setup, and agent iteration count. The repository warns that pulling all images can take minutes or hours and needs more than 50GB free storage, while the paper reports that virtually all tasks take at least 20 iterations and that many successful trajectories accumulate within 20-60 steps.",
+  "scientific_integrity_risks": [
+    "benchmark overfitting to a fixed set of scientific repositories",
+    "false positives from under-covered tests",
+    "false negatives from over-prescriptive tests",
+    "mistaking test success for full scientific validity",
+    "limited repository coverage relative to the broader scientific software ecosystem"
+  ],
+  "security_and_safety_risks": [
+    "agents execute code and install packages inside Docker containers",
+    "historical repository snapshots and Docker images expand the attack surface if isolation is weak",
+    "large scientific dependencies and build steps increase operational risk during evaluation"
+  ],
+  "mitigations": [
+    "isolated Docker containers",
+    "fixed repository snapshots and reconstructed dependencies",
+    "fail-to-pass verification",
+    "maintainer-authored pull-request linkage for repo-crawled tasks",
+    "domain-expert human verification",
+    "test revisions to reduce false positives and false negatives"
+  ],
+  "policy_relevance": "Relevant to governance of increasingly autonomous coding agents for research software, especially around reproducibility, benchmark validity, and safe deployment of agents that can modify scientific codebases.",
+  "uncertain": [
+    "evaluation_limitations",
+    "leaderboard_url",
+    "successors",
+    "evaluated_by"
+  ]
+}

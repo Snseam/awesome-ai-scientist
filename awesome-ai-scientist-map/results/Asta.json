@@ -1,0 +1,191 @@
+{
+  "id": "asta",
+  "name": "Asta",
+  "aliases": [
+    "Ai2 Asta",
+    "Asta ecosystem"
+  ],
+  "organization": "Allen Institute for AI",
+  "first_public_release": "2025-08-26",
+  "current_status": "Active; public scientific AI ecosystem with open-source benchmark/resources and some preview or beta product features.",
+  "category": "science_product_suite",
+  "type": [
+    "product",
+    "benchmark",
+    "codebase",
+    "infrastructure"
+  ],
+  "domains": [
+    "general_science"
+  ],
+  "positioning": "A science-focused agent ecosystem that combines research assistants, benchmark infrastructure, and developer resources.",
+  "boundary_notes": "Included because Ai2 presents Asta as an integrated ecosystem for scientific research assistance, benchmarking, and scientific tool infrastructure rather than a generic consumer web agent.",
+  "lifecycle_coverage": [
+    "paper_finding",
+    "scholarly_qa",
+    "literature_synthesis",
+    "scientific_tool_use",
+    "data_analysis",
+    "benchmarking"
+  ],
+  "tool_access": [
+    "Scientific paper search and retrieval",
+    "Citation following",
+    "Full-text literature access",
+    "Structured dataset upload and analysis",
+    "Model Context Protocol tools",
+    "Benchmark evaluation tools",
+    "Open-source agent baselines"
+  ],
+  "execution_environment": "Hosted Asta web product for researchers, plus open-source benchmark and tool environments for local or private deployment.",
+  "artifact_outputs": [
+    "Ranked paper sets with rationales",
+    "Citation-grounded literature summaries",
+    "Research answers with source traces",
+    "Reproducible data analyses",
+    "Benchmark scores and leaderboards",
+    "Agent baselines and evaluation logs"
+  ],
+  "human_roles": [
+    "Researchers define the question or dataset and review cited outputs",
+    "Users validate claims and decide whether to trust or reuse results",
+    "Developers fork or modify open-source agents and benchmark setups",
+    "Institutions must choose self-hosting for regulated datasets"
+  ],
+  "autonomy_level": "L2",
+  "autonomy_rationale": "Asta autonomously performs multi-step literature search, question answering, synthesis, and some data-analysis workflows, but humans still set goals, review evidence, and remain responsible for sensitive-data handling and downstream scientific decisions.",
+  "iteration_loop": "Yes. Asta reformulates queries, follows citations, clusters evidence, and in analysis mode explores datasets with follow-up analyses inside a bounded research workflow.",
+  "stopping_and_guardrails": "Ai2 emphasizes user control, transparency, and clear boundaries. Hosted analysis warns against regulated data, deletes uploaded datasets after 7 days, keeps explorations active for 24 hours before read-only mode, and requires self-hosting for HIPAA, GDPR, or similar regulated data.",
+  "known_failure_modes": "Scientific-agent errors can include hallucinated synthesis, incomplete evidence retrieval, weak cross-domain performance, benchmark overfitting, and cost blowups or loops in general-agent baselines. Ai2 also notes that scientific AI remains far from solved on end-to-end tasks.",
+  "benchmarks_used": [
+    "AstaBench",
+    "PaperFindingBench",
+    "ScholarQA-CS2",
+    "LitQA2-FullText-Search",
+    "Data analysis benchmarks in AstaBench",
+    "End-to-end discovery benchmarks in AstaBench"
+  ],
+  "metrics": [
+    "Task accuracy",
+    "Leaderboard rank",
+    "Reasoning quality",
+    "Runtime cost per problem",
+    "Transparency of logs and tool usage",
+    "Pareto frontier over accuracy and computational cost"
+  ],
+  "baselines": [
+    "57 evaluated agents across 22 agent classes in the AstaBench report",
+    "ReAct agents with multiple frontier models",
+    "Open-source baseline agents in agent-baselines",
+    "Commercial literature tools such as Elicit and SciSpace Deep Review on literature tasks"
+  ],
+  "validation_strength": "Benchmarked, open-source, and backed by an ICLR 2026 conference paper for AstaBench plus real-world product usage feedback.",
+  "evaluation_limitations": "AstaBench is evolving, some task instructions changed after release, and even strong agents still score modestly overall. Controlled tools improve comparability but may not capture every live-production workflow or every scientific domain equally well.",
+  "paper_url": "https://arxiv.org/abs/2510.21652",
+  "code_url": "https://github.com/allenai/agent-baselines",
+  "dataset_url": "",
+  "product_url": "https://allenai.org/asta",
+  "leaderboard_url": "https://allenai.org/asta/bench",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "Ai2 Paper Finder",
+    "Ai2 Scholar QA"
+  ],
+  "successors": [],
+  "components": [
+    "Asta agents",
+    "AstaBench",
+    "Asta resources",
+    "Ai2 Paper Finder",
+    "Ai2 Scholar QA",
+    "Analyze data / DataVoyager",
+    "Asta Scientific Corpus Tool",
+    "agent-baselines"
+  ],
+  "evaluated_by": [],
+  "evaluates": [],
+  "competes_with_or_complements": [
+    "OpenAI Deep Research",
+    "Google AI co-scientist",
+    "FutureHouse platforms",
+    "Elicit",
+    "Perplexity"
+  ],
+  "history": {
+    "milestones": [
+      "2025-08-26: Ai2 publicly announced Asta, AstaBench, and Asta resources.",
+      "2025-08-26: Asta launch included paper finding, literature summarization, and beta data analysis.",
+      "2025-10-24: AstaBench technical report first submitted to arXiv.",
+      "2026-04-21: AstaBench arXiv paper updated to v2 and published as an ICLR 2026 conference paper.",
+      "2026-05: Asta Scientific Corpus Tool documentation and MCP endpoint were publicly available."
+    ]
+  },
+  "milestones": [
+    "2025-08-26: Ai2 publicly announced Asta, AstaBench, and Asta resources.",
+    "2025-08-26: Asta launch included paper finding, literature summarization, and beta data analysis.",
+    "2025-10-24: AstaBench technical report first submitted to arXiv.",
+    "2026-04-21: AstaBench arXiv paper updated to v2 and published as an ICLR 2026 conference paper.",
+    "2026-05: Asta Scientific Corpus Tool documentation and MCP endpoint were publicly available."
+  ],
+  "version_history": [
+    "Initial Asta ecosystem release in August 2025.",
+    "AstaBench received a 0.3.1 update that adjusted paper-search task instructions after launch.",
+    "Asta continues to fold previously standalone tools into a unified product experience."
+  ],
+  "adoption_signals": [
+    "Ai2 runs a public Asta Preview program for researchers and research-adjacent professionals.",
+    "Ai2 published user testimonials from organizations such as DeepFlux and NewLimit.",
+    "AstaBench ships public leaderboards and open-source baseline agents for community reuse."
+  ],
+  "supersession_notes": "Not superseded. Asta is presented as an evolving ecosystem, with new features being folded into the platform over time.",
+  "real_world_applications": [
+    "Finding relevant papers for hard scientific queries",
+    "Answering scholarly questions from scientific documents",
+    "Summarizing evidence across papers with citations",
+    "Analyzing uploaded research datasets",
+    "Benchmarking scientific AI agents under controlled conditions"
+  ],
+  "users": [
+    "Academic researchers",
+    "Industry scientists",
+    "Research engineers",
+    "AI agent developers",
+    "Graduate students",
+    "Research-adjacent analysts"
+  ],
+  "deployment_constraints": [
+    "Hosted deployment should not be used for sensitive or regulated data",
+    "Self-hosting is required for HIPAA, GDPR, or similarly regulated datasets",
+    "Dataset uploads are retained for 7 days unless deleted sooner",
+    "Explorations become read-only after 24 hours",
+    "Some capabilities are beta or preview-only",
+    "Developer workflows may require API keys such as an Asta tool key"
+  ],
+  "cost_and_runtime": "Benchmarking explicitly tracks accuracy-cost tradeoffs, but public product pricing and typical end-user runtime were not fully specified in the primary sources checked on 2026-05-28. [uncertain]",
+  "scientific_integrity_risks": [
+    "Hallucinated or weakly supported literature synthesis",
+    "False confidence in incomplete scientific coverage",
+    "Benchmark overfitting or benchmark-specific optimization",
+    "Misinterpretation of statistical analyses",
+    "Over-trust in agent outputs without source checking"
+  ],
+  "security_and_safety_risks": [
+    "Exposure of sensitive research data if used in the hosted environment",
+    "Improper use with regulated datasets",
+    "Unsafe downstream decisions based on incorrect analyses",
+    "Potential leakage or misuse of API-backed scientific tools"
+  ],
+  "mitigations": [
+    "Citation-grounded and traceable outputs",
+    "Open-source benchmark and baseline agents for inspection",
+    "Controlled, reproducible evaluation tools",
+    "Self-hosting option for regulated data",
+    "Automatic file retention limits and deletion controls",
+    "User-control framing instead of full researcher replacement"
+  ],
+  "policy_relevance": "Relevant to scientific integrity, reproducibility, benchmark governance, data-governance choices for research organizations, and the broader policy question of how to evaluate science-focused AI agents transparently.",
+  "uncertain": [
+    "cost_and_runtime"
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "id": "bixbench",
+  "name": "BixBench",
+  "aliases": [
+    "BixBench: a Comprehensive Benchmark for LLM-based Agents in Computational Biology",
+    "Bioinformatics Benchmark"
+  ],
+  "organization": "FutureHouse and ScienceMachine",
+  "first_public_release": "2025-02-28",
+  "current_status": "Active public benchmark with a public arXiv preprint, public GitHub evaluation harness, and a public Hugging Face dataset. The current dataset main branch reflects a v1.5 update beyond the original preprint's question set.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "dataset",
+    "codebase"
+  ],
+  "domains": [
+    "bioinformatics",
+    "computational biology",
+    "genomics",
+    "transcriptomics",
+    "phylogenetics and evolutionary analysis"
+  ],
+  "positioning": "Benchmark for AI agents performing real-world biological data analysis and multi-step notebook-based exploration.",
+  "boundary_notes": "Included because BixBench evaluates open-ended scientific dataset exploration, code execution, and interpretation in biology-focused analysis tasks. It is more realistic than recall-style biology benchmarks and more domain-specific than generic data-science agent benchmarks.",
+  "lifecycle_coverage": [
+    "research-question understanding",
+    "dataset exploration",
+    "multi-step computational analysis",
+    "code writing and execution",
+    "result interpretation",
+    "open-answer submission and grading"
+  ],
+  "tool_access": [
+    "Jupyter notebook environment",
+    "Python",
+    "R",
+    "Bash",
+    "Aviary agent framework",
+    "Dockerized bioinformatics environment",
+    "Hugging Face dataset access"
+  ],
+  "execution_environment": "A controlled Jupyter-notebook-based agent environment built on Aviary, with containerized bioinformatics packages and evaluation harness scripts for zero-shot and agentic runs.",
+  "artifact_outputs": [
+    "analysis trajectories",
+    "Jupyter notebooks",
+    "open-answer submissions",
+    "multiple-choice predictions",
+    "accuracy scores",
+    "graded evaluation results"
+  ],
+  "human_roles": "Bioinformatics experts contributed the source analytical scenarios and reviewed generated questions. Users configure models and APIs, run the harness, and interpret the resulting notebooks and scores.",
+  "autonomy_level": "L2-L4 [uncertain]",
+  "autonomy_rationale": "BixBench evaluates code-executing agents that can plan and iterate through multi-step biological analyses in a notebook environment, but they remain bounded by fixed benchmark capsules, tools, and scoring rather than acting as unconstrained autonomous scientists.",
+  "iteration_loop": "The benchmark explicitly supports iterative notebook-based agent execution: agents inspect files, edit cells, rerun analyses, and submit answers after multi-step exploration.",
+  "stopping_and_guardrails": "Evaluation is bounded by benchmark capsules, fixed tools, an Aviary-controlled environment, Dockerized dependencies, and automatic grading. The dataset also includes explicit warnings that benchmark data should not appear in training corpora.",
+  "known_failure_modes": [
+    "poor open-answer accuracy on complex biological analyses",
+    "multiple-choice performance near or below random",
+    "plot or notebook-output misinterpretation",
+    "reliance on recall rather than grounded analysis",
+    "coverage gaps across bioinformatics workflows not represented in the benchmark"
+  ],
+  "benchmarks_used": "BixBench itself in open-answer and multiple-choice evaluation regimes, including majority-vote experiments across repeated trajectories.",
+  "metrics": [
+    "open-answer accuracy",
+    "multiple-choice accuracy",
+    "comparison against random guessing",
+    "majority-vote evaluation across repeated trajectories",
+    "benchmark runtime comparisons"
+  ],
+  "baselines": [
+    "Claude 3.5 Sonnet",
+    "GPT-4o",
+    "random baseline in multiple-choice evaluation",
+    "no-analysis calibration baseline [uncertain]"
+  ],
+  "validation_strength": "Benchmarked with a public preprint, open dataset, open evaluation harness, and explicit calibration experiments around data leakage, hyperparameter choice, and model choice; peer-review status was not identified in the consulted primary sources [uncertain].",
+  "evaluation_limitations": "The original paper reports 53 scenarios and 296 questions, while the current public repository and dataset main branch describe a v1.5 benchmark with 60 notebooks and 205 questions, so version comparisons require care. The paper evaluates only two frontier models and explicitly notes that many bioinformatics workflows remain outside current benchmark coverage.",
+  "paper_url": "https://arxiv.org/abs/2503.00096",
+  "code_url": "https://github.com/Future-House/BixBench",
+  "dataset_url": "https://huggingface.co/datasets/futurehouse/BixBench",
+  "product_url": "https://www.futurehouse.org/research-announcements/bixbench",
+  "leaderboard_url": "No standalone public leaderboard URL was identified in the consulted primary sources [uncertain]",
+  "source_quality": "Primary sources: official arXiv preprint, official GitHub repository, official Hugging Face dataset, and official FutureHouse announcement.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": "[uncertain] No explicit predecessor benchmark is named in the consulted primary sources.",
+  "successors": "[uncertain] No formal successor benchmark was identified in the consulted primary sources.",
+  "components": [
+    "53 scenarios and 296 questions in the original preprint",
+    "60 notebooks and 205 questions in the current public v1.5 dataset",
+    "Aviary-based evaluation harness",
+    "data-analysis-crow agent framework",
+    "Dockerized notebook environment",
+    "open-answer grading pipeline",
+    "multiple-choice evaluation mode",
+    "benchmark canary strings in the public dataset"
+  ],
+  "evaluated_by": "[uncertain] No separate external benchmark evaluating BixBench itself was identified in the consulted primary sources.",
+  "evaluates": [
+    "bioinformatics",
+    "biological data analysis",
+    "multi-step dataset exploration",
+    "open-ended computational biology reasoning",
+    "notebook-based scientific code execution"
+  ],
+  "competes_with_or_complements": [
+    "FutureHouse agents such as data-analysis-crow",
+    "ScienceAgentBench",
+    "DSBench",
+    "MLE-bench",
+    "other biology-focused scientific-agent evaluations [uncertain]"
+  ],
+  "milestones": [
+    "2025-02-28: arXiv v1 released.",
+    "2025-03-04: FutureHouse and ScienceMachine publicly announced BixBench.",
+    "2025-03-08: arXiv v2 released.",
+    "2025-10-08: arXiv v3 released.",
+    "2025: public dataset updated to a v1.5 question set while retaining the original v1.0 tag."
+  ],
+  "version_history": [
+    "arXiv v1 on 2025-02-28",
+    "arXiv v2 on 2025-03-08",
+    "arXiv v3 on 2025-10-08",
+    "current public dataset main branch and v1.5 tag contain 205 rows",
+    "original question set remains accessible under the v1.0 tag"
+  ],
+  "adoption_signals": [
+    "109 GitHub stars at verification time",
+    "36 Hugging Face dataset likes at verification time",
+    "official FutureHouse announcement",
+    "public open dataset and evaluation harness"
+  ],
+  "supersession_notes": "The current main and v1.5 dataset state supersede the original v1.0 question set for ongoing public use, while the original set remains available for reproducibility.",
+  "real_world_applications": [
+    "benchmarking autonomous bioinformatics agents",
+    "testing notebook-based biological data analysis systems",
+    "measuring multi-step dataset exploration ability in biology",
+    "guiding development of FutureHouse-style scientific agents"
+  ],
+  "users": [
+    "AI-for-biology researchers",
+    "bioinformatics agent developers",
+    "computational biologists evaluating assistants",
+    "benchmark designers"
+  ],
+  "deployment_constraints": "Running the harness requires dataset access through Hugging Face, Docker, a containerized notebook environment, bioinformatics packages, and API keys for supported LLMs. The repository notes that agentic evaluations can require significant API credits and 24-48 hours.",
+  "cost_and_runtime": "The benchmark comparison table reports BixBench at roughly 4.2 hours per task on average, and the repository warns that automated agentic evaluations can take 24-48 hours and significant API credits. Practical cost still depends on model choice and replica count [uncertain].",
+  "scientific_integrity_risks": [
+    "public benchmark contamination or training-data leakage",
+    "benchmark overfitting to a limited slice of bioinformatics workflows",
+    "models answering from recall rather than grounded analysis",
+    "version mismatch between the original preprint and the current public dataset"
+  ],
+  "security_and_safety_risks": [
+    "agents execute Python, R, and Bash code in notebook environments",
+    "misinterpretation of biological analyses could mislead downstream scientific decisions",
+    "bioinformatics package execution and external data handling create operational risk"
+  ],
+  "mitigations": [
+    "controlled Aviary environment",
+    "Dockerized dependency isolation",
+    "open evaluation harness",
+    "calibration experiments for data leakage and model choice",
+    "dataset canary warnings against inclusion in training corpora"
+  ],
+  "policy_relevance": "BixBench is relevant to scientific-AI governance because it measures how close current models are to autonomous biological data analysis, while also surfacing risks around benchmark contamination, code execution, and overclaiming progress from narrow scientific domains.",
+  "uncertain": [
+    "autonomy_level",
+    "baselines",
+    "validation_strength",
+    "leaderboard_url",
+    "predecessors",
+    "successors",
+    "evaluated_by",
+    "competes_with_or_complements",
+    "cost_and_runtime"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "id": "coscientist",
+  "name": "Coscientist",
+  "aliases": [
+    "Autonomous chemical research with large language models"
+  ],
+  "organization": "Carnegie Mellon University / Gomes Group",
+  "first_public_release": "2023-12-20",
+  "current_status": "Peer-reviewed research system with an official supporting-information repository; not released as a turnkey product.",
+  "category": "domain_scientific_discovery_agent",
+  "type": [
+    "paper",
+    "codebase",
+    "research demo"
+  ],
+  "domains": [
+    "chemistry"
+  ],
+  "positioning": "A GPT-4-based autonomous chemistry co-scientist for planning, executing, and optimizing laboratory experiments.",
+  "boundary_notes": "Included because it closes the loop from planning to wet-lab/cloud-lab execution in chemistry. Excludes generic coding agents and lab robots without LLM-driven scientific planning.",
+  "lifecycle_coverage": [
+    "synthesis_planning",
+    "hardware_documentation_search",
+    "cloud_lab_execution",
+    "liquid_handler_control",
+    "experiment_optimization"
+  ],
+  "tool_access": [
+    "Internet search via a dedicated web-search module",
+    "Documentation retrieval over API manuals",
+    "Isolated Python code execution in Docker",
+    "Opentrons Python API",
+    "Emerald Cloud Lab Symbolic Lab Language (SLL)",
+    "Laboratory automation APIs",
+    "UV-Vis plate-reader integration"
+  ],
+  "execution_environment": "GPT-4 planner plus helper modules running with web access, documentation retrieval, Docker-based code execution, and robotic/cloud-lab hardware interfaces.",
+  "artifact_outputs": [
+    "Synthesis plans",
+    "Experimental protocols",
+    "Executable automation code",
+    "Cloud-lab instructions",
+    "Optimization decisions",
+    "Analytical reasoning traces"
+  ],
+  "human_roles": [
+    "Humans provide the natural-language task and prepare the hardware context.",
+    "Humans manually moved plates in the integrated cross-coupling setup.",
+    "Humans inspect outcomes and can intervene if the physical workflow or safety constraints require it."
+  ],
+  "autonomy_level": "L4",
+  "autonomy_rationale": "Coscientist autonomously planned, wrote code for, and executed chemistry tasks across six experimental categories, including cloud-lab and liquid-handler actions. It remains below L5 because the reported setup still relied on human-provided goals, partial manual handling, and bounded tool interfaces.",
+  "iteration_loop": "Yes. The planner repeatedly calls GOOGLE, DOCUMENTATION, PYTHON, and EXPERIMENT actions, incorporates returned observations, fixes failing code, and revises experimental plans.",
+  "stopping_and_guardrails": "Guardrails include tool-bounded actions, Docker-isolated code execution, documentation grounding, and task-specific hardware and API constraints. In some experiments internet access was disabled, and the integrated wet-lab workflow still required manual plate transfer.",
+  "known_failure_modes": [
+    "Hallucinated or incomplete synthesis plans without grounding",
+    "Incorrect API or hardware instructions when documentation retrieval is insufficient",
+    "Suboptimal reaction parameter choices",
+    "Physical experiment failures from imperfect automation assumptions",
+    "Subjective grading noise in chemistry-planning evaluation"
+  ],
+  "benchmarks_used": [
+    "A seven-compound synthesis-planning test set scored on a 1-5 chemistry rubric",
+    "Documentation-search tasks for Opentrons and Emerald Cloud Lab APIs",
+    "Cloud-lab HPLC execution tasks",
+    "Low-level liquid-handler control tasks",
+    "Cross-coupling reaction design and optimization experiments"
+  ],
+  "metrics": [
+    "Chemistry-planning rubric scores from 1 to 5",
+    "Task success or failure for documentation lookup and command execution",
+    "Successful physical execution of robotic and cloud-lab procedures",
+    "Successful optimization of palladium-catalysed cross-couplings"
+  ],
+  "baselines": [
+    "GPT-3.5",
+    "GPT-4",
+    "Claude 1.3",
+    "Falcon-40B-Instruct",
+    "A GPT-3.5-based Web Searcher variant"
+  ],
+  "validation_strength": "Peer-reviewed and real-world lab validated.",
+  "evaluation_limitations": "The synthesis-planning rubric is partly subjective, the task suite is small, and different modules were validated on bespoke tasks rather than a standardized benchmark. The integrated wet-lab setup was not fully automated because plate movement remained manual.",
+  "paper_url": "https://www.nature.com/articles/s41586-023-06792-0",
+  "code_url": "https://github.com/gomesgroup/coscientist",
+  "dataset_url": "https://github.com/gomesgroup/coscientist",
+  "product_url": "Not applicable; this is a research system rather than a commercial product.",
+  "leaderboard_url": "Not applicable; no official public leaderboard.",
+  "source_quality": "Primary sources: peer-reviewed Nature article and official Gomes Group GitHub repository.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "Self-driving lab and autonomous experimentation systems",
+    "Tool-augmented chemistry agents such as ChemCrow"
+  ],
+  "successors": [
+    "No clearly identified official successor was announced by the authors as of 2026-05-28 [uncertain]."
+  ],
+  "components": [
+    "Planner (GPT-4 chat completion instance)",
+    "Web Searcher module",
+    "Documentation module",
+    "Code execution module",
+    "Automation / EXPERIMENT module",
+    "Opentrons OT-2 integration",
+    "Emerald Cloud Lab SLL integration",
+    "UVVIS command"
+  ],
+  "evaluated_by": [
+    "The six-task experimental suite reported in the Nature paper",
+    "Chemistry-planning comparisons against model baselines"
+  ],
+  "evaluates": [
+    "Not a benchmark item; it demonstrates and evaluates an autonomous chemistry agent."
+  ],
+  "competes_with_or_complements": [
+    "ChemCrow",
+    "Self-driving lab platforms",
+    "Cloud-lab automation systems",
+    "Robotic chemistry workflow tools"
+  ],
+  "milestones": [
+    "2023-12-20: Nature paper published",
+    "2023-12: Official supporting-information repository released publicly",
+    "2023-12: Demonstrated six chemistry and lab task classes, including cloud-lab execution and reaction optimization"
+  ],
+  "version_history": [
+    "Initial public release centered on the 2023 Nature paper and supporting repository.",
+    "No major public software version series or packaged releases were documented in the official repository as of 2026-05-28."
+  ],
+  "adoption_signals": [
+    "Nature reported 254k accesses and 948 citations at verification time.",
+    "The official repository showed about 202 to 203 GitHub stars and 29 forks on 2026-05-28."
+  ],
+  "supersession_notes": "No official superseding version was announced as of 2026-05-28.",
+  "real_world_applications": [
+    "Autonomous synthesis planning for known compounds",
+    "Hardware documentation retrieval for robotic APIs",
+    "Cloud-lab experiment execution",
+    "Liquid-handler protocol generation",
+    "Reaction optimization for palladium-catalysed cross-couplings"
+  ],
+  "users": [
+    "Academic chemists",
+    "Self-driving lab researchers",
+    "Laboratory automation engineers",
+    "Cloud-lab users"
+  ],
+  "deployment_constraints": [
+    "Requires access to GPT-4-class models and associated APIs",
+    "Requires the relevant documentation corpus and tool wrappers",
+    "Requires robotic hardware or cloud-lab endpoints such as Opentrons OT-2 or Emerald Cloud Lab",
+    "Requires wet-lab safety oversight and compatible instrumentation"
+  ],
+  "cost_and_runtime": "The paper does not report a standardized dollar cost or end-to-end runtime. Actual cost depends on GPT-4 usage, search calls, and laboratory hardware time [uncertain].",
+  "scientific_integrity_risks": [
+    "Hallucinated procedures or unsupported justifications if grounding fails",
+    "Overstating autonomy despite remaining manual steps",
+    "Weak reproducibility across changing closed-model APIs",
+    "Small bespoke evaluation tasks that may not generalize"
+  ],
+  "security_and_safety_risks": [
+    "Unsafe chemical or robotic actions if instructions are wrong",
+    "Risky code or hardware calls from an autonomous planner",
+    "Dual-use concerns around automating synthesis workflows",
+    "Cloud-lab misuse if execution permissions are not tightly scoped"
+  ],
+  "mitigations": [
+    "Documentation grounding and web grounding before action",
+    "Docker isolation for Python execution",
+    "Tool-bounded action space via GOOGLE, DOCUMENTATION, PYTHON, and EXPERIMENT commands",
+    "Human setup and residual manual handling in the physical workflow",
+    "Existing laboratory controls on instruments and cloud-lab APIs"
+  ],
+  "policy_relevance": "Relevant to responsible AI in laboratories, dual-use governance for chemistry automation, and policies for human oversight of autonomous experimental systems.",
+  "uncertain": [
+    "successors",
+    "cost_and_runtime"
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "id": "paperbench",
+  "name": "PaperBench",
+  "aliases": [
+    "PaperBench: Evaluating AI's Ability to Replicate AI Research"
+  ],
+  "organization": "OpenAI",
+  "first_public_release": "2025-04-02",
+  "current_status": "Active public benchmark with an official paper, OpenAI release page, and open repository.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "dataset",
+    "codebase"
+  ],
+  "domains": [
+    "AI research engineering",
+    "machine learning paper replication",
+    "long-horizon agent execution"
+  ],
+  "positioning": "Benchmark for end-to-end AI research replication from paper to code.",
+  "boundary_notes": "Included because it evaluates long-horizon AI research engineering rather than narrow coding or question answering. Each task requires understanding a paper, building a codebase, executing experiments, and being graded against a rubric.",
+  "lifecycle_coverage": [
+    "paper understanding",
+    "code writing",
+    "experiment execution",
+    "result reproduction",
+    "rubric-based evaluation"
+  ],
+  "tool_access": [
+    "Ubuntu containers",
+    "GPU execution for reproduction",
+    "API access for agents and judge",
+    "Git-LFS data hydration",
+    "LLM-based grading"
+  ],
+  "execution_environment": "Three-stage containerized evaluation: agent rollout in an Ubuntu container, reproduction in a fresh GPU container, and grading in a third container.",
+  "artifact_outputs": [
+    "replication codebases",
+    "executed submissions",
+    "rubric grades",
+    "leaderboard scores",
+    "judge-evaluation artifacts"
+  ],
+  "human_roles": "Benchmark designers select the papers and co-develop rubrics with the original paper authors. Users configure the benchmark, provide API keys and compute, run agents, and interpret the scores.",
+  "autonomy_level": "L2-L4 [uncertain]",
+  "autonomy_rationale": "PaperBench targets agents that must independently read papers, build codebases, run experiments, and iterate over failures, but still operate inside benchmark-provided infrastructure and evaluation scaffolding.",
+  "iteration_loop": "Evaluated agents are expected to iterate over implementation and experiments; the benchmark itself runs rollout, reproduction, and grading as separate stages.",
+  "stopping_and_guardrails": "Container isolation, explicit rubrics, separate grading infrastructure, required API-key configuration, and judge-based scoring constrain execution and evaluation.",
+  "known_failure_modes": [
+    "incomplete reproduction of a paper's contributions",
+    "weak long-horizon coordination",
+    "dependency or environment failures",
+    "rubric gaming or judge mismatch [uncertain]",
+    "performance below expert human baseline"
+  ],
+  "benchmarks_used": "PaperBench itself, plus a separate benchmark for evaluating the LLM judge.",
+  "metrics": [
+    "average replication score",
+    "rubric-level task completion",
+    "judge quality on a separate judge benchmark",
+    "comparison against a human baseline"
+  ],
+  "baselines": [
+    "BasicAgent and IterativeAgent variants on frontier models",
+    "Claude 3.5 Sonnet (New) with open-source scaffolding",
+    "top ML PhD human baseline on a subset"
+  ],
+  "validation_strength": "Benchmarked with hierarchical rubrics co-developed with the original paper authors and compared against a human baseline.",
+  "evaluation_limitations": "Scope is limited to 20 ICML 2024 Spotlight and Oral papers, evaluation depends partly on an LLM judge, and results may not generalize to all research domains or non-ICML workflows [uncertain].",
+  "paper_url": "https://arxiv.org/abs/2504.01848",
+  "code_url": "https://github.com/openai/preparedness/tree/main/project/paperbench",
+  "dataset_url": "https://github.com/openai/preparedness/tree/main/project/paperbench",
+  "product_url": "https://openai.com/index/paperbench/",
+  "leaderboard_url": "https://github.com/openai/preparedness/tree/main/project/paperbench",
+  "source_quality": "Primary sources: official OpenAI benchmark page, official arXiv paper, and official repository.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": "[uncertain] No explicit predecessor benchmark is named in the consulted primary sources.",
+  "successors": "[uncertain] No formal successor benchmark was identified in the consulted primary sources.",
+  "components": [
+    "20 ICML 2024 Spotlight and Oral papers",
+    "8,316 individually gradable tasks",
+    "hierarchical rubrics",
+    "LLM-based judge",
+    "agent rollout container",
+    "reproduction container",
+    "grading container",
+    "Git-LFS-hosted benchmark data"
+  ],
+  "evaluated_by": "[uncertain] No separate external benchmark evaluating PaperBench itself was identified in the consulted sources.",
+  "evaluates": [
+    "paper-to-code replication",
+    "AI research engineering",
+    "long-horizon agent execution",
+    "autonomous experiment execution"
+  ],
+  "competes_with_or_complements": [
+    "MLE-bench",
+    "Core-Bench"
+  ],
+  "milestones": [
+    "2025-04-02: Official OpenAI release page published.",
+    "2025-04-02: arXiv v1 released.",
+    "2025-04-04: arXiv v2 released.",
+    "2025-04-07: arXiv v3 released.",
+    "2025: Public repository released with benchmark data, code, setup instructions, and leaderboard section."
+  ],
+  "version_history": [
+    "arXiv v1 on 2025-04-02",
+    "arXiv v2 on 2025-04-04",
+    "arXiv v3 on 2025-04-07",
+    "public repository documentation includes setup, data hydration, leaderboard, and judge-evaluation instructions"
+  ],
+  "adoption_signals": [
+    "Public OpenAI release page",
+    "Public arXiv paper",
+    "Public official repository with a leaderboard section"
+  ],
+  "supersession_notes": "No supersession was noted in the consulted primary sources.",
+  "real_world_applications": [
+    "evaluating autonomous agents for research engineering",
+    "comparing paper-replication agents",
+    "studying long-horizon coding and experiment workflows",
+    "preparedness-style capability measurement"
+  ],
+  "users": [
+    "AI evaluation researchers",
+    "agent developers",
+    "preparedness teams",
+    "ML systems researchers"
+  ],
+  "deployment_constraints": "Requires containerized execution, GPU access for reproduction, hydrated Git-LFS data, and API keys for the agents and judge. Some papers also require access to the OpenAI API and Hugging Face.",
+  "cost_and_runtime": "Repository materials mention 24-hour and 36-hour evaluation limits for some leaderboard runs. Actual cost and runtime depend on model APIs, GPU access, and benchmark configuration [uncertain].",
+  "scientific_integrity_risks": [
+    "benchmark-specific optimization or rubric gaming",
+    "over-interpreting benchmark scores as general research ability",
+    "training-data contamination or paper memorization [uncertain]"
+  ],
+  "security_and_safety_risks": [
+    "agents execute code in containers",
+    "API key exposure if environments are misconfigured",
+    "GPU or container misuse and unsafe external downloads during replication [uncertain]"
+  ],
+  "mitigations": [
+    "three-stage isolated container workflow",
+    "co-developed rubrics with original paper authors",
+    "separate judge evaluation",
+    "explicit environment and API-key setup instructions"
+  ],
+  "policy_relevance": "Relevant to frontier-model preparedness, measurement of long-horizon autonomous AI research capabilities, and the design of evaluations for increasingly capable coding and research agents.",
+  "uncertain": [
+    "autonomy_level",
+    "known_failure_modes",
+    "evaluation_limitations",
+    "predecessors",
+    "successors",
+    "evaluated_by",
+    "cost_and_runtime",
+    "scientific_integrity_risks",
+    "security_and_safety_risks"
+  ]
+}

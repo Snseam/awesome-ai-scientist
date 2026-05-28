@@ -1,0 +1,197 @@
+{
+  "id": "airs_bench",
+  "name": "AIRS-Bench",
+  "aliases": [
+    "AIRS-Bench",
+    "AI Research Science Benchmark",
+    "AIRS-Bench: a Suite of Tasks for Frontier AI Research Science Agents"
+  ],
+  "organization": "Meta FAIR and collaborators",
+  "first_public_release": "2026-02-09",
+  "current_status": "Recent benchmark paper for frontier research agents; public implementation availability is [uncertain].",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark_suite"
+  ],
+  "domains": [
+    "machine learning",
+    "natural language processing",
+    "mathematics",
+    "coding",
+    "biochemical modeling",
+    "time series prediction"
+  ],
+  "positioning": "Benchmark suite for evaluating AI agents across the full machine-learning research lifecycle.",
+  "boundary_notes": "Included because it directly targets autonomous AI research-science agents and asks agents to improve on recent ML research tasks without baseline code.",
+  "lifecycle_coverage": [
+    "idea generation",
+    "problem understanding",
+    "resource discovery",
+    "implementation",
+    "debugging",
+    "experiment execution",
+    "experiment analysis",
+    "iterative refinement",
+    "final result comparison"
+  ],
+  "tool_access": [
+    "code execution",
+    "machine learning libraries",
+    "dataset access",
+    "compute resources",
+    "agent scaffolding [uncertain exact tools]"
+  ],
+  "execution_environment": "Benchmark suite of 20 machine-learning research tasks sourced from recent papers; agents are evaluated without being given baseline code.",
+  "artifact_outputs": [
+    "research code",
+    "experiment logs",
+    "model outputs",
+    "analysis artifacts",
+    "final task scores"
+  ],
+  "human_roles": [
+    "Humans curate recent research tasks.",
+    "Humans define expected evaluation protocols.",
+    "Human SOTA results act as reference targets.",
+    "Humans interpret agent failures and benchmark limitations."
+  ],
+  "autonomy_level": "L3-L4",
+  "autonomy_rationale": "AIRS-Bench is designed for agents that must conduct long-horizon ML research workflows from underspecified goals through implementation and iteration. It remains a benchmark with human-curated tasks, so it evaluates bounded autonomy rather than open-ended science.",
+  "iteration_loop": "Yes. The benchmark emphasizes iterative refinement, debugging, experiment analysis, and improving results over multiple attempts.",
+  "stopping_and_guardrails": [
+    "Tasks are bounded to benchmark-provided research problems.",
+    "No baseline code is supplied, increasing realism but keeping evaluation constrained.",
+    "Agents are compared against task-specific reference outcomes."
+  ],
+  "known_failure_modes": [
+    "Failure to understand vague research requirements.",
+    "Selecting weak experimental strategies.",
+    "Implementation bugs in ML code.",
+    "Compute budget exhaustion.",
+    "Poor analysis of failed or noisy experiments.",
+    "Overfitting to benchmark tasks once public."
+  ],
+  "benchmarks_used": [
+    "AIRS-Bench suite of 20 research tasks"
+  ],
+  "metrics": [
+    "Task-specific performance against recent ML-paper targets.",
+    "Success at improving or matching human SOTA [uncertain exact scoring aggregation].",
+    "Agent workflow completion and final experimental quality [uncertain exact metric names]."
+  ],
+  "baselines": [
+    "Frontier AI research agents evaluated in the paper [uncertain exact model and scaffold list]",
+    "Human SOTA from recent ML papers"
+  ],
+  "validation_strength": "Primary arXiv paper; independent reproduction and public leaderboard were not verified.",
+  "evaluation_limitations": [
+    "Only 20 tasks, so coverage is deep but not exhaustive.",
+    "High compute requirements may limit reproducibility.",
+    "Task-specific grading can be hard to normalize across research domains.",
+    "Public release may introduce contamination over time."
+  ],
+  "paper_url": "https://arxiv.org/abs/2602.06855",
+  "code_url": "[uncertain] No official code repository was verified during this pass.",
+  "dataset_url": "[uncertain] Public task data location was not verified.",
+  "product_url": "[uncertain] No associated product was identified.",
+  "leaderboard_url": "[uncertain] No official public leaderboard was identified.",
+  "source_quality": "Primary arXiv paper plus Hugging Face paper metadata and secondary summaries.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "MLAgentBench",
+    "MLE-bench",
+    "PaperBench",
+    "The AI Scientist-v2"
+  ],
+  "successors": [
+    "[uncertain] No successor release was identified."
+  ],
+  "components": [
+    "20 recent ML-paper-derived tasks",
+    "no-baseline-code task setting",
+    "research lifecycle evaluation protocol",
+    "task-specific scoring"
+  ],
+  "evaluated_by": [
+    "[uncertain] No external evaluation of AIRS-Bench itself was verified."
+  ],
+  "evaluates": [
+    "full ML research lifecycle",
+    "idea generation",
+    "experiment analysis",
+    "iterative refinement",
+    "autonomous implementation",
+    "debugging"
+  ],
+  "competes_with_or_complements": [
+    "MLAgentBench",
+    "MLE-bench",
+    "PaperBench",
+    "AI Scientist-v2"
+  ],
+  "milestones": [
+    "2026-02-09: arXiv preprint posted.",
+    "2026: Hugging Face paper page summarizes the 20-task suite.",
+    "2026-05-28: paper source verified."
+  ],
+  "version_history": [
+    "Initial arXiv release in February 2026.",
+    "Formal code/data versioning is [uncertain]."
+  ],
+  "adoption_signals": [
+    "Discussed in ML agent communities shortly after release.",
+    "Primary adoption metrics such as citations, stars, or leaderboard use were not verified."
+  ],
+  "supersession_notes": "No official successor or replacement was identified.",
+  "real_world_applications": [
+    "Evaluating AI agents for ML research automation.",
+    "Stress-testing research workflows beyond coding-only tasks.",
+    "Comparing agent scaffolds on long-horizon research problems."
+  ],
+  "users": [
+    "Frontier AI labs",
+    "agent benchmark researchers",
+    "ML research automation teams",
+    "safety and evaluation teams"
+  ],
+  "deployment_constraints": [
+    "Likely requires substantial compute for model training or experiments.",
+    "Needs controlled environments for fair task comparisons.",
+    "May require access to task datasets and exact scoring scripts [uncertain]."
+  ],
+  "cost_and_runtime": "[uncertain] The public summaries emphasize long-horizon research tasks but do not provide one canonical runtime or cost budget.",
+  "scientific_integrity_risks": [
+    "Conflating benchmark performance with real scientific discovery.",
+    "Benchmark contamination once tasks are public.",
+    "Overstating agent contributions relative to human task curation."
+  ],
+  "security_and_safety_risks": [
+    "Generated code execution in ML environments.",
+    "Potential misuse of increasingly capable autonomous research workflows.",
+    "Resource exhaustion from unbounded experiment loops."
+  ],
+  "mitigations": [
+    "Use sandboxed compute environments.",
+    "Track exact task versions and model/tool access.",
+    "Separate benchmark success from publication-quality scientific validation.",
+    "Use budget limits and execution logs."
+  ],
+  "policy_relevance": "Relevant to frontier-agent evaluations, autonomous R&D governance, benchmark contamination, and claims about AI systems performing research work.",
+  "uncertain": [
+    "current_status",
+    "tool_access",
+    "metrics",
+    "baselines",
+    "code_url",
+    "dataset_url",
+    "product_url",
+    "leaderboard_url",
+    "successors",
+    "evaluated_by",
+    "version_history",
+    "adoption_signals",
+    "deployment_constraints",
+    "cost_and_runtime"
+  ]
+}

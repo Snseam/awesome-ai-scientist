@@ -1,0 +1,190 @@
+{
+  "id": "chemcrow",
+  "name": "ChemCrow",
+  "aliases": [
+    "ChemCrow: Augmenting large-language models with chemistry tools"
+  ],
+  "organization": "University of Rochester White Lab and collaborators",
+  "first_public_release": "2023-04-11",
+  "current_status": "Peer-reviewed open-source research system; the public package omits some paper-era tools because of API restrictions.",
+  "category": "domain_scientific_discovery_agent",
+  "type": [
+    "paper",
+    "codebase"
+  ],
+  "domains": [
+    "chemistry"
+  ],
+  "positioning": "A tool-augmented chemistry assistant that uses GPT-4 plus expert-designed tools to solve reasoning-intensive chemistry tasks.",
+  "boundary_notes": "Included because it combines LLM reasoning, chemistry-specific tools, safety controls, and limited physical-lab linkage. Excludes generic chat assistants that answer chemistry questions without specialized tools or action loops.",
+  "lifecycle_coverage": [
+    "chemistry_question_answering",
+    "synthesis_planning",
+    "tool_use",
+    "safety_checks",
+    "cloud_lab_execution",
+    "molecular_design"
+  ],
+  "tool_access": [
+    "LangChain agent framework",
+    "Web search via SerpAPI",
+    "Literature search via paper-qa and FAISS",
+    "Python REPL",
+    "Human input tool",
+    "RDKit",
+    "PubChem",
+    "chem-space",
+    "RXN4Chem API",
+    "IBM Research RoboRXN platform",
+    "Optional self-hosted reaction-prediction and retrosynthesis Docker services"
+  ],
+  "execution_environment": "GPT-4 running inside a LangChain tool-using loop with external chemistry APIs, optional self-hosted services, and paper-era experiments connected to IBM Research's RoboRXN platform.",
+  "artifact_outputs": [
+    "Chemistry answers grounded in tools",
+    "Synthesis plans",
+    "Safety guidance",
+    "Experiment scripts",
+    "Chromophore candidates",
+    "Reasoning traces"
+  ],
+  "human_roles": [
+    "Users specify the chemistry task and can answer follow-up questions through the Human tool.",
+    "Human operators and chemist experts retain control over automated chemical platforms.",
+    "Expert chemists reviewed model outputs during evaluation."
+  ],
+  "autonomy_level": "L2",
+  "autonomy_rationale": "ChemCrow autonomously selects and chains tools within a reasoning loop and can drive bounded chemistry workflows, including cloud-connected synthesis in the paper. It remains assistant-level because users initiate tasks, human oversight remains central for laboratory execution, and the public system is a partial release rather than a fully autonomous end-to-end scientist.",
+  "iteration_loop": "Yes. ChemCrow follows repeated Thought, Action, Action Input, and Observation cycles until it reaches a final answer.",
+  "stopping_and_guardrails": "Safety controls combine hard-coded and prompted rules, including checks for dangerous or controlled chemicals. The agent can stop execution when a task is unsafe, ask humans for permission, and remains bounded by the external tools and APIs available to it.",
+  "known_failure_modes": [
+    "Hallucinated conclusions if tool outputs are weak or misused",
+    "Invalid or non-executable synthesis procedures",
+    "Reasoning errors despite access to tools",
+    "Unreliable LLM-based evaluation that rewards fluent but incorrect answers",
+    "Performance regressions when required APIs or tools are unavailable"
+  ],
+  "benchmarks_used": [
+    "Fourteen chemistry use cases spanning synthesis, molecular design, and chemical logic",
+    "Expert chemist comparisons between ChemCrow and tool-less GPT-4",
+    "EvaluatorGPT scoring of task responses",
+    "Physical synthesis validation on IBM Research's RoboRXN platform"
+  ],
+  "metrics": [
+    "Degree of task completion",
+    "Chemical correctness and factuality",
+    "Quality of reasoning",
+    "Expert preference between ChemCrow and GPT-4",
+    "EvaluatorGPT scores",
+    "Successful execution of robotic syntheses and chromophore discovery workflow"
+  ],
+  "baselines": [
+    "GPT-4 without external tools",
+    "Individual chemistry tools used outside the agent loop"
+  ],
+  "validation_strength": "Peer-reviewed and real-world validated.",
+  "evaluation_limitations": "The evaluation suite is bespoke rather than standardized, the strongest results depend on a closed GPT-4 API, and the paper shows that LLM-based evaluation can be misleading when factual chemistry matters. The public repository also does not reproduce the full paper system because some tools are missing.",
+  "paper_url": "https://arxiv.org/abs/2304.05376",
+  "code_url": "https://github.com/ur-whitelab/chemcrow-public",
+  "dataset_url": "https://github.com/ur-whitelab/chemcrow-runs",
+  "product_url": "Not applicable; this is a research system rather than a commercial product.",
+  "leaderboard_url": "Not applicable; no official public leaderboard.",
+  "source_quality": "Primary sources: Nature Machine Intelligence article, arXiv paper, and official ChemCrow repositories.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "ReAct",
+    "MRKL",
+    "RXN for Chemistry",
+    "AIZynthFinder"
+  ],
+  "successors": [
+    "FutureHouse Phoenix-style chemistry agent relationship noted in user metadata [uncertain]."
+  ],
+  "components": [
+    "Reaction tools",
+    "Molecule tools",
+    "Safety tools",
+    "Search tools",
+    "Standard tools",
+    "WebSearch",
+    "LitSearch",
+    "Python REPL",
+    "Human tool",
+    "RoboRXN integration"
+  ],
+  "evaluated_by": [
+    "Expert chemist review across fourteen use cases",
+    "EvaluatorGPT scoring",
+    "Physical synthesis validation on IBM Research's RoboRXN platform"
+  ],
+  "evaluates": [
+    "Not a benchmark item; it evaluates a chemistry tool-using agent across synthesis, design, and reasoning tasks."
+  ],
+  "competes_with_or_complements": [
+    "Coscientist",
+    "RXN for Chemistry",
+    "AIZynthFinder",
+    "Other tool-augmented chemistry copilots"
+  ],
+  "milestones": [
+    "2023-04-11: arXiv preprint submitted",
+    "2024: Nature Machine Intelligence article published",
+    "2024-03-27: ChemCrow-runs public release noted in repository metadata",
+    "2024: Open-source package and experiment repositories publicly available"
+  ],
+  "version_history": [
+    "ArXiv versions progressed from v1 on 2023-04-11 to v5 on 2023-10-02.",
+    "The public package is a partial open-source release and does not include all tools used in the paper because of API restrictions.",
+    "The peer-reviewed Nature Machine Intelligence version appeared in 2024."
+  ],
+  "adoption_signals": [
+    "Nature Machine Intelligence reported 138k accesses at verification time.",
+    "The official package repository showed about 913 GitHub stars and 143 forks on 2026-05-28.",
+    "ChemCrow-runs showed about 96 GitHub stars on 2026-05-28."
+  ],
+  "supersession_notes": "No official direct successor was announced as of 2026-05-28, although later chemistry agents reuse the same tool-augmented design pattern.",
+  "real_world_applications": [
+    "Chemistry question answering grounded in external tools",
+    "Retrosynthesis and synthesis planning",
+    "Safety screening for proposed reactions or controlled substances",
+    "Cloud-connected robotic synthesis execution on RoboRXN",
+    "Chromophore discovery and simple chemistry machine-learning workflows"
+  ],
+  "users": [
+    "Academic chemists",
+    "Medicinal and materials researchers",
+    "Students and non-experts needing a chemistry assistant",
+    "Robotic chemistry platform users"
+  ],
+  "deployment_constraints": [
+    "Requires GPT-4 or a comparable OpenAI model API",
+    "Optionally uses SerpAPI for web search",
+    "Relies on external chemistry APIs such as RXN4Chem unless users self-host replacements",
+    "Physical execution in the paper used IBM Research's proprietary RoboRXN platform",
+    "The public repository does not reproduce the full paper system because some tools are missing"
+  ],
+  "cost_and_runtime": "Runtime and cost depend on GPT-4 plus external APIs; the repository notes that RXN4Chem can be slow and may require API keys, while local self-hosting of some tools can require GPUs [uncertain].",
+  "scientific_integrity_risks": [
+    "Hallucinated conclusions when tool outputs are weak or misused",
+    "Closed-model reproducibility issues",
+    "LLM-based evaluation preferring fluent but wrong answers",
+    "Over-reliance by non-expert users on imperfect chemistry reasoning"
+  ],
+  "security_and_safety_risks": [
+    "Unsafe laboratory actions if synthesized procedures are wrong",
+    "Dual-use misuse for controlled or hazardous chemicals",
+    "Risk from autonomous tool chaining into cloud-connected lab hardware",
+    "Exposure of API credentials or misuse of external services"
+  ],
+  "mitigations": [
+    "Hard-coded and prompted safety guidelines",
+    "Execution stops when the target is flagged as dangerous or related to controlled chemicals",
+    "Human review and control remain heavy on automated chemical platforms",
+    "Tool grounding reduces hallucinations versus a tool-less GPT-4 baseline",
+    "The Human tool can require explicit user permission before certain actions"
+  ],
+  "policy_relevance": "Relevant to chemical safety policy, dual-use governance for open-source chemistry agents, and responsible release practices for LLM systems that can steer physical lab workflows.",
+  "uncertain": [
+    "successors",
+    "cost_and_runtime"
+  ]
+}

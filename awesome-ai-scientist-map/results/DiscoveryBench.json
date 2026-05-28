@@ -1,0 +1,200 @@
+{
+  "id": "discoverybench",
+  "name": "DiscoveryBench",
+  "aliases": [
+    "DiscoveryBench",
+    "DISCOVERYBENCH",
+    "DiscoveryBench: Towards Data-Driven Discovery with Large Language Models"
+  ],
+  "organization": "Allen Institute for AI (Ai2) with OpenLocus and University of Massachusetts Amherst authors",
+  "first_public_release": "2024-07-01",
+  "current_status": "Active open-source benchmark, dataset, and codebase; the paper was later published at ICLR 2025, and the GitHub repository shows no packaged releases.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "dataset",
+    "codebase"
+  ],
+  "domains": [
+    "sociology",
+    "biology",
+    "humanities",
+    "economics",
+    "engineering",
+    "meta-science"
+  ],
+  "positioning": "Benchmark for data-driven discovery and hypothesis generation from datasets.",
+  "boundary_notes": "Included because it measures whether agents can derive dataset-supported scientific hypotheses through multistep analysis. It does not cover wet-lab execution or real-world validation of new discoveries.",
+  "lifecycle_coverage": [
+    "goal interpretation",
+    "data loading",
+    "data cleaning",
+    "data integration",
+    "feature engineering",
+    "statistical analysis",
+    "hypothesis generation",
+    "workflow summarization",
+    "evaluation"
+  ],
+  "tool_access": [
+    "Python execution",
+    "statistical libraries",
+    "dataset metadata",
+    "domain-specific tools [uncertain]",
+    "LLM-based evaluator"
+  ],
+  "execution_environment": "Python benchmark code and datasets distributed through GitHub and Hugging Face, where agents receive dataset paths, metadata, and a natural-language discovery goal.",
+  "artifact_outputs": [
+    "natural-language hypotheses",
+    "workflow summaries",
+    "evaluation reports",
+    "generated analysis code"
+  ],
+  "human_roles": [
+    "Humans curate DB-REAL tasks from published papers.",
+    "Humans can optionally supply domain knowledge hints.",
+    "Humans interpret benchmark results and compare agent outputs."
+  ],
+  "autonomy_level": "L2-L3",
+  "autonomy_rationale": "Tasks require multi-step autonomous workflow design, code generation, statistical analysis, and semantic reasoning over provided datasets, but humans still choose the benchmark tasks and provide the datasets. This fits bounded research-workflow autonomy rather than fully autonomous science.",
+  "iteration_loop": "Yes. Agents can iteratively propose code, inspect outputs, refine workflows, and revise hypotheses before producing a final answer.",
+  "stopping_and_guardrails": [
+    "Tasks are bounded to provided datasets and metadata.",
+    "Evaluation uses a structured hypothesis-matching metric with facet-level checks.",
+    "Benchmark does not claim novel scientific validation beyond known published discoveries."
+  ],
+  "known_failure_modes": [
+    "Wrong or underspecified hypotheses.",
+    "Failure to map goal terms to dataset variables.",
+    "Skipping necessary multistep statistical analysis.",
+    "Poor performance on long or domain-specific workflows.",
+    "Reliance on shallow heuristics instead of full verification."
+  ],
+  "benchmarks_used": [
+    "DB-REAL with 264 tasks across 6 domains.",
+    "DB-SYNTH with 903 synthetic tasks across 48 domains.",
+    "Train and test split of 25 and 239 tasks for the public Hugging Face DB-REAL dataset card."
+  ],
+  "metrics": [
+    "Hypothesis Match Score (HMS) scaled from 0 to 100.",
+    "Facet-based submetrics for context alignment, variable F1, and relationship accuracy.",
+    "Human alignment check: HMS ranking matched annotator preference 95% of the time in the paper.",
+    "Best reported non-oracle performance peaks at about 25%."
+  ],
+  "baselines": [
+    "CodeGen",
+    "ReAct",
+    "DataVoyager",
+    "Reflexion (Oracle)",
+    "NoDataGuess",
+    "GPT-4o",
+    "GPT-4-0125-preview",
+    "Llama-3-70B"
+  ],
+  "validation_strength": "Peer-reviewed benchmark paper at ICLR 2025, open-source code, and a public dataset card.",
+  "evaluation_limitations": [
+    "Benchmark covers data-driven discovery from provided datasets, not wet-lab or novel experimental validation.",
+    "Real tasks are manually derived from published papers, so coverage is broad but not exhaustive.",
+    "Performance drops sharply with workflow length and domain-specific methods.",
+    "Some domain knowledge gains were measured with added hints, so pure zero-shot performance can understate assisted use cases."
+  ],
+  "paper_url": "https://arxiv.org/abs/2407.01725",
+  "code_url": "https://github.com/allenai/discoverybench",
+  "dataset_url": "https://huggingface.co/datasets/allenai/discoverybench",
+  "product_url": "[uncertain] No separate product site was identified; GitHub and Hugging Face are the primary landing pages.",
+  "leaderboard_url": "[uncertain] No official public leaderboard URL was identified in the primary sources.",
+  "source_quality": "Primary sources: arXiv paper, ICLR/OpenReview PDF, official GitHub repository, and official Hugging Face dataset card.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "QRData",
+    "DSBench",
+    "BLADE"
+  ],
+  "successors": [
+    "[uncertain] No official benchmark successor or v2 release was identified in the primary sources."
+  ],
+  "components": [
+    "DB-REAL task set",
+    "DB-SYNTH task set",
+    "discovery agents",
+    "evaluation scripts",
+    "Hugging Face dataset card",
+    "workflow metadata and answer keys"
+  ],
+  "evaluated_by": [
+    "[uncertain] No official external leaderboard or benchmark-of-the-benchmark process was identified in the primary sources."
+  ],
+  "evaluates": [
+    "data-driven discovery",
+    "hypothesis generation",
+    "multi-step reasoning",
+    "data semantics",
+    "workflow design"
+  ],
+  "competes_with_or_complements": [
+    "ResearchBench [uncertain]",
+    "DSBench",
+    "QRData",
+    "BLADE",
+    "CORE-Bench"
+  ],
+  "milestones": [
+    "2024-07-01: arXiv preprint posted.",
+    "2024-07: GitHub code and benchmark release publicly referenced from the paper.",
+    "2025: published at ICLR 2025.",
+    "2026-05-28: Hugging Face dataset card shows about 2,508 downloads in the last month and 264 rows in the public viewer."
+  ],
+  "version_history": [
+    "Initial arXiv and GitHub release in 2024.",
+    "ICLR 2025 camera-ready publication followed the initial release.",
+    "GitHub repository reports no formal packaged releases as of 2026-05-28."
+  ],
+  "adoption_signals": [
+    "GitHub repository shows about 145 stars and 18 forks as of 2026-05-28.",
+    "Hugging Face dataset card shows about 2,508 downloads in the last month."
+  ],
+  "supersession_notes": "No official replacement or v2 benchmark was identified in the primary sources.",
+  "real_world_applications": [
+    "Evaluating agents that search for dataset-supported hypotheses.",
+    "Studying multistep scientific data analysis behavior.",
+    "Benchmarking open-ended discovery workflows across domains."
+  ],
+  "users": [
+    "AI research groups",
+    "scientific discovery agent developers",
+    "benchmark designers",
+    "data-centric machine learning researchers"
+  ],
+  "deployment_constraints": [
+    "Requires dataset access and Python-based analysis tooling.",
+    "Some tasks need multiple datasets and domain-specific statistical methods.",
+    "Open-ended evaluation depends on an LLM-based evaluator and benchmark metadata."
+  ],
+  "cost_and_runtime": "[uncertain] The primary sources describe workflow complexity and benchmark scale, but do not provide one canonical runtime or cost budget for all evaluations.",
+  "scientific_integrity_risks": [
+    "Overclaiming novel discovery from a benchmark based on already published findings.",
+    "Benchmark gaming against the HMS evaluator.",
+    "Using shallow correlations instead of domain-valid analysis workflows."
+  ],
+  "security_and_safety_risks": [
+    "Executing generated analysis code over diverse datasets.",
+    "Overreliance on LLM evaluator judgments.",
+    "Potential misuse of open-ended data workflows without domain review."
+  ],
+  "mitigations": [
+    "Facet-based evaluation decomposes context, variables, and relationships.",
+    "The paper reports human agreement checks for HMS.",
+    "Tasks are grounded in published papers and provided datasets rather than unconstrained web search."
+  ],
+  "policy_relevance": "Relevant to claims about autonomous scientific discovery, benchmark validity, and safe evaluation of research agents.",
+  "uncertain": [
+    "tool_access",
+    "product_url",
+    "leaderboard_url",
+    "successors",
+    "evaluated_by",
+    "competes_with_or_complements",
+    "cost_and_runtime"
+  ]
+}

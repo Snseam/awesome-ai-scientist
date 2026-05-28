@@ -1,0 +1,189 @@
+{
+  "id": "alphaevolve",
+  "name": "AlphaEvolve",
+  "aliases": [
+    "AlphaEvolve: A coding agent for scientific and algorithmic discovery"
+  ],
+  "organization": "Google DeepMind / Google Cloud",
+  "first_public_release": "2025-05-14",
+  "current_status": "Research preview with an official white paper, launch blog, and companion problem repository; early-access interest was announced, but the core runtime is not publicly released.",
+  "category": "domain_scientific_discovery_agent",
+  "type": [
+    "paper",
+    "product",
+    "infrastructure"
+  ],
+  "domains": [
+    "algorithms",
+    "mathematics",
+    "systems_optimization",
+    "AI_infrastructure"
+  ],
+  "positioning": "A Gemini-powered evolutionary coding agent for algorithm discovery and system optimization.",
+  "boundary_notes": "Included because it autonomously searches over code variants to discover new algorithms and production heuristics, not merely act as an IDE assistant. Excludes generic coding copilots without automated evaluation and evolutionary search loops.",
+  "lifecycle_coverage": [
+    "code_generation",
+    "evolutionary_search",
+    "program_evaluation",
+    "algorithm_optimization"
+  ],
+  "tool_access": [
+    "Gemini Flash and Gemini Pro models",
+    "Prompt sampler",
+    "Program database",
+    "Automated evaluators",
+    "Code execution",
+    "Distributed controller loop",
+    "User-provided evaluation code and initial programs",
+    "Companion Colab notebooks and problem repository"
+  ],
+  "execution_environment": "A product-hosted and research-hosted distributed evaluation loop that queries Gemini models, runs generated code, scores programs automatically, and stores promising candidates in an evolutionary database.",
+  "artifact_outputs": [
+    "Improved code diffs",
+    "Optimized heuristics and kernels",
+    "Mathematical constructions",
+    "Search algorithms",
+    "Hardware design rewrites",
+    "Problem-specific notebooks and results"
+  ],
+  "human_roles": [
+    "Humans define the task, evaluation criteria, initial solution, and optional background knowledge.",
+    "Humans choose which code blocks are evolvable and review high-value outputs before deployment.",
+    "Engineers validate or integrate production-facing improvements into Google systems."
+  ],
+  "autonomy_level": "L3",
+  "autonomy_rationale": "Once the task, evaluation function, and initial program are supplied, AlphaEvolve runs an autonomous improvement loop over code and scores candidates without step-by-step human steering. It stays below L4 and L5 because it is limited to machine-gradeable tasks, depends on human-specified evaluators and seed code, and is not a general end-to-end scientist across physical experimentation.",
+  "iteration_loop": "Yes. AlphaEvolve repeatedly samples prompts from past programs, asks an LLM ensemble for diffs, executes evaluators, and feeds scored programs back into the database.",
+  "stopping_and_guardrails": "The system is constrained by user-defined evaluation functions, EVOLVE-BLOCK markers, automated verification, and the requirement that tasks be machine-gradeable. Hardware and infrastructure proposals pass robust verification before integration, and public access was limited to a planned early-access program.",
+  "known_failure_modes": [
+    "Over-optimizing to imperfect evaluator metrics",
+    "Missing good solutions when the search space or prompt distribution is poorly chosen",
+    "Generating invalid code diffs that fail evaluation",
+    "False novelty claims if verification is incomplete",
+    "Limited applicability to tasks that cannot be automatically scored"
+  ],
+  "benchmarks_used": [
+    "More than 50 open problems in mathematical analysis, geometry, combinatorics, and number theory",
+    "Matrix multiplication algorithm discovery tasks",
+    "Google Borg data-center scheduling",
+    "TPU arithmetic-circuit optimization",
+    "Gemini training kernel optimization",
+    "FlashAttention kernel optimization"
+  ],
+  "metrics": [
+    "Automated scalar evaluation metrics supplied by the user",
+    "Recovered compute percentage in data-center scheduling",
+    "Kernel speedups and training-time reduction",
+    "Number of scalar multiplications for matrix multiplication algorithms",
+    "Rate of rediscovering state-of-the-art solutions and rate of improving them"
+  ],
+  "baselines": [
+    "Human-written initial programs",
+    "Prior state-of-the-art solutions on each problem",
+    "FunSearch",
+    "AlphaTensor",
+    "Existing production heuristics and kernels"
+  ],
+  "validation_strength": "Benchmarked plus real-world internal production validation; not peer-reviewed as of 2026-05-28.",
+  "evaluation_limitations": "AlphaEvolve only applies where progress can be reduced to automatic evaluation metrics. The strongest production claims depend on internal Google environments, and the public companion repository does not release the full agent runtime.",
+  "paper_url": "https://arxiv.org/abs/2506.13131",
+  "code_url": "https://github.com/google-deepmind/alphaevolve_repository_of_problems",
+  "dataset_url": "https://google-deepmind.github.io/alphaevolve_repository_of_problems/",
+  "product_url": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
+  "leaderboard_url": "Not applicable; no official public leaderboard.",
+  "source_quality": "Primary sources: official Google DeepMind blog, AlphaEvolve white paper, and official Google DeepMind companion repository.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "FunSearch",
+    "AlphaTensor",
+    "AlphaDev-style algorithm discovery systems [uncertain]"
+  ],
+  "successors": [
+    "The public companion repository for mathematical problems extends the AlphaEvolve release footprint but is not a successor system.",
+    "OpenEvolve and similar open-source implementations are community follow-ons rather than official successors."
+  ],
+  "components": [
+    "Prompt sampler",
+    "LLM ensemble",
+    "Program database",
+    "Evaluators pool",
+    "Distributed controller loop",
+    "EVOLVE-BLOCK API",
+    "Evaluation function interface"
+  ],
+  "evaluated_by": [
+    "Internal and white-paper evaluations across math, algorithms, and systems tasks",
+    "Automatic evaluators on each problem",
+    "Production verification on selected Google infrastructure improvements"
+  ],
+  "evaluates": [
+    "Not a benchmark item; it evaluates and improves algorithms supplied as code under automated metrics."
+  ],
+  "competes_with_or_complements": [
+    "FunSearch",
+    "AlphaTensor",
+    "AlphaDev",
+    "OpenEvolve implementations",
+    "Other coding agents with automated evaluation loops"
+  ],
+  "milestones": [
+    "2025-05-14: DeepMind blog announcement",
+    "2025-06-16: AlphaEvolve white paper released on arXiv",
+    "2025: Official mathematical problem repository and Colab artifacts published",
+    "2025: Reported deployments across Google's compute ecosystem and math-discovery studies"
+  ],
+  "version_history": [
+    "Initial public release began with the May 14, 2025 product preview blog post.",
+    "The white paper was posted to arXiv on 2025-06-16.",
+    "A later official companion repository released problem pages and notebooks but explicitly did not release the AlphaEvolve runtime."
+  ],
+  "adoption_signals": [
+    "DeepMind reported that a scheduling heuristic found by AlphaEvolve had been in production for over a year and recovered about 0.7% of Google's worldwide compute resources on average.",
+    "DeepMind reported a 23% speedup for a Gemini training kernel, yielding roughly a 1% training-time reduction, and up to 32.5% speedup on a FlashAttention kernel.",
+    "The official companion repository showed about 224 GitHub stars and 10 forks on 2026-05-28."
+  ],
+  "supersession_notes": "No official successor or general public product release was announced as of 2026-05-28.",
+  "real_world_applications": [
+    "Algorithm discovery in mathematics",
+    "Data-center scheduling optimization",
+    "TPU arithmetic-circuit simplification",
+    "Kernel optimization for AI training and inference",
+    "Search over machine-gradeable scientific and engineering problems"
+  ],
+  "users": [
+    "Algorithm researchers",
+    "Systems and infrastructure engineers",
+    "Chip designers",
+    "Mathematicians",
+    "Selected academic users in the announced early-access program"
+  ],
+  "deployment_constraints": [
+    "Requires a machine-gradeable evaluation function",
+    "Requires an initial program or code skeleton with evolvable blocks",
+    "Can require substantial parallel compute and accelerators for slow evaluators",
+    "Core system availability was limited; the public repo releases problems and notebooks, not the full runtime"
+  ],
+  "cost_and_runtime": "The white paper states that evaluation can range from seconds on one device to hours in parallel on accelerators, and overall cost depends on evaluator complexity plus repeated LLM sampling [uncertain].",
+  "scientific_integrity_risks": [
+    "Overfitting to evaluation functions rather than true scientific value",
+    "Mistaking evaluator-approved improvements for broader novelty or usefulness",
+    "Limited external reproducibility when the strongest results depend on internal infrastructure",
+    "Selection bias toward problems that are easy to auto-grade"
+  ],
+  "security_and_safety_risks": [
+    "Autonomous code changes against critical infrastructure or kernels could cause regressions if verification is incomplete",
+    "Hardware-design modifications need strong correctness checks before deployment",
+    "Large-scale automated search can consume substantial compute and privileges"
+  ],
+  "mitigations": [
+    "Automated evaluators verify correctness and quality before programs are retained",
+    "Users explicitly define the evaluation code and evolvable regions",
+    "Production-facing hardware proposals pass robust verification",
+    "Release scope was limited to a preview, white paper, and companion artifacts rather than unrestricted runtime access"
+  ],
+  "policy_relevance": "Relevant to governance of powerful coding agents, verification standards for AI-generated infrastructure changes, and access controls for agentic systems that can optimize critical compute stacks.",
+  "uncertain": [
+    "predecessors",
+    "cost_and_runtime"
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "id": "agent_laboratory",
+  "name": "Agent Laboratory",
+  "aliases": [
+    "Agent Laboratory: Using LLM Agents as Research Assistants"
+  ],
+  "organization": "Academic open-source project",
+  "first_public_release": "2025-01-08",
+  "current_status": "Active open-source research workflow",
+  "category": "research_workflow_agent",
+  "type": [
+    "paper",
+    "open_source_system"
+  ],
+  "domains": [
+    "machine_learning",
+    "general_computational_research"
+  ],
+  "positioning": "Autonomous research assistant",
+  "boundary_notes": "Included because it covers literature review, experimentation, and report writing as a unified research workflow. It is narrower than wet-lab discovery platforms and broader than single-stage literature tools.",
+  "lifecycle_coverage": [
+    "literature_review",
+    "experiment_planning",
+    "code_execution",
+    "paper_drafting"
+  ],
+  "tool_access": [
+    "arXiv",
+    "Hugging Face",
+    "Python",
+    "LaTeX",
+    "LLM APIs"
+  ],
+  "execution_environment": "Local or user-managed compute environment with Python 3.12, optional pdflatex, and user-supplied model/API access",
+  "artifact_outputs": [
+    "research report",
+    "code repository",
+    "experiment plans",
+    "notes",
+    "generated machine learning experiments"
+  ],
+  "human_roles": "A human provides the research idea, task notes, available compute details, and optional feedback at each phase. The system is framed as an assistant rather than a replacement for researcher creativity.",
+  "autonomy_level": "L3",
+  "autonomy_rationale": "Agent Laboratory autonomously executes a multi-stage workflow across literature review, experimentation, and report writing, but still depends on human goal setting, optional stage feedback, and user-managed execution resources.",
+  "iteration_loop": "Yes. The workflow progresses through staged agent collaboration, can resume from checkpoints, and supports human feedback between stages.",
+  "stopping_and_guardrails": "Guardrails include human-provided task notes, optional copilot mode, checkpoint saves, optional disabling of LaTeX compilation, and dependence on user-managed compute and API configuration.",
+  "known_failure_modes": [
+    "hallucinated literature synthesis",
+    "invalid or weak experiment design",
+    "code generation errors",
+    "model-quality dependence",
+    "overclaiming novelty without strong human review"
+  ],
+  "benchmarks_used": [
+    "Researcher survey and final-paper evaluation by human researchers",
+    "task-specific machine learning experiments including repository examples such as MATH [uncertain]"
+  ],
+  "metrics": [
+    "human evaluation of final paper quality",
+    "best outcomes reported with o1-preview",
+    "state-of-the-art performance against existing methods in generated machine learning code",
+    "84% lower research expense than previous autonomous research methods"
+  ],
+  "baselines": [
+    "previous autonomous research methods [uncertain]",
+    "different underlying LLM backends including o1-preview and other state-of-the-art models"
+  ],
+  "validation_strength": "Benchmarked and human-reviewed",
+  "evaluation_limitations": "Publicly visible sources emphasize the abstract and README rather than a complete evaluation table. Benchmark scope, baseline roster, and reproducibility details are only partially recoverable without a full paper audit [uncertain].",
+  "paper_url": "https://arxiv.org/abs/2501.04227",
+  "code_url": "https://github.com/SamuelSchmidgall/AgentLaboratory",
+  "dataset_url": "No dedicated dataset release is publicly listed in the primary sources reviewed [uncertain]",
+  "product_url": "https://agentlaboratory.github.io/",
+  "leaderboard_url": "No official public leaderboard is linked from the primary sources reviewed [uncertain]",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "Earlier autonomous research-agent systems and prior autonomous research methods discussed in the paper [uncertain]"
+  ],
+  "successors": [
+    "AgentRxiv"
+  ],
+  "components": [
+    "Literature Review phase",
+    "Experimentation phase",
+    "Report Writing phase",
+    "specialized LLM-driven agents"
+  ],
+  "evaluated_by": [
+    "human researcher survey",
+    "human feedback during staged execution",
+    "task-specific machine learning outcome comparisons"
+  ],
+  "evaluates": "Not a benchmark; it does not primarily evaluate other systems.",
+  "competes_with_or_complements": [
+    "The AI Scientist and adjacent autonomous research workflows [uncertain]",
+    "sakana_ai_scientist_v1",
+    "FutureHouse Platform Agents"
+  ],
+  "milestones": [
+    "2025-01-08: arXiv v1 submitted",
+    "2025-03-24: README announced AgentRxiv integration",
+    "2025-06-17: arXiv v2 posted"
+  ],
+  "version_history": [
+    "arXiv v1 on 2025-01-08",
+    "arXiv v2 on 2025-06-17",
+    "README lists support for OpenAI and DeepSeek model backends as of verification date"
+  ],
+  "adoption_signals": [
+    "GitHub repository showed 5.6k stars and 783 forks on 2026-05-28",
+    "Public multilingual README and project website"
+  ],
+  "supersession_notes": "Not superseded in the reviewed sources. AgentRxiv appears to extend collaborative accumulation rather than replace Agent Laboratory.",
+  "real_world_applications": [
+    "machine learning literature review",
+    "experiment planning",
+    "automated code-based empirical research",
+    "drafting research reports"
+  ],
+  "users": [
+    "academic researchers",
+    "machine learning engineers",
+    "students",
+    "independent research practitioners"
+  ],
+  "deployment_constraints": [
+    "Python 3.12 recommended",
+    "LLM API or supported model backend access",
+    "optional pdflatex installation for compilation",
+    "user-managed compute, datasets, and hardware configuration"
+  ],
+  "cost_and_runtime": "The paper abstract reports an 84% reduction in research expense versus previous autonomous research methods, but absolute runtime and cost depend on chosen models, hardware, and experiment scope [uncertain].",
+  "scientific_integrity_risks": [
+    "fabricated or weak citations",
+    "invalid benchmark conclusions",
+    "false novelty claims",
+    "overreliance on generated reports without expert review"
+  ],
+  "security_and_safety_risks": [
+    "unsafe generated code execution in user environments",
+    "uncontrolled API spending",
+    "external-tool misuse if agents are given broad access"
+  ],
+  "mitigations": [
+    "human goal setting and optional feedback at each stage",
+    "user control over compute and configuration",
+    "checkpointing for auditability and recovery",
+    "assistant framing rather than fully unsupervised deployment"
+  ],
+  "policy_relevance": "Relevant to responsible AI in science because it automates manuscript and experiment generation, raising questions about provenance, reproducibility, authorship, and review burden.",
+  "uncertain": [
+    "benchmarks_used",
+    "baselines",
+    "evaluation_limitations",
+    "dataset_url",
+    "leaderboard_url",
+    "predecessors",
+    "competes_with_or_complements",
+    "cost_and_runtime"
+  ]
+}

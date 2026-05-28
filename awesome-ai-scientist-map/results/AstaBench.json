@@ -1,0 +1,211 @@
+{
+  "id": "astabench",
+  "name": "AstaBench",
+  "aliases": [
+    "Asta Bench"
+  ],
+  "organization": "Allen Institute for AI (Ai2)",
+  "first_public_release": "2025-08",
+  "current_status": "Active benchmark suite with open-source code, a gated dataset, and a public leaderboard.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark_suite",
+    "leaderboard",
+    "codebase"
+  ],
+  "domains": [
+    "scientific research",
+    "literature understanding",
+    "code execution",
+    "data analysis",
+    "scientific discovery",
+    "multi-domain science"
+  ],
+  "positioning": "Scientific research benchmark suite and leaderboard for AI agents.",
+  "boundary_notes": "Included because it is a benchmark suite explicitly designed to measure agentic scientific research ability across literature, coding, data analysis, and end-to-end discovery, rather than a general chatbot benchmark.",
+  "lifecycle_coverage": [
+    "literature search",
+    "scientific question answering",
+    "code writing",
+    "code execution",
+    "data analysis",
+    "structured summarization",
+    "end-to-end discovery"
+  ],
+  "tool_access": [
+    "date-restricted scientific literature search tools",
+    "Asta Scientific Corpus tool",
+    "sandboxed code execution",
+    "stateful python notebook tools",
+    "InspectAI-compatible tool interfaces",
+    "MCP-accessible research tools"
+  ],
+  "execution_environment": "InspectAI-based local or Dockerized benchmark runner with standardized tools, gated dataset access through Hugging Face, and sandboxed environments for coding and data tasks.",
+  "artifact_outputs": [
+    "benchmark scores",
+    "cost reports",
+    "leaderboard submissions",
+    "execution logs",
+    "traceable evaluation artifacts",
+    "agent compatibility metadata"
+  ],
+  "human_roles": [
+    "Researchers define tasks and rubrics, maintain the benchmark, and review methodology.",
+    "Agent developers run evaluations and submit results.",
+    "Humans still interpret leaderboard tradeoffs and scientific usefulness."
+  ],
+  "autonomy_level": "L1-L3",
+  "autonomy_rationale": "AstaBench evaluates agents that use tools and multi-step workflows for bounded scientific tasks, from focused assistants up to partially autonomous end-to-end research agents, rather than fully self-directing L4-L5 systems.",
+  "iteration_loop": "Yes. Agents can be run repeatedly across validation and test splits, with leaderboard submissions and cost-scored re-evaluation loops, but the benchmark itself is an evaluation loop rather than a self-improving agent.",
+  "stopping_and_guardrails": [
+    "Standardized tool interfaces and date-restricted literature access improve reproducibility.",
+    "Cost logging and time-invariant pricing reduce confounding from repeated-agent strategies.",
+    "Sandboxed execution constrains code and notebook tasks.",
+    "Leaderboard metadata records openness, tool usage, logs, and reproducibility warnings."
+  ],
+  "known_failure_modes": [
+    "Agents may hallucinate citations or analyses.",
+    "Agents may exploit tool differences rather than core reasoning gains.",
+    "LLM-as-a-judge grading can miss subtle scientific quality issues.",
+    "High-memory tasks can fail operationally before measuring true capability.",
+    "Benchmark-specific optimization can overfit to suite interfaces."
+  ],
+  "benchmarks_used": [
+    "PaperFindingBench",
+    "ScholarQABench2",
+    "LitQA2-FT",
+    "LitQA2-FT-Search",
+    "ArxivDIGESTables-Clean",
+    "CORE-Bench-Hard",
+    "DS-1000",
+    "SUPER-Expert",
+    "DiscoveryBench",
+    "E2E-Bench",
+    "E2E-Bench-Hard"
+  ],
+  "metrics": [
+    "task-level rubric scores",
+    "cross-category overall score",
+    "cost per problem",
+    "Pareto frontier of score vs cost",
+    "benchmark-specific scoring outputs from InspectAI and AstaBench scorers"
+  ],
+  "baselines": [
+    "57 agents across 22 agent classes in the paper",
+    "Asta science-specific agents",
+    "ReAct-style general agents",
+    "open- and closed-weight model backends",
+    "wrappers around external commercial research tools"
+  ],
+  "validation_strength": "Benchmarked with standardized tooling, public leaderboard reporting, open-source code, and an arXiv technical report; not yet a peer-reviewed archival publication in the checked sources.",
+  "evaluation_limitations": [
+    "Scores depend partly on LLM-as-a-judge rubrics.",
+    "Some benchmark areas, especially data analysis and discovery, remain difficult and may be noisy to score.",
+    "The dataset is gated, which can limit immediate reproducibility.",
+    "Large compute and memory requirements can bias who can run the full suite."
+  ],
+  "paper_url": "https://arxiv.org/abs/2510.21652",
+  "code_url": "https://github.com/allenai/asta-bench",
+  "dataset_url": "https://huggingface.co/datasets/allenai/asta-bench",
+  "product_url": "https://allenai.org/asta/bench",
+  "leaderboard_url": "https://huggingface.co/spaces/allenai/asta-bench-leaderboard",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "PaperFindingBench",
+    "ScholarQABench2",
+    "LitQA2",
+    "CORE-Bench-Hard",
+    "DS-1000",
+    "SUPER",
+    "DiscoveryBench",
+    "E2E-Bench"
+  ],
+  "successors": [
+    "[uncertain] No separately named successor benchmark was identified in the primary sources checked on 2026-05-28; the project appears to evolve through AstaBench updates and new leaderboard results."
+  ],
+  "components": [
+    "AstaBench suite",
+    "Asta Scientific Corpus tool",
+    "Computational Notebook and python_session environment",
+    "agent-eval leaderboard framework",
+    "agent-baselines repository",
+    "2400+ problems across 11 benchmarks"
+  ],
+  "evaluated_by": [
+    "A public leaderboard backed by agent-eval and InspectAI.",
+    "An arXiv technical report describing methodology and baselines.",
+    "Community and internal reruns through validation and test splits."
+  ],
+  "evaluates": [
+    "scientific research agents",
+    "paper finding",
+    "scholarly question answering",
+    "tool use",
+    "code execution",
+    "data analysis",
+    "end-to-end scientific discovery",
+    "multi-domain science"
+  ],
+  "competes_with_or_complements": [
+    "Part of the broader Asta ecosystem alongside Asta agents and Asta resources.",
+    "Complements general deep-research benchmarks by focusing specifically on scientific research workflows."
+  ],
+  "milestones": [
+    "2025-08-26: Ai2 published the launch blog for AstaBench and its initial public leaderboard.",
+    "2025-10-24: arXiv v1 of the AstaBench paper was released.",
+    "2026-04-21: arXiv v2 of the paper was released.",
+    "2026-05-28: Public code repository and leaderboard remained available."
+  ],
+  "version_history": [
+    "AstaBench paper v1 released on 2025-10-24 and v2 on 2026-04-21.",
+    "AstaBench 0.3.1 adjusted paper-search task instructions to better match scoring criteria.",
+    "The benchmark is described by Ai2 as an evolving evaluation with refreshed problems and leaderboard updates."
+  ],
+  "adoption_signals": [
+    "Ai2 hosts a dedicated benchmark page and public leaderboard.",
+    "The public GitHub repository showed 105 stars on 2026-05-28.",
+    "The suite is positioned as one of the three core pillars of the Asta ecosystem."
+  ],
+  "supersession_notes": "Not superseded in the checked sources; it is presented as the current benchmarking pillar of Asta.",
+  "real_world_applications": [
+    "Comparing scientific research agents for literature understanding, code execution, data analysis, and discovery workflows.",
+    "Evaluating whether general or specialized agents are better suited for research assistance.",
+    "Providing a reproducible benchmark for teams building science-focused agent products."
+  ],
+  "users": [
+    "AI agent researchers",
+    "scientific AI developers",
+    "benchmark maintainers",
+    "research-product teams",
+    "labs evaluating scholarly assistants"
+  ],
+  "deployment_constraints": [
+    "Requires Hugging Face access to the gated dataset.",
+    "Requires API keys for supported model providers and Asta tools.",
+    "Docker is recommended, and some tasks require sandboxed execution.",
+    "Full-suite runs may require high RAM and multicore CPU resources."
+  ],
+  "cost_and_runtime": "AstaBench explicitly tracks score and cost together. The repo notes roughly 10 GB internal framework memory for full-suite runs, with some SUPER and E2E instances using 20-30 GB more; Ai2 reports using a 128 GB RAM, 8-core machine for many internal runs.",
+  "scientific_integrity_risks": [
+    "LLM-judged scientific tasks can reward polished but weak reasoning.",
+    "Agents may fabricate citations or overstate findings.",
+    "Benchmark optimization may not transfer cleanly to real scientific work."
+  ],
+  "security_and_safety_risks": [
+    "Sandboxed code tasks still involve executing agent-generated code.",
+    "Scientific search and execution tools could be misused if guardrails are weakened.",
+    "Closed-source submissions can reduce transparency about unsafe behaviors."
+  ],
+  "mitigations": [
+    "Date-restricted literature tools for reproducibility.",
+    "Sandboxed notebooks and constrained task tools.",
+    "Cost logging, traceable logs, and source-code collection for leaderboard submissions.",
+    "Submission metadata that flags openness, tool categories, and missing reproducibility evidence."
+  ],
+  "policy_relevance": "Relevant to trustworthy evaluation of scientific AI agents, reproducibility standards, and responsible disclosure of benchmarked agent capabilities.",
+  "uncertain": [
+    "successors"
+  ]
+}

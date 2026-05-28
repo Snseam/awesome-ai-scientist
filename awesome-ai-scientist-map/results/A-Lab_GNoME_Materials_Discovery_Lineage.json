@@ -1,0 +1,168 @@
+{
+  "id": "alab_gnome_materials_lineage",
+  "name": "A-Lab / GNoME Materials Discovery Lineage",
+  "aliases": [
+    "A-Lab",
+    "GNoME",
+    "An autonomous laboratory for the accelerated synthesis of inorganic materials",
+    "Scaling deep learning for materials discovery",
+    "Materials Discovery: GNoME"
+  ],
+  "organization": "Lawrence Berkeley National Laboratory, University of California Berkeley, Google DeepMind, and collaborators",
+  "first_public_release": "2023-11",
+  "current_status": "Active research lineage with public Nature papers, a public GNoME dataset and code repository, and ongoing follow-up evaluation and replication activity.",
+  "category": "domain_scientific_discovery_agent",
+  "type": [
+    "paper",
+    "dataset",
+    "infrastructure"
+  ],
+  "domains": [
+    "materials_science",
+    "inorganic_chemistry"
+  ],
+  "positioning": "Autonomous materials discovery stack that combines large-scale learned candidate generation with robotic closed-loop synthesis and characterization.",
+  "boundary_notes": "Included because the lineage spans both computational discovery and real-world autonomous execution in a scientific domain. It is broader than a single paper but narrower than a general AI scientist platform because it is centered on inorganic materials discovery.",
+  "lifecycle_coverage": [
+    "materials_candidate_generation",
+    "stability_screening",
+    "synthesis_planning",
+    "robotic_synthesis",
+    "characterization",
+    "active_learning",
+    "autonomous_decision_making"
+  ],
+  "tool_access": [
+    "large-scale DFT workflows",
+    "Materials Project data",
+    "OQMD data",
+    "natural-language synthesis models",
+    "ARROWS active learning",
+    "robotic powder handling",
+    "box furnaces",
+    "XRD characterization",
+    "laboratory API",
+    "GNoME dataset and models"
+  ],
+  "execution_environment": "Hybrid environment: large-scale computational materials discovery on DeepMind and database infrastructure, plus robotic closed-loop execution in the Berkeley Lab A-Lab.",
+  "artifact_outputs": [
+    "predicted stable crystal structures",
+    "updated convex-hull materials dataset",
+    "synthesis recipes",
+    "experimental XRD analyses",
+    "validated inorganic compounds",
+    "follow-up active-learning decisions"
+  ],
+  "human_roles": "Humans defined the initial target set, can submit jobs through the lab API, and manually refined diffraction patterns after the autonomous runs to confirm outcomes. Researchers also decide follow-up scientific use of predicted or synthesized materials.",
+  "autonomy_level": "L4",
+  "autonomy_rationale": "The lineage moves beyond recommendation into constrained real-world autonomous action: GNoME generates candidates at scale and A-Lab plans, executes, characterizes, and iterates on experiments through robotics and active learning. Humans still frame targets, maintain the platform, and validate broader scientific conclusions.",
+  "iteration_loop": "Yes. GNoME performs iterative active-learning discovery with DFT feedback, and A-Lab closes the loop by proposing new synthesis recipes when yields are poor and feeding characterization results back into decision making.",
+  "stopping_and_guardrails": "The A-Lab operates on air-stable targets, within a bounded robotic workflow, and through a lab API. Manual post-hoc confirmation of diffraction results and constrained materials domains limit risk. GNoME predictions remain bounded by stability heuristics and database snapshots.",
+  "known_failure_modes": "Reported failure modes include slow reaction kinetics, precursor volatility, amorphization, computational inaccuracy, false positives near convex-hull boundaries, and materials that appear stable computationally but are not synthesizable in practice.",
+  "benchmarks_used": [
+    "36 of 57 target compounds synthesized over 17 days in A-Lab",
+    "381,000 new stable convex-hull entries from GNoME",
+    "ICSD and Materials Project snapshot matching",
+    "r2SCAN validation for discovered materials",
+    "later crystal-stability evaluation frameworks"
+  ],
+  "metrics": [
+    "A-Lab: 36 of 57 targets synthesized over 17 days with 63% target success.",
+    "A-Lab: 353 experiments performed.",
+    "GNoME: 2.2 million structures below the previous convex hull.",
+    "GNoME: 381,000 newly discovered stable convex-hull entries.",
+    "GNoME: more than 45,500 novel prototypes.",
+    "GNoME: 84% of discovered binary and ternary materials remain stable under r2SCAN validation.",
+    "GNoME: 86.8% of tested quaternaries remain stable on the r2SCAN convex hull."
+  ],
+  "baselines": [
+    "Materials Project and OQMD stable-material catalogs",
+    "literature-inspired synthesis recipes without active-learning follow-up",
+    "previous human and heuristic materials discovery workflows"
+  ],
+  "validation_strength": "Peer-reviewed primary papers, open dataset and code, real robotic lab execution, manual post-hoc confirmation of synthesis outcomes, and later third-party evaluation work make this one of the stronger validation profiles in AI-for-science.",
+  "evaluation_limitations": "Predicted stability is not identical to synthesizability, convex-hull status can change as new materials are discovered, lab success depends on precursor and kinetics constraints, and later public scrutiny led to correction and reproduction questions that temper headline claims.",
+  "paper_url": "https://www.nature.com/articles/s41586-023-06734-w",
+  "code_url": "https://github.com/google-deepmind/materials_discovery",
+  "dataset_url": "https://github.com/google-deepmind/materials_discovery",
+  "product_url": "https://deepmind.google/blog/millions-of-new-materials-discovered-with-deep-learning/",
+  "leaderboard_url": "[uncertain] No official public leaderboard was verified for this lineage.",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "Materials Project",
+    "OQMD",
+    "text-mined synthesis-planning models",
+    "ARROWS active-learning synthesis optimization",
+    "prior high-throughput ab initio materials screening"
+  ],
+  "successors": [
+    "google-deepmind/materials_discovery public release and August 2024 dataset expansion",
+    "later external evaluations such as crystal-stability benchmark frameworks",
+    "independent experimental follow-up on specific GNoME-discovered materials"
+  ],
+  "components": [
+    "GNoME message-passing models",
+    "A-Lab robotic synthesis platform",
+    "Materials Project",
+    "OQMD",
+    "ARROWS",
+    "SynthesisSimilarity",
+    "s4 temperature model",
+    "XRD-AutoAnalyzer",
+    "robotic arms",
+    "powder preparation station",
+    "furnace station",
+    "XRD characterization station",
+    "laboratory API"
+  ],
+  "evaluated_by": [
+    "manual post-hoc diffraction refinement",
+    "ICSD experimental matches",
+    "Materials Project snapshot matching",
+    "r2SCAN stability checks",
+    "later external benchmark-style evaluation papers"
+  ],
+  "evaluates": [
+    "Not a benchmark; it evaluates materials candidates and synthesis routes rather than ranking general AI systems."
+  ],
+  "competes_with_or_complements": [
+    "SciAgents",
+    "Google Co-Scientist",
+    "other autonomous laboratory systems and materials discovery stacks"
+  ],
+  "milestones": [
+    "2023-11: Nature paper on A-Lab published.",
+    "2023-11: Nature paper on GNoME published.",
+    "2023-11: DeepMind blog announced 2.2 million discovered crystals and 380,000 stable candidates.",
+    "2024-08: official materials_discovery repository expanded the release to more than 520,000 materials within 1 meV/atom from the convex hull.",
+    "2026-01: public reporting and correction activity highlighted reproduction and interpretation questions around the A-Lab headline claims. [uncertain]"
+  ],
+  "version_history": "The main public evolution is from the 2023 papers to the public materials_discovery repository and the August 2024 dataset expansion. A-Lab itself appears as a research platform rather than a semantically versioned product.",
+  "adoption_signals": "The lineage has high visibility through Nature publications, an official DeepMind blog, a public GitHub repository, and independent experimental matches for 736 structures reported by DeepMind. Downstream studies are already using the GNoME dataset.",
+  "supersession_notes": "Not superseded. Later evaluation papers and corrections refine how the original claims should be interpreted, especially around stability metrics and autonomous synthesis reporting.",
+  "real_world_applications": [
+    "inorganic crystal discovery",
+    "battery and ion-conductor screening",
+    "layered-material discovery",
+    "robotic solid-state synthesis",
+    "autonomous materials validation pipelines"
+  ],
+  "users": [
+    "materials scientists",
+    "autonomous-lab researchers",
+    "computational chemistry and physics teams",
+    "industrial R&D groups interested in inorganic materials discovery"
+  ],
+  "deployment_constraints": "Requires major computational infrastructure, high-quality materials databases, specialized ML tooling, robotic lab hardware, XRD characterization, controlled precursor handling, and strong safety and maintenance processes.",
+  "cost_and_runtime": "A-Lab reported 17 days of continuous experimentation for the 57-target campaign. GNoME required very large-scale compute and DFT infrastructure, but full cost figures were not verified in the retrieved sources. [uncertain]",
+  "scientific_integrity_risks": "The biggest risks are overstating computational stability as practical discovery, reporting optimistic autonomous-synthesis counts without enough nuance, and underestimating how much manual validation is still required.",
+  "security_and_safety_risks": "Robotic synthesis introduces equipment, heat, chemical, and lab-protocol risks. At the computational layer, false positives can waste scarce lab time and materials.",
+  "mitigations": "Air-stable target selection, bounded robotic workflows, API-mediated control, manual post-hoc verification, multiple validation layers for predicted materials, and later external evaluation all help contain risk.",
+  "policy_relevance": "This lineage is a concrete reference point for governance of autonomous laboratories, claims standards for AI-assisted discovery, and the distinction between predictive novelty, experimental realization, and reproducible scientific validation.",
+  "uncertain": [
+    "leaderboard_url",
+    "milestones",
+    "cost_and_runtime"
+  ]
+}

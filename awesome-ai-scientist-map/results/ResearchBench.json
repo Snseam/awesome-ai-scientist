@@ -1,0 +1,185 @@
+{
+  "id": "researchbench",
+  "name": "ResearchBench",
+  "aliases": [
+    "ResearchBench",
+    "ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition"
+  ],
+  "organization": "Academic research team; dataset page maintained by ankilok on Hugging Face",
+  "first_public_release": "2025-03-27",
+  "current_status": "Active benchmark and public dataset; code availability is [uncertain].",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "dataset"
+  ],
+  "domains": [
+    "general scientific discovery",
+    "natural language processing",
+    "hypothesis generation",
+    "literature-grounded research"
+  ],
+  "positioning": "Benchmark for evaluating whether LLMs can produce scientific hypotheses through inspiration-based task decomposition.",
+  "boundary_notes": "Included because it explicitly targets scientific discovery capabilities, especially inspiration retrieval and hypothesis generation. It is not an end-to-end experiment execution benchmark.",
+  "lifecycle_coverage": [
+    "inspiration retrieval",
+    "inspiration reconstruction",
+    "hypothesis proposal",
+    "hypothesis evaluation",
+    "scientific reasoning"
+  ],
+  "tool_access": [
+    "paper corpus access [uncertain]",
+    "retrieval over inspirations",
+    "LLM generation",
+    "automatic and human evaluation protocols"
+  ],
+  "execution_environment": "Benchmark dataset and evaluation setting described in the arXiv paper and Hugging Face dataset page.",
+  "artifact_outputs": [
+    "retrieved inspirations",
+    "reconstructed inspiration explanations",
+    "generated research hypotheses",
+    "benchmark scores"
+  ],
+  "human_roles": [
+    "Humans curate benchmark tasks and ground-truth inspirations.",
+    "Humans interpret whether generated hypotheses are novel, feasible, and relevant.",
+    "Researchers run and compare LLM baselines."
+  ],
+  "autonomy_level": "L2-L3",
+  "autonomy_rationale": "The benchmark targets bounded scientific-discovery subtasks rather than autonomous experiment execution. Strong agents can retrieve inspirations and propose hypotheses, but task setup and validation remain human-defined.",
+  "iteration_loop": "The paper frames discovery as decomposed subtasks; iterative refinement may be used by evaluated systems, but an official autonomous loop is [uncertain].",
+  "stopping_and_guardrails": [
+    "Tasks are constrained to benchmark-provided scientific contexts.",
+    "Outputs are scored against benchmark criteria rather than accepted as discoveries.",
+    "Human interpretation remains necessary for scientific novelty and feasibility."
+  ],
+  "known_failure_modes": [
+    "Retrieving irrelevant or weak inspirations.",
+    "Producing hypotheses that are plausible but not genuinely novel.",
+    "Overfitting to benchmark phrasing.",
+    "Missing domain constraints needed for feasible experiments."
+  ],
+  "benchmarks_used": [
+    "ResearchBench benchmark tasks",
+    "Inspiration retrieval subtask",
+    "Inspiration reconstruction subtask",
+    "Hypothesis generation subtask"
+  ],
+  "metrics": [
+    "Retrieval quality [uncertain exact metric names]",
+    "Reconstruction quality [uncertain exact metric names]",
+    "Hypothesis quality judged by relevance, novelty, and feasibility [uncertain exact rubric]"
+  ],
+  "baselines": [
+    "Large language model baselines reported in the paper [uncertain exact model list]",
+    "Retrieval and generation variants [uncertain]"
+  ],
+  "validation_strength": "Primary arXiv paper plus public Hugging Face dataset page; independent reproduction or official leaderboard was not verified.",
+  "evaluation_limitations": [
+    "Focuses on inspiration and hypothesis generation, not wet-lab validation or code execution.",
+    "Scientific quality judgments can be subjective.",
+    "Public code and official leaderboard availability were not verified.",
+    "Dataset contamination risk should be assessed before using frontier model results."
+  ],
+  "paper_url": "https://arxiv.org/abs/2503.21248",
+  "code_url": "[uncertain] No official code repository was verified during this pass.",
+  "dataset_url": "https://huggingface.co/datasets/ankilok/Researchbench",
+  "product_url": "[uncertain] No associated product was identified.",
+  "leaderboard_url": "[uncertain] No official public leaderboard was identified.",
+  "source_quality": "Primary arXiv paper and public Hugging Face dataset card.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "Prior LLM hypothesis-generation and scientific-discovery benchmarks [uncertain specific lineage]",
+    "Literature-based discovery workflows"
+  ],
+  "successors": [
+    "[uncertain] No official successor benchmark was identified."
+  ],
+  "components": [
+    "inspiration retrieval task",
+    "inspiration reconstruction task",
+    "hypothesis generation task",
+    "ResearchBench dataset"
+  ],
+  "evaluated_by": [
+    "[uncertain] No external benchmark-of-benchmark evaluation was verified."
+  ],
+  "evaluates": [
+    "scientific discovery",
+    "inspiration-based reasoning",
+    "hypothesis generation",
+    "literature-grounded ideation"
+  ],
+  "competes_with_or_complements": [
+    "DiscoveryBench",
+    "AI Co-Scientist",
+    "DeepResearch Bench",
+    "PaperBench"
+  ],
+  "milestones": [
+    "2025-03-27: arXiv preprint posted.",
+    "2025: Hugging Face dataset page references the paper and benchmark decomposition.",
+    "2026-05-28: verified paper and dataset landing pages."
+  ],
+  "version_history": [
+    "Initial arXiv release in 2025.",
+    "Dataset page available on Hugging Face; formal versioning is [uncertain]."
+  ],
+  "adoption_signals": [
+    "Hugging Face paper and dataset pages exist.",
+    "Independent leaderboard or broad adoption signals were not verified."
+  ],
+  "supersession_notes": "No official replacement or v2 was identified.",
+  "real_world_applications": [
+    "Evaluating AI systems that assist research ideation.",
+    "Studying how LLMs connect papers to new hypotheses.",
+    "Benchmarking co-scientist and discovery-agent workflows."
+  ],
+  "users": [
+    "AI research-agent developers",
+    "scientific-discovery benchmark designers",
+    "NLP researchers",
+    "research organizations evaluating hypothesis-generation tools"
+  ],
+  "deployment_constraints": [
+    "Requires access to the benchmark dataset and scoring protocol.",
+    "Scientific hypothesis quality may require expert review.",
+    "Exact code and leaderboard infrastructure are [uncertain]."
+  ],
+  "cost_and_runtime": "[uncertain] No canonical cost or runtime budget was verified.",
+  "scientific_integrity_risks": [
+    "Overclaiming generated hypotheses as validated discoveries.",
+    "Subjective scoring of novelty and feasibility.",
+    "Possible benchmark contamination in future model training data."
+  ],
+  "security_and_safety_risks": [
+    "Low direct operational risk because tasks are benchmarked ideation tasks.",
+    "Potential dual-use concerns if used for sensitive scientific domains without review.",
+    "Risk of unsupported research claims being propagated."
+  ],
+  "mitigations": [
+    "Treat outputs as hypotheses, not discoveries.",
+    "Use expert review for high-stakes domains.",
+    "Record provenance for inspirations and generated claims."
+  ],
+  "policy_relevance": "Relevant to publication norms, disclosure of AI-generated hypotheses, benchmark governance, and responsible scientific ideation.",
+  "uncertain": [
+    "current_status",
+    "tool_access",
+    "iteration_loop",
+    "metrics",
+    "baselines",
+    "code_url",
+    "product_url",
+    "leaderboard_url",
+    "predecessors",
+    "successors",
+    "evaluated_by",
+    "version_history",
+    "adoption_signals",
+    "deployment_constraints",
+    "cost_and_runtime"
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "futurehouse_robin",
+  "name": "Robin",
+  "aliases": [
+    "Robin: A multi-agent system for automating scientific discovery"
+  ],
+  "organization": "FutureHouse",
+  "first_public_release": "2025-05-19",
+  "current_status": "Active open-source research demo and paper-backed discovery workflow",
+  "category": "domain_scientific_discovery_agent",
+  "type": [
+    "paper",
+    "open_source_system",
+    "research_demo"
+  ],
+  "domains": [
+    "biology",
+    "biomedicine"
+  ],
+  "positioning": "Semi-autonomous scientific discovery system",
+  "boundary_notes": "Included because Robin orchestrates background research, hypothesis generation, experiment proposal, data analysis, and hypothesis updating in one discovery loop. It is more integrated than standalone literature or chemistry agents, but still depends on humans for wet-lab execution.",
+  "lifecycle_coverage": [
+    "background_research",
+    "hypothesis_generation",
+    "experiment_proposal",
+    "data_analysis",
+    "hypothesis_update"
+  ],
+  "tool_access": [
+    "Edison platform agents",
+    "literature search agents",
+    "data analysis agents",
+    "LiteLLM-compatible LLM APIs",
+    "Jupyter notebooks",
+    "Docker"
+  ],
+  "execution_environment": "User-run Python or Docker environment with Jupyter notebooks, Edison platform access for literature and data analysis, and external wet-lab execution for biological experiments",
+  "artifact_outputs": [
+    "hypotheses",
+    "experiment proposals",
+    "data analyses",
+    "figures",
+    "agent trajectories",
+    "manuscript text"
+  ],
+  "human_roles": "Humans provide the disease target, configure API keys and notebooks, and execute physical experiments. Robin handles the intellectual workflow, while human researchers remain responsible for wet-lab validation and downstream scientific judgment.",
+  "autonomy_level": "L3",
+  "autonomy_rationale": "Robin automates the key intellectual steps of scientific discovery across multiple iterations, but it is not fully closed-loop because human researchers perform the physical experiments and supply the runtime environment and platform access.",
+  "iteration_loop": "Yes. Robin iterates from literature review to candidate selection, experiment proposal, data analysis, and updated hypotheses in a lab-in-the-loop cycle.",
+  "stopping_and_guardrails": "Operational limits include dependence on Edison platform access, user-supplied LLM credentials, notebook-based execution, and a hard boundary where humans execute and validate physical experiments.",
+  "known_failure_modes": [
+    "hallucinated biological mechanisms",
+    "weak candidate prioritization",
+    "overfitting to available literature",
+    "errors in notebook-driven analysis",
+    "false positives that fail wet-lab validation"
+  ],
+  "benchmarks_used": [
+    "Real-world iterative dry age-related macular degeneration discovery workflow",
+    "preclinical validation of proposed candidates",
+    "follow-up RNA-seq analysis"
+  ],
+  "metrics": [
+    "identification of ripasudil as a novel therapeutic candidate for dry age-related macular degeneration",
+    "successful generation of experiment plans and updated mechanistic hypotheses",
+    "analysis identifying ABCA1 upregulation in the follow-up RNA-seq experiment"
+  ],
+  "baselines": [
+    "No explicit benchmark baseline roster is stated in the abstract or announcement pages reviewed [uncertain]"
+  ],
+  "validation_strength": "Real-world validated",
+  "evaluation_limitations": "Public sources emphasize a single flagship case study in one biomedical problem. Generalization across diseases, broader benchmark comparisons, and fully independent reproductions are not yet demonstrated in the reviewed primary sources.",
+  "paper_url": "https://arxiv.org/abs/2505.13400",
+  "code_url": "https://github.com/Future-House/robin",
+  "dataset_url": "No separate stable dataset URL is provided in the reviewed primary sources, although code, data, and trajectories were announced [uncertain]",
+  "product_url": "https://www.futurehouse.org/research-announcements/demonstrating-end-to-end-scientific-discovery-with-robin-a-multi-agent-system",
+  "leaderboard_url": "No official public leaderboard is provided for Robin in the reviewed primary sources [uncertain]",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "FutureHouse Platform Agents",
+    "Crow",
+    "Falcon",
+    "Finch"
+  ],
+  "successors": [
+    "No named successor is publicly identified in the reviewed primary sources [uncertain]"
+  ],
+  "components": [
+    "Crow",
+    "Falcon",
+    "Finch",
+    "hypothesis generation workflow",
+    "experiment proposal workflow",
+    "data analysis workflow"
+  ],
+  "evaluated_by": [
+    "preclinical wet-lab validation",
+    "RNA-seq follow-up analysis",
+    "paper case study"
+  ],
+  "evaluates": "Not a benchmark; it does not primarily evaluate other systems.",
+  "competes_with_or_complements": [
+    "FutureHouse Platform Agents",
+    "other autonomous scientific discovery systems",
+    "lab-in-the-loop AI scientist workflows [uncertain]"
+  ],
+  "milestones": [
+    "2025-05-19: arXiv paper submitted",
+    "2025-05-20: FutureHouse announcement published",
+    "2025-05-27: code, data, and trajectories announced for release"
+  ],
+  "version_history": [
+    "Initial arXiv release on 2025-05-19",
+    "Public GitHub repository with notebooks and Docker setup by verification date",
+    "No tagged software releases were visible in the reviewed repository page [uncertain]"
+  ],
+  "adoption_signals": [
+    "GitHub repository showed 432 stars and 64 forks on 2026-05-28",
+    "Open-source repository, public preprint, and published FutureHouse announcement"
+  ],
+  "supersession_notes": "Not superseded in the reviewed primary sources.",
+  "real_world_applications": [
+    "biomedical hypothesis generation",
+    "therapeutic candidate identification",
+    "experiment proposal for disease research",
+    "analysis of follow-up biological data"
+  ],
+  "users": [
+    "biomedical researchers",
+    "computational biologists",
+    "scientific AI teams",
+    "translational research groups"
+  ],
+  "deployment_constraints": [
+    "Python 3.12 or higher",
+    "Edison platform API access",
+    "LLM provider API access",
+    "Jupyter or Docker environment",
+    "wet-lab capability for real-world validation"
+  ],
+  "cost_and_runtime": "FutureHouse states the full process from conceptualizing Robin to paper submission took about 2.5 months. Running the open-source workflow also requires platform access, LLM API costs, and potentially wet-lab spending for validation.",
+  "scientific_integrity_risks": [
+    "overclaiming novelty from limited literature evidence",
+    "single-case discovery overgeneralization",
+    "mechanistic misinterpretation",
+    "authorship and provenance ambiguity in AI-generated scientific outputs"
+  ],
+  "security_and_safety_risks": [
+    "unsafe biomedical recommendations if used without expert oversight",
+    "misuse of automated disease-target discovery workflows",
+    "external API and notebook execution risks"
+  ],
+  "mitigations": [
+    "human-performed wet-lab experiments",
+    "interpretable multi-agent workflow",
+    "public code and example trajectories",
+    "requirement for platform and notebook configuration rather than hidden autonomous deployment"
+  ],
+  "policy_relevance": "Robin is relevant to AI governance in science because it combines autonomous hypothesis generation with real biological validation, creating questions about dual use, authorship, evidence standards, and lab oversight.",
+  "uncertain": [
+    "baselines",
+    "dataset_url",
+    "leaderboard_url",
+    "successors",
+    "competes_with_or_complements",
+    "version_history"
+  ]
+}

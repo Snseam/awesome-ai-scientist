@@ -1,0 +1,167 @@
+{
+  "id": "mlagentbench",
+  "name": "MLAgentBench",
+  "aliases": [
+    "MLAgentBench: Evaluating Language Agents on Machine Learning Experimentation"
+  ],
+  "organization": "Stanford SNAP",
+  "first_public_release": "2023-10-05",
+  "current_status": "Active public benchmark with an arXiv paper and open-source repository.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "codebase"
+  ],
+  "domains": [
+    "machine learning experimentation",
+    "ML engineering",
+    "agentic code execution",
+    "model improvement"
+  ],
+  "positioning": "Benchmark for end-to-end machine learning experimentation by language agents.",
+  "boundary_notes": "Included because it evaluates autonomous ML experimentation across data, modeling, training, and analysis loops. It is broader than a generic coding benchmark because the goal is to improve ML models through iterative experimentation.",
+  "lifecycle_coverage": [
+    "experiment design",
+    "code writing",
+    "code execution",
+    "result analysis",
+    "model improvement",
+    "long-term planning evaluation"
+  ],
+  "tool_access": [
+    "file read and write",
+    "code execution",
+    "output inspection",
+    "interactive task environments",
+    "Docker",
+    "Kaggle API for some tasks",
+    "LLM API keys"
+  ],
+  "execution_environment": "Interactive task environments that resemble human research workflows. The repository supports local execution and Docker, and tasks may require dataset preparation and repeated experiment runs.",
+  "artifact_outputs": [
+    "improved model submissions",
+    "experiment logs",
+    "success-rate metrics",
+    "improvement-over-baseline metrics",
+    "agent plans and traces"
+  ],
+  "human_roles": "Benchmark creators define tasks and starter code. Users configure dependencies, provide API keys, accept competition rules where required, run agents, and review experimental outputs.",
+  "autonomy_level": "L2-L3 [uncertain]",
+  "autonomy_rationale": "MLAgentBench targets agents that autonomously run ML experiments and improve models, but within bounded tasks, starter code, user-provided infrastructure, and explicit evaluation scripts.",
+  "iteration_loop": "Iterative ML experimentation is central to the benchmark: agents read and write files, run experiments, inspect outputs, and revise approaches over multiple steps.",
+  "stopping_and_guardrails": "The repository recommends Docker because agents modify and execute files. Tasks require explicit environment setup, API credentials, and Kaggle authentication for some datasets.",
+  "known_failure_modes": [
+    "weak long-term planning",
+    "hallucination during experimentation",
+    "poor transfer to recent Kaggle challenges",
+    "environment and setup failures",
+    "uneven success across tasks"
+  ],
+  "benchmarks_used": "MLAgentBench itself across 13 ML engineering tasks.",
+  "metrics": [
+    "success rate",
+    "improvement over the starter-code baseline",
+    "valid submission rate"
+  ],
+  "baselines": [
+    "Claude v1.0 agent",
+    "Claude v2.1 agent",
+    "Claude v3 Opus agent",
+    "GPT-4 agent",
+    "GPT-4-turbo agent",
+    "Gemini-Pro agent",
+    "Mixtral agent",
+    "starter-code baseline"
+  ],
+  "validation_strength": "Benchmarked with public tasks, a public paper, and repository-reported quantitative results.",
+  "evaluation_limitations": "Performance varies widely across tasks, from strong results on older datasets to 0% on some recent Kaggle challenges, so benchmark scores depend heavily on task recency and environment setup.",
+  "paper_url": "https://arxiv.org/abs/2310.03302",
+  "code_url": "https://github.com/snap-stanford/MLAgentBench",
+  "dataset_url": "[uncertain] No standalone dataset page was identified; the benchmark spans 13 tasks and prepares task data through the official repository.",
+  "product_url": "https://github.com/snap-stanford/MLAgentBench",
+  "leaderboard_url": "[uncertain] No standalone official leaderboard was identified; results are reported in the paper and repository.",
+  "source_quality": "Primary sources: official arXiv paper and official Stanford SNAP repository.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": "[uncertain] No explicit predecessor benchmark is named in the consulted primary sources.",
+  "successors": [
+    "MLE-bench"
+  ],
+  "components": [
+    "13 ML engineering tasks",
+    "starter code",
+    "interactive task environments",
+    "ReAct-based reference agent",
+    "Docker image",
+    "task preparation scripts",
+    "evaluation scripts"
+  ],
+  "evaluated_by": "[uncertain] No separate external benchmark evaluating MLAgentBench itself was identified in the consulted sources.",
+  "evaluates": [
+    "ML experimentation",
+    "code execution",
+    "model improvement",
+    "long-term planning"
+  ],
+  "competes_with_or_complements": [
+    "AIRS-Bench",
+    "MLE-bench"
+  ],
+  "milestones": [
+    "2023-10-05: arXiv v1 released.",
+    "2024-04-14: arXiv v2 released.",
+    "Public repository released with setup instructions, Docker guidance, and benchmark scripts."
+  ],
+  "version_history": [
+    "arXiv v1 on 2023-10-05",
+    "arXiv v2 on 2024-04-14",
+    "the public repository continues to host setup, task preparation, and evaluation workflows"
+  ],
+  "adoption_signals": [
+    "Public arXiv paper",
+    "Public GitHub repository",
+    "Public log repository is linked from the official repository"
+  ],
+  "supersession_notes": "Not superseded in the consulted sources. Later related benchmarks such as MLE-bench appear adjacent rather than clearly replacing it [uncertain].",
+  "real_world_applications": [
+    "benchmarking agentic ML research assistants",
+    "testing autonomous model-improvement workflows",
+    "studying iterative experiment planning and execution",
+    "comparing language models on ML engineering tasks"
+  ],
+  "users": [
+    "ML agent researchers",
+    "benchmark designers",
+    "AI systems researchers",
+    "autonomous experimentation developers"
+  ],
+  "deployment_constraints": "Requires Python 3.10, benchmark dependencies, code-execution permissions, possible Docker usage, Kaggle authentication for some tasks, and API keys for supported models.",
+  "cost_and_runtime": "Cost and runtime depend on the number of experiment runs, chosen model APIs, dataset preparation, and available compute; the repository does not publish a single fixed budget [uncertain].",
+  "scientific_integrity_risks": [
+    "benchmark overfitting",
+    "training-data leakage on public tasks",
+    "misleading comparisons when environment setup differs",
+    "overgeneralizing from 13 tasks to all ML research"
+  ],
+  "security_and_safety_risks": [
+    "agents modify and execute code",
+    "external data downloads and Kaggle access increase operational risk",
+    "API-key handling and container isolation must be managed carefully"
+  ],
+  "mitigations": [
+    "Docker and sandbox recommendation",
+    "explicit setup instructions",
+    "starter-code baselines",
+    "public logs and scripts for inspection"
+  ],
+  "policy_relevance": "Relevant to evaluation of autonomous experimentation systems, reproducibility of agent benchmarks, and governance of code-executing research agents.",
+  "uncertain": [
+    "autonomy_level",
+    "dataset_url",
+    "leaderboard_url",
+    "predecessors",
+    "evaluated_by",
+    "supersession_notes",
+    "cost_and_runtime"
+  ]
+}

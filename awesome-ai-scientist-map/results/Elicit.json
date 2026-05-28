@@ -1,0 +1,188 @@
+{
+  "id": "elicit",
+  "name": "Elicit",
+  "aliases": [
+    "Elicit AI",
+    "Elicit Systematic Review"
+  ],
+  "organization": "Elicit",
+  "first_public_release": "2021-08-31",
+  "current_status": "Active commercial research product with web app, enterprise systematic-review workflows, and a public API.",
+  "category": "literature_review_product",
+  "type": [
+    "product",
+    "infrastructure"
+  ],
+  "domains": [
+    "general_academic_research",
+    "systematic_reviews"
+  ],
+  "positioning": "An AI research assistant and literature-review platform focused on paper search, evidence extraction, and synthesis.",
+  "boundary_notes": "Included because Elicit directly supports literature review and systematic review workflows that are central to AI-assisted scientific research, even though it is not a full end-to-end autonomous scientist.",
+  "lifecycle_coverage": [
+    "paper_search",
+    "screening",
+    "data_extraction",
+    "literature_synthesis",
+    "report_generation",
+    "monitoring_new_literature"
+  ],
+  "tool_access": [
+    "Search over Elicit corpus",
+    "PubMed search",
+    "ClinicalTrials search",
+    "PDF and full-text screening",
+    "Structured extraction tables",
+    "Report generation",
+    "API for reports and systematic reviews"
+  ],
+  "execution_environment": "Hosted Elicit product and API-backed long-running report or systematic-review jobs.",
+  "artifact_outputs": [
+    "Paper lists",
+    "Screening recommendations",
+    "Extraction tables",
+    "Sentence-level citations and quotes",
+    "Systematic review reports",
+    "Saved libraries and alerts"
+  ],
+  "human_roles": [
+    "Researchers define the research question and review scope",
+    "Users inspect and override screening decisions",
+    "Users verify extracted data against source quotes, tables, or figures",
+    "Teams can use Elicit as one reviewer or a second reviewer in dual-review workflows"
+  ],
+  "autonomy_level": "L1",
+  "autonomy_rationale": "Elicit automates bounded parts of literature and systematic-review workflows, but the user still defines the protocol, reviews or overrides key screening and extraction outputs, and owns the final research judgment.",
+  "iteration_loop": "Limited and workflow-bounded. Elicit can search, screen, extract, and synthesize within a configured review pipeline, but it is not presented as an open-ended autonomous agent that independently broadens its mission.",
+  "stopping_and_guardrails": "Systematic-review workflows are structured around explicit criteria, extraction questions, citation-backed verification, plan-specific limits, and user review of outputs. Enterprise gating and plan limits constrain the most advanced workflow stages.",
+  "known_failure_modes": "Official evaluations note that misses can arise from poorly generated screening criteria, search recall limits, extraction errors, and the difficulty of exactly reproducing heterogeneous published systematic reviews.",
+  "benchmarks_used": [
+    "Internal and external systematic-review evaluations reported by Elicit",
+    "Cochrane-review replication-style evaluations",
+    "AstaBench literature understanding tasks such as ScholarQA-CS2"
+  ],
+  "metrics": [
+    "Search recall",
+    "Abstract-screening sensitivity and specificity",
+    "Full-text-screening sensitivity and specificity",
+    "Extraction accuracy",
+    "Time savings",
+    "Hallucination rate in extraction and report workflows"
+  ],
+  "baselines": [
+    "Published systematic reviews",
+    "Manual human extraction gold standards",
+    "Independent external evaluation teams",
+    "Consensus search engine as an irrelevant-paper source in one evaluation",
+    "Other literature tools evaluated in AstaBench"
+  ],
+  "validation_strength": "Benchmarked and externally case-studied, with product-specific evaluations reported by the company and evidence of use by research organizations.",
+  "evaluation_limitations": "Elicit notes that published reviews are heterogeneous and not always reproducible from the paper alone, so exact replication is difficult. Some evaluation claims come from company-run studies or partner case studies rather than peer-reviewed product papers.",
+  "paper_url": "",
+  "code_url": "",
+  "dataset_url": "",
+  "product_url": "https://elicit.com/",
+  "leaderboard_url": "",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [],
+  "successors": [],
+  "components": [
+    "Paper Search",
+    "Systematic Review",
+    "Screening",
+    "Data Extraction",
+    "Reports",
+    "Library",
+    "Alerts",
+    "API",
+    "Research Agents"
+  ],
+  "evaluated_by": [
+    "AstaBench literature tasks"
+  ],
+  "evaluates": [],
+  "competes_with_or_complements": [
+    "Consensus",
+    "Asta Scholar QA",
+    "SciSpace Deep Review",
+    "OpenAI Deep Research",
+    "Perplexity"
+  ],
+  "history": {
+    "milestones": [
+      "2021-08-31: Elicit first launched its literature-review workflow.",
+      "2024-02-28: Elicit reported it had been launching user-facing features weekly since September 2021.",
+      "2025-02: Elicit introduced Systematic Review workflows.",
+      "2025-03-18: Elicit published an evaluation of its Systematic Review workflow.",
+      "2026-03-03: Elicit introduced the public API.",
+      "2026-05-06: Elicit announced PRISMA 2020 support and published larger-scale systematic-review evaluation results."
+    ]
+  },
+  "milestones": [
+    "2021-08-31: Elicit first launched its literature-review workflow.",
+    "2024-02-28: Elicit reported it had been launching user-facing features weekly since September 2021.",
+    "2025-02: Elicit introduced Systematic Review workflows.",
+    "2025-03-18: Elicit published an evaluation of its Systematic Review workflow.",
+    "2026-03-03: Elicit introduced the public API.",
+    "2026-05-06: Elicit announced PRISMA 2020 support and published larger-scale systematic-review evaluation results."
+  ],
+  "version_history": [
+    "Started as a literature-review workflow in 2021.",
+    "Expanded into structured reports and systematic-review workflows in 2024-2025.",
+    "Added keyword search, clinical-trials coverage, research agents, and API access in 2025-2026.",
+    "Current systematic-review workflow supports PRISMA 2020-oriented documentation and dual review."
+  ],
+  "adoption_signals": [
+    "Elicit says it is trusted by top research institutions.",
+    "The company reported over 200,000 monthly users by early 2024.",
+    "Public case studies include Formation Bio, VDI/VDE, and Oxford PharmaGenesis.",
+    "The API exposes reports and systematic-review workflows for programmatic use."
+  ],
+  "supersession_notes": "Not superseded. The product is expanding from literature review into systematic-review, API, and broader research-agent workflows.",
+  "real_world_applications": [
+    "Academic literature review",
+    "Systematic reviews",
+    "Evidence synthesis for policy briefs",
+    "Clinical and pharma landscape reviews",
+    "Structured extraction from many papers",
+    "Monitoring new literature with alerts"
+  ],
+  "users": [
+    "Academic researchers",
+    "Systematic-review specialists",
+    "Policy researchers",
+    "Pharma and medtech teams",
+    "Research operations teams",
+    "Students"
+  ],
+  "deployment_constraints": [
+    "Advanced systematic-review workflow availability depends on plan tier",
+    "The systematic-review API requires Enterprise",
+    "Plan limits cap columns and search results",
+    "Figure extraction is not available on all plans",
+    "Long-running jobs require polling or watching progress in the product"
+  ],
+  "cost_and_runtime": "API reports are asynchronous jobs that typically take 5 to 15 minutes. Systematic reviews are long-running and plan-limited, with higher tiers supporting up to 40,000 titles, abstracts, and full texts per review.",
+  "scientific_integrity_risks": [
+    "Missed relevant studies due to imperfect recall",
+    "Improperly generated screening criteria",
+    "Extraction errors or hallucinated synthesis",
+    "Over-reliance on AI recommendations without human verification",
+    "Difficulty reproducing published reviews exactly"
+  ],
+  "security_and_safety_risks": [
+    "Exposure of sensitive unpublished materials if uploaded carelessly",
+    "Misuse of automated evidence synthesis in high-stakes decisions without review",
+    "Incorrect extraction propagating into downstream policy or clinical work"
+  ],
+  "mitigations": [
+    "Sentence-level citations and supporting quotes",
+    "Traceable and auditable extraction workflow",
+    "Editable screening and extraction criteria",
+    "Dual-review support",
+    "Explicit plan limits and staged workflow structure"
+  ],
+  "policy_relevance": "Relevant to evidence-synthesis governance, reproducibility standards such as PRISMA 2020, responsible use of AI in policy and health research, and human-verification expectations for literature-review automation.",
+  "uncertain": []
+}

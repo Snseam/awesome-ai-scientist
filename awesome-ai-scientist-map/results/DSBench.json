@@ -1,0 +1,176 @@
+{
+  "id": "dsbench",
+  "name": "DSBench",
+  "aliases": [
+    "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?"
+  ],
+  "organization": "Tencent AI Lab, Seattle with University of Texas at Dallas and University of Southern California",
+  "first_public_release": "2024-09-12",
+  "current_status": "Active public benchmark with an arXiv paper, public repository, and ICLR 2025 acceptance; the repository also notes later reuse in OpenAI's ChatGPT agent evaluation.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "codebase"
+  ],
+  "domains": [
+    "data science",
+    "data analysis",
+    "data modeling",
+    "tabular reasoning",
+    "competition-style spreadsheet and Kaggle workflows"
+  ],
+  "positioning": "Benchmark for realistic data science agents that must analyze files, reason over multimodal context, and solve end-to-end modeling tasks.",
+  "boundary_notes": "Included because DSBench evaluates realistic data science workflows rather than narrow code completion. It covers long contexts, tables, images, data files, and full modeling pipelines with executable evaluation.",
+  "lifecycle_coverage": [
+    "task understanding",
+    "data inspection",
+    "multimodal context interpretation",
+    "data analysis",
+    "feature engineering and modeling",
+    "code execution",
+    "submission generation",
+    "performance evaluation"
+  ],
+  "tool_access": [
+    "local data files",
+    "Python packages",
+    "local shell or code execution through agent frameworks",
+    "OpenAI Assistant Code Interpreter for one baseline",
+    "images and tables embedded in tasks"
+  ],
+  "execution_environment": "Local benchmark evaluation over repository-provided data analysis and data modeling tasks, with support for model-only baselines, AutoGen agents, and Code Interpreter-style baselines.",
+  "artifact_outputs": [
+    "question answers",
+    "submission files",
+    "task-level accuracy scores",
+    "competition-level accuracy scores",
+    "relative performance gap scores",
+    "cost and inference-time measurements"
+  ],
+  "human_roles": "Benchmark authors curate tasks and evaluation scripts. Users install dependencies, configure APIs or model frameworks, run the benchmark, and interpret the reported scores.",
+  "autonomy_level": "L1-L3 [uncertain]",
+  "autonomy_rationale": "DSBench evaluates both plain models and tool-using agents, but all systems stay within fixed benchmark tasks, fixed data files, and executable evaluation scripts rather than acting autonomously in the open world.",
+  "iteration_loop": "Agent baselines such as AutoGen revise code over multiple turns and rerun analyses, while model-only baselines operate in more limited bounded interactions.",
+  "stopping_and_guardrails": "The benchmark constrains work through predefined tasks, executable evaluation, local file-based inputs, explicit environment setup, and a non-commercial-use disclaimer for the released dataset.",
+  "known_failure_modes": [
+    "misunderstanding long or multimodal task context",
+    "failing to identify the right tables or files",
+    "producing invalid submission files for modeling tasks",
+    "high cost or long runtime for stronger agent baselines",
+    "weak performance on harder or newer competition tasks"
+  ],
+  "benchmarks_used": "DSBench itself across 466 data-analysis tasks and 74 data-modeling tasks.",
+  "metrics": [
+    "task-level accuracy for data analysis",
+    "competition-level accuracy for data analysis",
+    "task success rate for data modeling",
+    "Relative Performance Gap (RPG) for data modeling",
+    "cost",
+    "inference time"
+  ],
+  "baselines": [
+    "model-only baselines including LLaVA, Llama 3, GPT-3.5, GPT-4, GPT-4o, GPT-4o mini, Claude, and Gemini",
+    "AutoGen-based agents",
+    "OpenAI Code Interpreter baselines",
+    "human baseline"
+  ],
+  "validation_strength": "Peer-reviewed benchmark with public code, executable evaluation, quantitative baselines, and human comparison.",
+  "evaluation_limitations": "Data-modeling tasks use an internal 8:2 train-test split because original Kaggle test labels are inaccessible. Data-analysis correctness relies on semantic comparison with an LLM-based judge, and the benchmark is limited to tasks sourced from ModelOff and Kaggle-style competitions.",
+  "paper_url": "https://arxiv.org/abs/2409.07703",
+  "code_url": "https://github.com/LiqiangJing/DSBench",
+  "dataset_url": "https://github.com/LiqiangJing/DSBench",
+  "product_url": "https://liqiangjing.github.io/dsbench.github.io/",
+  "leaderboard_url": "No standalone official leaderboard was identified in the consulted primary sources [uncertain]",
+  "source_quality": "Primary sources: official arXiv paper and official GitHub repository.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": "[uncertain] No explicit predecessor benchmark is named in the consulted primary sources.",
+  "successors": "[uncertain] No formal successor benchmark was identified in the consulted primary sources.",
+  "components": [
+    "466 data-analysis tasks",
+    "74 data-modeling tasks",
+    "ModelOff-derived analysis set",
+    "Kaggle-derived modeling set",
+    "executable evaluation scripts",
+    "Relative Performance Gap metric",
+    "AutoGen baseline setup",
+    "Code Interpreter baseline setup",
+    "data_analysis and data_modeling task directories"
+  ],
+  "evaluated_by": "ICLR 2025 peer review and later downstream reuse in OpenAI's ChatGPT agent evaluation [uncertain].",
+  "evaluates": [
+    "data science",
+    "data analysis",
+    "data modeling",
+    "spreadsheet and Kaggle-style task solving",
+    "multimodal file-based reasoning"
+  ],
+  "competes_with_or_complements": [
+    "DiscoveryBench",
+    "MLE-bench",
+    "MLAgentBench",
+    "DS-1000",
+    "DSEval"
+  ],
+  "milestones": [
+    "2024-09-12: arXiv v1 released.",
+    "2025-01-22: repository announced ICLR 2025 acceptance.",
+    "2025-02-22: arXiv v2 released.",
+    "2025-04-11: arXiv v3 released.",
+    "2025-07-17: repository noted use in OpenAI's ChatGPT agent evaluation."
+  ],
+  "version_history": [
+    "arXiv v1 on 2024-09-12",
+    "arXiv v2 on 2025-02-22",
+    "arXiv v3 on 2025-04-11",
+    "public repository continues to host benchmark code, task data, and evaluation instructions"
+  ],
+  "adoption_signals": [
+    "117 GitHub stars at verification time",
+    "ICLR 2025 acceptance",
+    "public repository",
+    "later reuse in OpenAI's ChatGPT agent evaluation as noted by the repository"
+  ],
+  "supersession_notes": "No supersession was identified in the consulted primary sources.",
+  "real_world_applications": [
+    "benchmarking autonomous data science agents",
+    "testing multimodal spreadsheet and table reasoning",
+    "evaluating end-to-end model-building assistants",
+    "comparing agent frameworks for Kaggle-like workflows"
+  ],
+  "users": [
+    "data-science agent researchers",
+    "benchmark designers",
+    "AI systems researchers",
+    "developers of notebook and analytics agents"
+  ],
+  "deployment_constraints": "Requires local benchmark setup, Python dependencies, access to task files, and possibly API-based model frameworks such as AutoGen or Code Interpreter-style baselines. The dataset is released for research and educational use only.",
+  "cost_and_runtime": "The paper reports benchmark cost and inference time as explicit metrics, and stronger agent baselines can be materially slower and more expensive than model-only baselines. Exact practical cost depends on the chosen models and frameworks [uncertain].",
+  "scientific_integrity_risks": [
+    "benchmark overfitting to public competition tasks",
+    "data leakage from well-known Kaggle or ModelOff tasks",
+    "judge errors in semantic evaluation for data-analysis answers",
+    "overgeneralizing benchmark performance to all real-world data science"
+  ],
+  "security_and_safety_risks": [
+    "agent frameworks may execute generated code locally",
+    "uploaded data to hosted code-interpreter tools may raise privacy concerns",
+    "competition data licensing or compliance issues if reused outside the benchmark rules"
+  ],
+  "mitigations": [
+    "executable evaluation scripts",
+    "explicit benchmark task definitions",
+    "held-out split creation for modeling tasks",
+    "public baseline reporting",
+    "non-commercial-use and compliance disclaimers in the repository"
+  ],
+  "policy_relevance": "DSBench is relevant to governance of code-executing agents because it measures realistic data-centric work with files, tables, and modeling loops rather than toy code tasks, helping clarify current limits of practical data science automation.",
+  "uncertain": [
+    "autonomy_level",
+    "leaderboard_url",
+    "predecessors",
+    "successors",
+    "evaluated_by",
+    "cost_and_runtime"
+  ]
+}

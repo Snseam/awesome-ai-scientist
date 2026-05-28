@@ -1,0 +1,190 @@
+{
+  "id": "mle_bench",
+  "name": "MLE-bench",
+  "aliases": [
+    "MLE-bench",
+    "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering"
+  ],
+  "organization": "OpenAI",
+  "first_public_release": "2024-10-09",
+  "current_status": "Active open-source benchmark and codebase; the public leaderboard remains visible, but new leaderboard submissions were paused on 2026-04-24 while the maintainers work on a fairer comparison process.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "codebase"
+  ],
+  "domains": [
+    "machine learning engineering",
+    "Kaggle-style competitions",
+    "applied machine learning"
+  ],
+  "positioning": "Benchmark for evaluating AI agents on end-to-end machine learning engineering competition tasks.",
+  "boundary_notes": "Included because it evaluates autonomous ML engineering work such as data preparation, model training, experiment execution, and benchmark grading. It is not a general research assistant or wet-lab scientist system.",
+  "lifecycle_coverage": [
+    "dataset preparation",
+    "feature engineering [uncertain]",
+    "model training",
+    "experiment execution",
+    "submission generation",
+    "benchmark grading",
+    "result analysis"
+  ],
+  "tool_access": [
+    "shell",
+    "Python execution",
+    "Docker environment",
+    "benchmark grading server",
+    "Kaggle-style datasets"
+  ],
+  "execution_environment": "Benchmark-hosted ML engineering environment executed through the MLE-bench codebase, typically in a Linux Docker setup with benchmark-provided datasets and grading tools.",
+  "artifact_outputs": [
+    "competition submissions",
+    "grading reports",
+    "agent run logs",
+    "leaderboard scores"
+  ],
+  "human_roles": [
+    "Humans choose the agent, model, and resource settings.",
+    "Humans review leaderboard submissions and grading reports.",
+    "Humans interpret benchmark results and fairness caveats."
+  ],
+  "autonomy_level": "L2-L3",
+  "autonomy_rationale": "Tasks require multi-step autonomous coding, data preparation, model training, and experiment iteration over long runtimes, but humans still choose goals, resources, and submission settings. The benchmark measures substantial bounded autonomy rather than fully self-directed research.",
+  "iteration_loop": "Yes. Agents can iteratively train models, inspect results, revise code, and resubmit within the allowed runtime.",
+  "stopping_and_guardrails": [
+    "Canonical benchmark settings use a 24-hour runtime, 36 vCPUs, 440 GB RAM, and one 24 GB A10 GPU.",
+    "Benchmark code provides a grading server and structured submission workflow.",
+    "Agents run inside a provided Docker-based environment.",
+    "Competition rules must be accepted before some local tests run."
+  ],
+  "known_failure_modes": [
+    "Benchmark contamination from pre-training on public Kaggle material.",
+    "Benchmark overfitting to specific competitions or leaderboard quirks.",
+    "Rule violations or plagiarism in generated submissions.",
+    "High variance across seeds and resource settings.",
+    "Known issues in some benchmark competitions pending a future v2 release."
+  ],
+  "benchmarks_used": [
+    "75 Kaggle competitions in the full benchmark.",
+    "Low, Medium, High, and All splits in the official evaluation setup.",
+    "Human baselines derived from public Kaggle leaderboards."
+  ],
+  "metrics": [
+    "Any Medal (%) reported across Low, Medium, High, and All splits.",
+    "Mean plus standard error across repeated runs.",
+    "Paper headline result: bronze-medal-or-better performance in 16.9% of competitions for the best reported setup."
+  ],
+  "baselines": [
+    "AIDE with o1-preview.",
+    "AIDE with gpt-4o-2024-08-06.",
+    "AIDE with claude-3-5-sonnet-20240620.",
+    "OpenHands with gpt-4o-2024-08-06.",
+    "MLAB with gpt-4o-2024-08-06.",
+    "Human comparison via public Kaggle leaderboards."
+  ],
+  "validation_strength": "Benchmarked with a public paper, open-source code, and an active public leaderboard. Venue status beyond the arXiv and official OpenAI release is [uncertain].",
+  "evaluation_limitations": [
+    "Full evaluation is expensive and data-heavy: about 3.3 TB across 75 competitions.",
+    "Performance is sensitive to runtime and compute budgets.",
+    "The authors explicitly study contamination risk from pre-training.",
+    "The repository documents known competition issues and plans a batched v2 fix release.",
+    "As of 2026-04-24, leaderboard submissions are paused while fairness and comparability are revised."
+  ],
+  "paper_url": "https://arxiv.org/abs/2410.07095",
+  "code_url": "https://github.com/openai/mle-bench/",
+  "dataset_url": "[uncertain] No single standalone dataset landing page was identified; the benchmark data is distributed through the official repository and competition preparation pipeline.",
+  "product_url": "https://openai.com/index/mle-bench/",
+  "leaderboard_url": "https://github.com/openai/mle-bench/#leaderboard",
+  "source_quality": "Primary sources: arXiv paper, official OpenAI page, and official GitHub repository.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "Kaggle public competitions and leaderboards",
+    "Earlier agent scaffold evaluations such as AIDE [uncertain]"
+  ],
+  "successors": [
+    "Planned MLE-bench v2 release on openai/frontier-evals."
+  ],
+  "components": [
+    "75-competition benchmark dataset",
+    "Low-complexity Lite split of 22 competitions",
+    "Docker base environment",
+    "grading server",
+    "leaderboard aggregation scripts",
+    "rule-violation detector",
+    "plagiarism detector",
+    "evaluated agent implementations"
+  ],
+  "evaluated_by": [
+    "Community leaderboard submissions in the official repository."
+  ],
+  "evaluates": [
+    "ML engineering",
+    "Kaggle-style competition performance",
+    "agent scaffolds",
+    "resource scaling behavior",
+    "pre-training contamination sensitivity"
+  ],
+  "competes_with_or_complements": [
+    "PaperBench",
+    "CORE-Bench",
+    "DiscoveryBench"
+  ],
+  "milestones": [
+    "2024-10-09: arXiv preprint submitted.",
+    "2024-10-10: official OpenAI research page published.",
+    "2025-02-26: arXiv v6 released.",
+    "2026-04-24: leaderboard paused for new submissions pending a fairer comparison process."
+  ],
+  "version_history": [
+    "v1 benchmark released with the paper and GitHub repository in October 2024.",
+    "Repository notes a planned v2 release on openai/frontier-evals with versioned leaderboard results."
+  ],
+  "adoption_signals": [
+    "GitHub repository shows about 1.5k stars and 249 forks as of 2026-05-28.",
+    "Multiple external agent submissions appear on the public leaderboard."
+  ],
+  "supersession_notes": "The benchmark is still active, but the repository signals a future v2 with batched competition fixes and explicit leaderboard versioning.",
+  "real_world_applications": [
+    "Evaluating autonomous ML engineering agents.",
+    "Comparing scaffold and model choices for Kaggle-style workflows.",
+    "Stress-testing long-horizon coding agents on realistic ML tasks."
+  ],
+  "users": [
+    "Agent researchers",
+    "ML engineers",
+    "benchmark designers",
+    "foundation model evaluation teams"
+  ],
+  "deployment_constraints": [
+    "Full benchmark evaluation is storage- and compute-intensive.",
+    "Canonical setup assumes Linux amd64 Docker support.",
+    "Some runs require GPU access.",
+    "Fair comparison depends on reporting runtime, hardware, seeds, and grading reports."
+  ],
+  "cost_and_runtime": "The canonical benchmark uses 24 hours per run. The Low split reduces total dataset size to about 158 GB, while the full 75-competition benchmark is about 3.3 TB and is explicitly described as expensive.",
+  "scientific_integrity_risks": [
+    "Benchmark gaming against public leaderboards.",
+    "Plagiarism or leakage from public competition artifacts.",
+    "Contamination from model pre-training on benchmark-relevant materials.",
+    "Overinterpreting leaderboard gains as general scientific autonomy."
+  ],
+  "security_and_safety_risks": [
+    "Executing agent-written code in a heavy ML environment.",
+    "Potential misuse of external compute or data resources.",
+    "Unsafe shell or package installation behavior inside benchmark runs."
+  ],
+  "mitigations": [
+    "Docker-based execution environment.",
+    "Leaderboard submission review and grading report requirements.",
+    "Included rule-violation and plagiarism detectors.",
+    "Explicit reporting of hardware, runtime, seeds, and split-specific scores."
+  ],
+  "policy_relevance": "Relevant to frontier-model evaluation, benchmark governance, contamination auditing, and claims about autonomous ML engineering capability.",
+  "uncertain": [
+    "lifecycle_coverage",
+    "validation_strength",
+    "dataset_url",
+    "predecessors"
+  ]
+}

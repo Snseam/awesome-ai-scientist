@@ -1,0 +1,480 @@
+topic: "Awesome AI Scientist"
+subtitle: "Verified ecosystem map of AI Scientist systems, papers, benchmarks, products, and open-source implementations"
+generated_at: "2026-05-28"
+time_range:
+  primary: "2023-01-01 to 2026-05-28"
+  note: "Include older lineage only when it directly explains current AI Scientist systems."
+scope:
+  goal: "Map systems that automate or strongly augment scientific research workflows, linking papers to code, products, datasets, benchmarks, and applications."
+  include:
+    - "End-to-end AI Scientist systems"
+    - "Domain-specific autonomous discovery agents"
+    - "Research synthesis and deep-research products"
+    - "Benchmarks for research agents, scientific coding, ML experimentation, reproducibility, and discovery"
+    - "Open-source implementations and datasets"
+  exclude:
+    - "General chatbots without research-specific workflows"
+    - "Single-task scientific foundation models unless connected to agentic discovery workflows"
+taxonomy:
+  autonomy_levels:
+    L0: "Reference tool: retrieves, summarizes, or analyzes under direct user control."
+    L1: "Task assistant: completes bounded research subtasks with human steering."
+    L2: "Workflow agent: chains search, coding, analysis, and writing across a defined task."
+    L3: "Semi-autonomous research agent: proposes hypotheses and experiments, but needs human gating or external validation."
+    L4: "End-to-end autonomous scientist: ideates, runs experiments, analyzes, writes, and self-evaluates in a bounded domain."
+    L5: "Open-ended autonomous scientist with real-world intervention and durable safety controls."
+  landscape_axes:
+    - "Scientific lifecycle coverage"
+    - "Domain scope"
+    - "Tool and environment access"
+    - "Evidence grounding and citation quality"
+    - "Experiment execution and reproducibility"
+    - "Peer review or benchmark validation"
+    - "Safety, sandboxing, and governance"
+execution:
+  batch_size: 6
+  items_per_agent: 3
+  output_dir: "./results"
+  recommended_deep_phase:
+    - "Assign one agent per taxonomy cluster."
+    - "Require at least one primary source per paper, codebase, product, and benchmark claim."
+    - "Record uncertainty explicitly instead of filling gaps from secondary summaries."
+items:
+  - id: sakana_ai_scientist_v1
+    name: "The AI Scientist"
+    category: "end_to_end_ai_scientist"
+    type: ["paper", "open_source_system"]
+    organization: "Sakana AI, UBC, Oxford, Vector Institute"
+    first_public_release: "2024-08"
+    autonomy_level: "L4"
+    lifecycle_coverage: ["idea_generation", "code_writing", "experiment_execution", "visualization", "paper_writing", "automated_review"]
+    domains: ["machine_learning"]
+    paper_url: "https://arxiv.org/abs/2408.06292"
+    code_url: "https://github.com/SakanaAI/AI-Scientist"
+    product_url: "https://sakana.ai/ai-scientist"
+    relationships: ["predecessor_of:sakana_ai_scientist_v2", "evaluated_by:automated_reviewer_internal"]
+    verification_notes: "Primary paper and Sakana post state that the system generates ideas, code, experiments, figures, papers, and simulated reviews."
+
+  - id: sakana_ai_scientist_v2
+    name: "The AI Scientist-v2"
+    category: "end_to_end_ai_scientist"
+    type: ["paper", "open_source_system"]
+    organization: "Sakana AI and collaborators"
+    first_public_release: "2025-04"
+    autonomy_level: "L4"
+    lifecycle_coverage: ["hypothesis_generation", "experiment_design", "experiment_execution", "data_analysis", "figure_refinement", "paper_writing", "peer_review_submission"]
+    domains: ["machine_learning"]
+    paper_url: "https://arxiv.org/abs/2504.08066"
+    code_url: "https://github.com/SakanaAI/AI-Scientist-v2"
+    relationships: ["successor_of:sakana_ai_scientist_v1", "uses:agentic_tree_search", "uses:experiment_manager_agent"]
+    verification_notes: "Primary paper and repository describe removal of human-authored templates and an ICLR 2025 workshop submission result."
+
+  - id: google_ai_co_scientist
+    name: "AI Co-Scientist / Co-Scientist"
+    category: "hypothesis_and_research_planning_system"
+    type: ["paper", "product_research_system"]
+    organization: "Google Research / Google DeepMind"
+    first_public_release: "2025-02"
+    autonomy_level: "L3"
+    lifecycle_coverage: ["literature_reasoning", "hypothesis_generation", "research_plan_generation", "self_evaluation", "scientist_collaboration"]
+    domains: ["biomedicine", "biology", "general_science"]
+    paper_url: "https://www.nature.com/articles/s41586-026-10644-y"
+    product_url: "https://blog.google/feed/google-research-ai-co-scientist/"
+    relationships: ["gemini_based", "human_in_the_loop_validation"]
+    verification_notes: "Google launch post says Gemini-based system aids hypothesis and research-plan generation; Nature article reports real-world validations."
+
+  - id: agent_laboratory
+    name: "Agent Laboratory"
+    category: "research_workflow_agent"
+    type: ["paper", "open_source_system"]
+    organization: "Academic open-source project"
+    first_public_release: "2025-01"
+    autonomy_level: "L3"
+    lifecycle_coverage: ["literature_review", "experiment_planning", "code_execution", "paper_drafting"]
+    domains: ["machine_learning", "general_computational_research"]
+    paper_url: "https://arxiv.org/abs/2501.04227"
+    code_url: "https://github.com/SamuelSchmidgall/AgentLaboratory"
+    relationships: ["adjacent_to:sakana_ai_scientist_v1"]
+    verification_notes: "Paper describes an autonomous LLM framework for completing the research process as an assistant."
+
+  - id: futurehouse_robin
+    name: "Robin"
+    category: "domain_scientific_discovery_agent"
+    type: ["paper", "open_source_system", "research_demo"]
+    organization: "FutureHouse"
+    first_public_release: "2025-05"
+    autonomy_level: "L3"
+    lifecycle_coverage: ["background_research", "hypothesis_generation", "experiment_proposal", "data_analysis", "hypothesis_update"]
+    domains: ["biology", "biomedicine"]
+    paper_url: "https://arxiv.org/abs/2505.13400"
+    code_url: "https://github.com/Future-House/robin"
+    product_url: "https://www.futurehouse.org/research-announcements/demonstrating-end-to-end-scientific-discovery-with-robin-a-multi-agent-system"
+    relationships: ["builds_on:futurehouse_platform_agents", "uses:specialized_literature_and_analysis_agents"]
+    verification_notes: "FutureHouse announcement states Robin integrates literature search and data analysis agents and open-sources code and trajectories."
+
+  - id: futurehouse_platform_agents
+    name: "FutureHouse Platform Agents"
+    category: "science_product_suite"
+    type: ["product", "agent_suite"]
+    organization: "FutureHouse"
+    first_public_release: "2025-05"
+    autonomy_level: "L2"
+    lifecycle_coverage: ["literature_search", "literature_synthesis", "research_gap_analysis", "chemistry_planning", "data_analysis"]
+    domains: ["biology", "chemistry", "biomedicine"]
+    product_url: "https://www.futurehouse.org/research-announcements/launching-futurehouse-platform-ai-agents"
+    relationships: ["components:crow_falcon_owl_phoenix_finch", "feeds_into:futurehouse_robin"]
+    verification_notes: "Launch post describes Crow, Falcon, Owl, Phoenix, and Finch as specialized scientific agents."
+
+  - id: coscientist
+    name: "Coscientist"
+    category: "robotic_and_lab_automation_agent"
+    type: ["paper", "open_source_code"]
+    organization: "Carnegie Mellon University / Gomes Group"
+    first_public_release: "2023-12"
+    autonomy_level: "L4"
+    lifecycle_coverage: ["synthesis_planning", "hardware_documentation_search", "cloud_lab_execution", "liquid_handler_control", "experiment_optimization"]
+    domains: ["chemistry"]
+    paper_url: "https://www.nature.com/articles/s41586-023-06792-0"
+    code_url: "https://github.com/gomesgroup/coscientist"
+    relationships: ["related_to:self_driving_labs", "related_to:chemcrow"]
+    verification_notes: "Nature article reports GPT-4 based system autonomously plans and performs chemistry experiments across six task types."
+
+  - id: chemcrow
+    name: "ChemCrow"
+    category: "domain_tool_augmented_agent"
+    type: ["paper", "open_source_system"]
+    organization: "University of Rochester White Lab and collaborators"
+    first_public_release: "2023-04"
+    autonomy_level: "L2"
+    lifecycle_coverage: ["chemistry_question_answering", "synthesis_planning", "tool_use", "safety_checks"]
+    domains: ["chemistry"]
+    paper_url: "https://arxiv.org/abs/2304.05376"
+    code_url: "https://github.com/ur-whitelab/chemcrow-public"
+    relationships: ["predecessor_or_component_style_for:futurehouse_phoenix", "related_to:coscientist"]
+    verification_notes: "Nature Machine Intelligence article and repository report an open-source chemistry-tool agent."
+
+  - id: alphaevolve
+    name: "AlphaEvolve"
+    category: "algorithm_discovery_agent"
+    type: ["research_system", "product_preview"]
+    organization: "Google DeepMind / Google Cloud"
+    first_public_release: "2025-05"
+    autonomy_level: "L3"
+    lifecycle_coverage: ["code_generation", "evolutionary_search", "program_evaluation", "algorithm_optimization"]
+    domains: ["algorithms", "mathematics", "systems_optimization", "AI_infrastructure"]
+    product_url: "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+    relationships: ["lineage:alphadev_funsearch_alphatensor", "related_to:open_evolve_implementations"]
+    verification_notes: "DeepMind describes AlphaEvolve as a Gemini-powered evolutionary coding agent for algorithm discovery and optimization."
+
+  - id: sciagents
+    name: "SciAgents"
+    category: "domain_scientific_discovery_agent"
+    type: ["paper", "research_system"]
+    organization: "MIT and collaborators"
+    first_public_release: "2024-09"
+    autonomy_level: "L3"
+    lifecycle_coverage: ["knowledge_graph_reasoning", "literature_retrieval", "hypothesis_generation", "multi_agent_critique"]
+    domains: ["materials_science", "bioinspired_materials"]
+    paper_url: "https://arxiv.org/abs/2409.05556"
+    relationships: ["uses:ontological_knowledge_graphs", "related_to:alab_gnome_materials_lineage"]
+    verification_notes: "Primary paper describes multi-agent intelligent graph reasoning for automated scientific discovery."
+
+  - id: alab_gnome_materials_lineage
+    name: "A-Lab / GNoME Materials Discovery Lineage"
+    category: "robotic_and_lab_automation_agent"
+    type: ["paper", "dataset", "autonomous_lab_system"]
+    organization: "Lawrence Berkeley National Laboratory, UC Berkeley, Google DeepMind, and collaborators"
+    first_public_release: "2023-11"
+    autonomy_level: "L4"
+    lifecycle_coverage: ["materials_candidate_generation", "synthesis_planning", "robotic_synthesis", "characterization", "autonomous_decision_making"]
+    domains: ["materials_science", "inorganic_chemistry"]
+    paper_url: "https://www.nature.com/articles/s41586-023-06734-w"
+    related_paper_url: "https://www.nature.com/articles/s41586-023-06735-9"
+    relationships: ["related_to:sciagents", "related_to:coscientist", "uses_or_intersects:GNoME_materials_predictions"]
+    verification_notes: "Nature papers report autonomous materials synthesis and large-scale learned materials discovery; include controversy and reproduction notes in deep phase."
+
+  - id: deep_scientist
+    name: "DeepScientist"
+    category: "frontier_claimed_ai_scientist_system"
+    type: ["paper", "planned_open_source"]
+    organization: "ResearAI"
+    first_public_release: "2025-09"
+    autonomy_level: "L4"
+    lifecycle_coverage: ["challenge_framing", "hypothesis_generation", "experimentation", "frontier_progression"]
+    domains: ["machine_learning", "scientific_tasks"]
+    paper_url: "https://arxiv.org/abs/2509.26603"
+    code_url: "https://github.com/ResearAI/DeepScientist/"
+    relationships: ["extends:ai_scientist_system_family"]
+    verification_notes: "Treat as emerging until repository and logs are verified in deep phase."
+
+  - id: asta
+    name: "Asta"
+    category: "science_agent_platform"
+    type: ["product_research_platform", "benchmark_suite"]
+    organization: "Allen Institute for AI"
+    first_public_release: "2025"
+    autonomy_level: "L2"
+    lifecycle_coverage: ["paper_finding", "scholarly_qa", "scientific_tool_use", "benchmarking"]
+    domains: ["general_science"]
+    product_url: "https://allenai.org/asta"
+    benchmark_url: "https://arxiv.org/abs/2510.21652"
+    code_url: "https://github.com/allenai/agent-baselines"
+    relationships: ["includes:astabench", "provides:agent_baselines"]
+    verification_notes: "AllenAI describes Asta as agents, benchmarks, and resources for scientific AI."
+
+  - id: openai_deep_research
+    name: "OpenAI Deep Research"
+    category: "deep_research_product"
+    type: ["product", "agent"]
+    organization: "OpenAI"
+    first_public_release: "2025-02"
+    autonomy_level: "L2"
+    lifecycle_coverage: ["web_search", "source_analysis", "citation_grounded_report_generation", "data_analysis"]
+    domains: ["finance", "science", "policy", "engineering", "general_research"]
+    product_url: "https://openai.com/index/introducing-deep-research/"
+    api_url: "https://developers.openai.com/api/docs/models/o3-deep-research"
+    relationships: ["evaluated_by:deep_research_bench", "merged_capabilities_with:chatgpt_agent"]
+    verification_notes: "OpenAI describes an agent that independently searches, analyzes, and synthesizes sources into cited reports."
+
+  - id: elicit
+    name: "Elicit"
+    category: "literature_review_product"
+    type: ["product"]
+    organization: "Elicit"
+    first_public_release: "pre_2023"
+    autonomy_level: "L1"
+    lifecycle_coverage: ["paper_search", "screening", "data_extraction", "literature_synthesis"]
+    domains: ["general_academic_research", "systematic_reviews"]
+    product_url: "https://elicit.com/"
+    relationships: ["competitor_or_comparator:consensus", "evaluated_in:astabench_literature_tasks"]
+    verification_notes: "Deep phase should verify current product capabilities from official docs because features evolve quickly."
+
+  - id: consensus
+    name: "Consensus"
+    category: "scientific_search_product"
+    type: ["product"]
+    organization: "Consensus"
+    first_public_release: "2021"
+    autonomy_level: "L1"
+    lifecycle_coverage: ["academic_search", "paper_summarization", "evidence_synthesis"]
+    domains: ["general_academic_research"]
+    product_url: "https://consensus.app/"
+    docs_url: "https://consensus.app/blog/how-consensus-works/"
+    relationships: ["competitor_or_comparator:elicit"]
+    verification_notes: "Official FAQ says it is an AI search engine for scientific and academic research."
+
+  - id: paperbench
+    name: "PaperBench"
+    category: "benchmark"
+    type: ["paper", "benchmark_code", "dataset"]
+    organization: "OpenAI"
+    first_public_release: "2025-04"
+    autonomy_level_target: "L2-L4"
+    evaluates: ["paper_to_code_replication", "AI_research_engineering", "long_horizon_agent_execution"]
+    paper_url: "https://arxiv.org/abs/2504.01848"
+    benchmark_url: "https://openai.com/index/paperbench/"
+    code_url: "https://github.com/openai/preparedness/tree/main/project/paperbench"
+    relationships: ["related_to:mle_bench", "related_to:core_bench"]
+    verification_notes: "OpenAI describes PaperBench as evaluating agents' ability to replicate state-of-the-art AI research."
+
+  - id: mlagentbench
+    name: "MLAgentBench"
+    category: "benchmark"
+    type: ["paper", "benchmark_code"]
+    organization: "Stanford SNAP"
+    first_public_release: "2023-10"
+    autonomy_level_target: "L2-L3"
+    evaluates: ["ML_experimentation", "code_execution", "model_improvement", "long_term_planning"]
+    paper_url: "https://arxiv.org/abs/2310.03302"
+    code_url: "https://github.com/snap-stanford/MLAgentBench"
+    relationships: ["precursor_to:mle_bench", "related_to:airs_bench"]
+    verification_notes: "Paper and repository define end-to-end ML experimentation tasks for agents."
+
+  - id: mle_bench
+    name: "MLE-bench"
+    category: "benchmark"
+    type: ["paper", "benchmark_code"]
+    organization: "OpenAI"
+    first_public_release: "2024-10"
+    autonomy_level_target: "L2-L3"
+    evaluates: ["ML_engineering", "Kaggle_style_competitions", "agent_scaffolds"]
+    paper_url: "https://arxiv.org/abs/2410.07095"
+    code_url: "https://github.com/openai/mle-bench/"
+    relationships: ["related_to:paperbench", "uses_or_compares:aide_scaffolding"]
+    verification_notes: "Paper reports benchmark code and ML engineering competition tasks."
+
+  - id: core_bench
+    name: "CORE-Bench"
+    category: "benchmark"
+    type: ["paper", "benchmark"]
+    organization: "Academic benchmark"
+    first_public_release: "2024-09"
+    autonomy_level_target: "L2-L3"
+    evaluates: ["computational_reproducibility", "research_artifact_execution", "published_result_validation"]
+    paper_url: "https://arxiv.org/abs/2409.11363"
+    relationships: ["complements:paperbench", "complements:mle_bench"]
+    verification_notes: "Paper frames benchmark around computational reproducibility by AI agents."
+
+  - id: discoverybench
+    name: "DiscoveryBench"
+    category: "benchmark"
+    type: ["paper", "benchmark"]
+    organization: "Academic benchmark"
+    first_public_release: "2024-07"
+    autonomy_level_target: "L2-L3"
+    evaluates: ["data_driven_discovery", "hypothesis_generation", "multi_step_reasoning"]
+    paper_url: "https://arxiv.org/abs/2407.01725"
+    relationships: ["related_to:researchbench", "related_to:dsbench"]
+    verification_notes: "Paper says it formalizes multi-step data-driven discovery and reports best systems still score low."
+
+  - id: scicode
+    name: "SciCode"
+    category: "benchmark"
+    type: ["paper", "benchmark_code"]
+    organization: "Scientist-curated benchmark project"
+    first_public_release: "2024-07"
+    autonomy_level_target: "L1-L3"
+    evaluates: ["scientific_coding", "research_problem_solving", "natural_science_computation"]
+    paper_url: "https://arxiv.org/abs/2407.13168"
+    code_url: "https://github.com/scicode-bench/SciCode"
+    relationships: ["related_to:ainsteinbench", "related_to:paperbench"]
+    verification_notes: "Repository identifies SciCode as a scientist-curated benchmark for coding solutions to scientific problems."
+
+  - id: dsbench
+    name: "DSBench"
+    category: "benchmark"
+    type: ["paper", "benchmark"]
+    organization: "Academic benchmark"
+    first_public_release: "2024-09"
+    autonomy_level_target: "L1-L3"
+    evaluates: ["data_science", "data_analysis", "data_modeling", "spreadsheet_and_kaggle_tasks"]
+    paper_url: "https://arxiv.org/abs/2409.07703"
+    relationships: ["related_to:discoverybench", "related_to:mle_bench"]
+    verification_notes: "Paper evaluates realistic data science tasks and reports large gaps to expert performance."
+
+  - id: bixbench
+    name: "BixBench"
+    category: "benchmark"
+    type: ["paper", "dataset", "benchmark_code"]
+    organization: "FutureHouse and ScienceMachine"
+    first_public_release: "2025-03"
+    autonomy_level_target: "L2-L4"
+    evaluates: ["bioinformatics", "biological_data_analysis", "multi_step_dataset_exploration"]
+    paper_url: "https://arxiv.org/abs/2503.00096"
+    dataset_url: "https://huggingface.co/datasets/futurehouse/BixBench"
+    relationships: ["supports_evaluation_of:futurehouse_agents", "domain_specific:biology"]
+    verification_notes: "Paper and dataset page define practical bioinformatics scenarios and open-answer questions."
+
+  - id: astabench
+    name: "AstaBench"
+    category: "benchmark"
+    type: ["paper", "benchmark_suite", "leaderboard"]
+    organization: "Allen Institute for AI"
+    first_public_release: "2025"
+    autonomy_level_target: "L1-L3"
+    evaluates: ["scientific_research_suite", "paper_finding", "scholarly_QA", "tool_use", "multi_domain_science"]
+    paper_url: "https://arxiv.org/abs/2510.21652"
+    product_url: "https://allenai.org/asta"
+    relationships: ["part_of:asta", "includes:2400_plus_problems"]
+    verification_notes: "AllenAI Asta page and paper describe agents plus benchmarks for scientific research."
+
+  - id: deepresearch_bench_comprehensive
+    name: "DeepResearch Bench"
+    category: "benchmark"
+    type: ["paper", "benchmark_code"]
+    organization: "Academic benchmark"
+    first_public_release: "2025-06"
+    autonomy_level_target: "L2"
+    evaluates: ["deep_research_agents", "citation_quality", "retrieval_accuracy", "long_form_report_quality"]
+    paper_url: "https://arxiv.org/abs/2506.11763"
+    code_url: "https://github.com/Ayanami0730/deep_research_bench"
+    relationships: ["evaluates:openai_deep_research", "evaluates:gemini_deep_research", "related_to:futuresearch_deep_research_bench"]
+    verification_notes: "Paper defines 100 PhD-level research tasks across 22 fields."
+
+  - id: futuresearch_deep_research_bench
+    name: "Deep Research Bench / RetroSearch"
+    category: "benchmark"
+    type: ["paper", "leaderboard", "benchmark_environment"]
+    organization: "FutureSearch"
+    first_public_release: "2025-05"
+    autonomy_level_target: "L2"
+    evaluates: ["web_research_agents", "frozen_web_retrieval", "tool_use", "hallucination", "forgetting"]
+    paper_url: "https://arxiv.org/abs/2506.06287"
+    leaderboard_url: "https://drb.futuresearch.ai/"
+    relationships: ["complements:deepresearch_bench_comprehensive", "evaluates:deep_research_products"]
+    verification_notes: "Paper introduces RetroSearch and a public leaderboard for web research agents."
+
+  - id: researchbench
+    name: "ResearchBench"
+    category: "benchmark"
+    type: ["paper", "benchmark"]
+    organization: "Academic benchmark"
+    first_public_release: "2025-03"
+    autonomy_level_target: "L2-L3"
+    evaluates: ["scientific_discovery", "inspiration_based_task_decomposition", "hypothesis_quality"]
+    paper_url: "https://arxiv.org/abs/2503.21248"
+    relationships: ["related_to:discoverybench", "related_to:ai_co_scientist"]
+    verification_notes: "Deep phase should verify code/data availability and task construction."
+
+  - id: airs_bench
+    name: "AIRS-Bench"
+    category: "benchmark"
+    type: ["paper", "benchmark_suite"]
+    organization: "Meta FAIR and collaborators"
+    first_public_release: "2026-02"
+    autonomy_level_target: "L3-L4"
+    evaluates: ["full_ML_research_lifecycle", "idea_generation", "experiment_analysis", "iterative_refinement", "no_baseline_code_setting"]
+    paper_url: "https://arxiv.org/abs/2602.06855"
+    relationships: ["successor_style_to:mlagentbench", "related_to:paperbench", "related_to:sakana_ai_scientist_v2"]
+    verification_notes: "Paper describes 20 tasks from state-of-the-art ML papers, without providing baseline code."
+
+  - id: mmdeepresearch_bench
+    name: "MMDeepResearch-Bench"
+    category: "benchmark"
+    type: ["paper", "benchmark"]
+    organization: "Academic benchmark"
+    first_public_release: "2026-01"
+    autonomy_level_target: "L2"
+    evaluates: ["multimodal_deep_research", "image_text_evidence", "citation_grounding", "report_integrity"]
+    paper_url: "https://arxiv.org/abs/2601.12346"
+    relationships: ["extends:deepresearch_bench_comprehensive"]
+    verification_notes: "Paper introduces 140 multimodal tasks across 21 domains."
+
+  - id: ainsteinbench
+    name: "AInsteinBench"
+    category: "benchmark"
+    type: ["paper", "benchmark"]
+    organization: "Academic benchmark"
+    first_public_release: "2025-12"
+    autonomy_level_target: "L2-L3"
+    evaluates: ["scientific_repository_maintenance", "scientific_computing_code_agents", "real_PR_tasks"]
+    paper_url: "https://arxiv.org/abs/2512.21373"
+    relationships: ["related_to:scicode", "related_to:paperbench"]
+    verification_notes: "Paper benchmarks coding agents on tasks from scientific software repositories."
+sources:
+  - "https://arxiv.org/abs/2408.06292"
+  - "https://github.com/SakanaAI/AI-Scientist"
+  - "https://arxiv.org/abs/2504.08066"
+  - "https://github.com/SakanaAI/AI-Scientist-v2"
+  - "https://blog.google/feed/google-research-ai-co-scientist/"
+  - "https://www.nature.com/articles/s41586-026-10644-y"
+  - "https://arxiv.org/abs/2501.04227"
+  - "https://www.futurehouse.org/research-announcements/demonstrating-end-to-end-scientific-discovery-with-robin-a-multi-agent-system"
+  - "https://www.futurehouse.org/research-announcements/launching-futurehouse-platform-ai-agents"
+  - "https://www.nature.com/articles/s41586-023-06792-0"
+  - "https://arxiv.org/abs/2304.05376"
+  - "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+  - "https://arxiv.org/abs/2409.05556"
+  - "https://www.nature.com/articles/s41586-023-06734-w"
+  - "https://www.nature.com/articles/s41586-023-06735-9"
+  - "https://openai.com/index/paperbench/"
+  - "https://arxiv.org/abs/2310.03302"
+  - "https://arxiv.org/abs/2410.07095"
+  - "https://arxiv.org/abs/2409.11363"
+  - "https://arxiv.org/abs/2407.01725"
+  - "https://github.com/scicode-bench/SciCode"
+  - "https://arxiv.org/abs/2503.00096"
+  - "https://allenai.org/asta"
+  - "https://arxiv.org/abs/2506.11763"
+  - "https://arxiv.org/abs/2506.06287"
+  - "https://arxiv.org/abs/2602.06855"

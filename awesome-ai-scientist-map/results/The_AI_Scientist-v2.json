@@ -1,0 +1,183 @@
+{
+  "id": "sakana_ai_scientist_v2",
+  "name": "The AI Scientist-v2",
+  "aliases": [
+    "AI Scientist-v2",
+    "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search"
+  ],
+  "organization": [
+    "Sakana AI",
+    "University of British Columbia",
+    "Vector Institute",
+    "University of Oxford"
+  ],
+  "first_public_release": "2025-04-07",
+  "current_status": "Active open-source research system.",
+  "category": "end_to_end_ai_scientist",
+  "type": [
+    "paper",
+    "codebase"
+  ],
+  "domains": [
+    "machine_learning"
+  ],
+  "positioning": "Autonomous scientist for open-ended machine-learning discovery via agentic tree search.",
+  "boundary_notes": "Included because it performs end-to-end machine-learning research without human-authored experimental templates, from hypothesis generation through peer-review-submitted manuscripts. It is broader than pure literature or planning tools but still scoped to compute-based ML research.",
+  "lifecycle_coverage": [
+    "hypothesis_generation",
+    "experiment_design",
+    "experiment_execution",
+    "data_analysis",
+    "figure_refinement",
+    "paper_writing",
+    "peer_review_submission"
+  ],
+  "tool_access": [
+    "Semantic Scholar literature search",
+    "LLM-written code generation and debugging",
+    "GPU experiment execution",
+    "Agentic tree search orchestration",
+    "LaTeX and PDF generation",
+    "AI reviewer with a VLM figure-refinement loop"
+  ],
+  "execution_environment": "Local or server-side Linux environment with NVIDIA GPUs, CUDA, PyTorch, LaTeX and PDF tooling, API-accessed foundation models, and optional Semantic Scholar API access.",
+  "artifact_outputs": [
+    "Structured research ideas",
+    "Code changes and experiment branches",
+    "Experiment logs",
+    "Tree-search visualizations",
+    "Figures",
+    "Scientific manuscripts",
+    "AI reviews"
+  ],
+  "human_roles": [
+    "Humans provide a broad topic and infrastructure",
+    "Humans sandbox execution and supply model or API credentials",
+    "Humans selected which generated papers to submit in the workshop experiment",
+    "Humans retained final authority over publication and release"
+  ],
+  "autonomy_level": "L4",
+  "autonomy_rationale": "It autonomously generates hypotheses, conducts experiments, analyzes results, refines figures, and writes full manuscripts in an open-ended ML setting without topic-specific code templates, but humans still provide the topic, compute, and publication decisions.",
+  "iteration_loop": "Progressive agentic tree search over experimental branches, plus iterative review and figure-refinement feedback loops.",
+  "stopping_and_guardrails": [
+    "Authors require use inside a controlled sandbox such as Docker",
+    "Resource use is bounded by tree-search parameters, worker counts, and step limits",
+    "Novelty and citation grounding can use Semantic Scholar",
+    "The repository license mandates clear disclosure of AI use in resulting manuscripts"
+  ],
+  "known_failure_modes": [
+    "Lower success rates than v1 on template-friendly tasks",
+    "Potentially unsafe code execution, uncontrolled web access, or unintended process spawning",
+    "CUDA out-of-memory failures or model-capacity mismatches",
+    "Citation or figure-quality issues that require reviewer feedback",
+    "Workshop-level acceptance does not guarantee conference-track quality"
+  ],
+  "benchmarks_used": [
+    "Three fully autonomous submissions to the ICLR 2025 I Can't Believe It's Not Better workshop",
+    "Peer-review scores against human workshop acceptance thresholds",
+    "Internal human review and reproducibility checks on the submitted papers"
+  ],
+  "metrics": [
+    "One manuscript received reviewer scores 6, 7, and 6, for an average of 6.33",
+    "One of three fully autonomous submissions exceeded the average human acceptance threshold",
+    "Typical experimentation cost is about 15 to 20 USD per run, with about 5 USD more for writing under the example defaults",
+    "Example runs typically finish within several hours, with writing taking about 20 to 30 minutes once experiments are complete"
+  ],
+  "baselines": [
+    "The AI Scientist-v1",
+    "Average human workshop acceptance threshold",
+    "The template-based v1 workflow as the stronger option for tasks with a clear starting template"
+  ],
+  "validation_strength": "Human-reviewed and peer-reviewed, with official submission evidence.",
+  "evaluation_limitations": [
+    "Only three workshop submissions were tested",
+    "The workshop bar is lower than a top conference main track",
+    "The accepted-threshold paper was withdrawn before publication and did not receive a public meta-review",
+    "Authors state that v2 can have lower success rates than v1 when strong templates are available"
+  ],
+  "paper_url": "https://arxiv.org/abs/2504.08066",
+  "code_url": "https://github.com/SakanaAI/AI-Scientist-v2",
+  "dataset_url": "None.",
+  "product_url": "https://sakana.ai/ai-scientist-first-publication/",
+  "leaderboard_url": "None.",
+  "source_quality": "Primary paper, official repository, and official Sakana AI post.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "sakana_ai_scientist_v1"
+  ],
+  "successors": [],
+  "components": [
+    "Agentic tree search",
+    "Experiment manager agent",
+    "Template-free ideation pipeline",
+    "Semantic Scholar novelty search",
+    "AI reviewer with VLM figure-refinement loop",
+    "Best-first search configuration and worker-based branching"
+  ],
+  "evaluated_by": [
+    "ICLR 2025 I Can't Believe It's Not Better workshop peer review",
+    "Internal human review",
+    "Internal code and reproducibility review"
+  ],
+  "evaluates": [],
+  "competes_with_or_complements": [
+    "The AI Scientist",
+    "AI Co-Scientist / Co-Scientist"
+  ],
+  "milestones": [
+    "2025-03-12: Sakana AI announced that a fully AI-generated paper from the improved system crossed a workshop acceptance threshold",
+    "2025-04-07: Sakana AI published the technical report and open-sourced v2",
+    "2025-04-10: arXiv submission of paper 2504.08066",
+    "2026-03-26: Sakana AI reported the broader AI Scientist line in Nature"
+  ],
+  "version_history": [
+    "2025-03 workshop-result announcement",
+    "2025-04 technical report and repository release",
+    "No formal GitHub release tags were published as of 2026-05-28"
+  ],
+  "adoption_signals": [
+    "GitHub repository had about 6.4k stars and 857 forks when checked on 2026-05-28",
+    "The peer-review result drew official Sakana AI coverage and public discussion",
+    "Generated papers and analysis were released publicly"
+  ],
+  "supersession_notes": "This is the documented successor of v1; no later public successor was verified as of 2026-05-28.",
+  "real_world_applications": [
+    "Open-ended machine-learning hypothesis generation",
+    "Autonomous workshop-paper drafting and submission experiments",
+    "Automated exploratory experimentation across multiple ML domains"
+  ],
+  "users": [
+    "Autonomous-science researchers",
+    "Machine-learning researchers",
+    "AI research labs studying end-to-end research automation"
+  ],
+  "deployment_constraints": [
+    "Linux plus NVIDIA GPU and CUDA stack",
+    "OpenAI, Gemini, or Claude model access",
+    "Optional Semantic Scholar API access",
+    "LaTeX, Poppler, and chktex tooling",
+    "Controlled sandboxing because the system executes LLM-written code",
+    "License-based disclosure obligations for downstream papers"
+  ],
+  "cost_and_runtime": "The official repository estimates a few dollars for ideation, about 15 to 20 USD for the main experimentation run with Claude 3.5 Sonnet, about 5 USD more for writing under the example defaults, and several hours of wall-clock time for a full run.",
+  "scientific_integrity_risks": [
+    "AI-generated manuscripts may overstate novelty or rigor",
+    "Peer-review gaming or reviewer-overload concerns",
+    "Citation, formatting, or statistical mistakes in generated papers",
+    "Ambiguity around authorship and disclosure without explicit policy"
+  ],
+  "security_and_safety_risks": [
+    "Execution of LLM-written code",
+    "Uncontrolled web access",
+    "Dangerous package use",
+    "Unintended spawned processes"
+  ],
+  "mitigations": [
+    "Run only inside a controlled sandbox",
+    "Use bounded worker and search-step settings",
+    "Perform human review and reproducibility checks before release",
+    "Disclose AI use clearly in any resulting manuscript"
+  ],
+  "policy_relevance": "Strongly relevant to AI-authorship disclosure, peer-review integrity, IRB-governed experiments with AI-generated papers, and the safe release of autonomous research systems.",
+  "uncertain": []
+}

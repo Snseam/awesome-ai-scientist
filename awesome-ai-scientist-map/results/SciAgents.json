@@ -1,0 +1,136 @@
+{
+  "id": "sciagents",
+  "name": "SciAgents",
+  "aliases": [
+    "SciAgentsDiscovery",
+    "SciAgents: Automating scientific discovery through multi-agent intelligent graph reasoning",
+    "SciAgents: Automating Scientific Discovery Through Bioinspired Multi-Agent Intelligent Graph Reasoning"
+  ],
+  "organization": "Massachusetts Institute of Technology (MIT)",
+  "first_public_release": "2024-09-09",
+  "current_status": "Active open-source research prototype with a public paper and public GitHub repository.",
+  "category": "domain_scientific_discovery_agent",
+  "type": [
+    "paper",
+    "codebase",
+    "research demo"
+  ],
+  "domains": [
+    "materials_science",
+    "bioinspired_materials"
+  ],
+  "positioning": "Domain-specific autonomous co-scientist for graph-grounded hypothesis generation in materials science.",
+  "boundary_notes": "Included because it couples literature retrieval, ontological knowledge graphs, and multi-agent critique to generate scientific hypotheses in a real scientific domain. It is not a general-purpose product suite, and it does not autonomously execute wet-lab experiments.",
+  "lifecycle_coverage": [
+    "literature_retrieval",
+    "knowledge_graph_reasoning",
+    "hypothesis_generation",
+    "multi_agent_critique",
+    "proposal_refinement"
+  ],
+  "tool_access": [
+    "large language models",
+    "data retrieval tools",
+    "OpenAI API",
+    "Semantic Scholar API",
+    "ontological knowledge graph files",
+    "Hugging Face graph and embedding downloads"
+  ],
+  "execution_environment": "Local Python and notebook workflow using GraphReasoning, AG2, downloaded graph artifacts, and external APIs.",
+  "artifact_outputs": [
+    "research hypotheses",
+    "research proposals",
+    "critiques",
+    "structured JSON summaries",
+    "draft documents"
+  ],
+  "human_roles": "Humans choose the domain and prompts, provide API keys and graph resources, inspect outputs, and decide whether any generated hypothesis is scientifically valid or worth experimental follow-up.",
+  "autonomy_level": "L3",
+  "autonomy_rationale": "SciAgents can autonomously retrieve context, traverse a knowledge graph, generate hypotheses, and critique/refine them through multiple specialized agents, but it still depends on humans for setup, API access, and downstream validation.",
+  "iteration_loop": "Yes. The system samples graph context, generates proposals, critiques them with specialized agents, refines them, and expands the output into a more detailed research draft.",
+  "stopping_and_guardrails": "The workflow is constrained by local execution, external API availability, graph coverage, and human review. It does not include autonomous lab actuation or irreversible real-world actions.",
+  "known_failure_modes": "Possible failure modes include hallucinated novelty claims, weak or noisy graph links, retrieval gaps, overconfident hypothesis ranking, and generated ideas that are scientifically interesting but not experimentally feasible.",
+  "benchmarks_used": "Paper-level case studies in biologically inspired materials rather than a standardized public benchmark. [uncertain]",
+  "metrics": "The paper emphasizes qualitative gains in scale, precision, exploratory breadth, and interdisciplinary linkage discovery. It does not present a single canonical benchmark metric in the retrieved primary sources. [uncertain]",
+  "baselines": "Traditional human-driven scientific ideation and the repository's non-automated versus automated multi-agent workflows; formal quantitative baseline definitions are limited in the retrieved sources. [uncertain]",
+  "validation_strength": "Peer-reviewed publication lineage and public code support the claims, but the central validation is still case-study based rather than independent large-scale external reproduction.",
+  "evaluation_limitations": "Evaluation is domain-specific, largely qualitative, and focused on ideation quality rather than downstream experimental success. External replication evidence for the generated discoveries was not verified in the retrieved sources.",
+  "paper_url": "https://arxiv.org/abs/2409.05556",
+  "code_url": "https://github.com/lamm-mit/SciAgentsDiscovery",
+  "dataset_url": "https://huggingface.co/lamm-mit/bio-graph-1K",
+  "product_url": "[uncertain] No dedicated product or documentation site beyond the paper and repository was verified.",
+  "leaderboard_url": "[uncertain] No public leaderboard was verified.",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "GraphReasoning and generative knowledge extraction work from the same MIT group",
+    "ontological knowledge graph methods for scientific discovery",
+    "multi-agent LLM research planning frameworks"
+  ],
+  "successors": [
+    "[uncertain] No direct named successor system was verified as of 2026-05-28."
+  ],
+  "components": [
+    "Ontologist agent",
+    "Scientist 1 agent",
+    "Scientist 2 agent",
+    "Critic agent",
+    "Planner agent",
+    "Assistant agent",
+    "global knowledge graph",
+    "GraphReasoning package",
+    "AG2 automation framework",
+    "OpenAI API",
+    "Semantic Scholar API"
+  ],
+  "evaluated_by": [
+    "paper case studies in biologically inspired materials"
+  ],
+  "evaluates": [
+    "Not a benchmark; it generates and critiques scientific hypotheses rather than scoring external systems."
+  ],
+  "competes_with_or_complements": [
+    "A-Lab / GNoME Materials Discovery Lineage",
+    "Google Co-Scientist",
+    "The AI Scientist family [uncertain]"
+  ],
+  "milestones": [
+    "2024-09-09: arXiv preprint submitted.",
+    "2024: repository released with automated and non-automated notebooks.",
+    "2024: repository citation points to publication in Advanced Materials."
+  ],
+  "version_history": "Public artifacts show the 2024 paper and repository workflow variants, but no formal semantic version history was verified. [uncertain]",
+  "adoption_signals": "Public GitHub repository, arXiv preprint, and journal citation metadata are available, but citation counts, user adoption, and repository star counts were not verified here. [uncertain]",
+  "supersession_notes": "No superseding replacement or deprecation notice was verified as of 2026-05-28. [uncertain]",
+  "real_world_applications": [
+    "bioinspired materials ideation",
+    "mechanism discovery from literature",
+    "early-stage hypothesis generation for materials R&D",
+    "graph-grounded literature synthesis"
+  ],
+  "users": [
+    "academic materials scientists",
+    "computational materials researchers",
+    "AI-for-science researchers",
+    "R&D teams exploring bioinspired materials"
+  ],
+  "deployment_constraints": "Requires Python setup, GraphReasoning installation, downloaded graph artifacts, OpenAI access, Semantic Scholar access, and enough local resources to run notebook-driven multi-agent workflows.",
+  "cost_and_runtime": "No authoritative end-to-end runtime or cost benchmark was reported in the retrieved sources; cost depends on API usage, graph size, and local compute. [uncertain]",
+  "scientific_integrity_risks": "The main integrity risks are fabricated novelty, overstated interdisciplinary links, and weak evidence chains from graph connections to scientific claims.",
+  "security_and_safety_risks": "The system has relatively low direct physical risk because it is a reasoning workflow, but unsafe downstream use could misdirect lab resources or produce misleading scientific narratives.",
+  "mitigations": "Graph-grounded context, specialized critique agents, human review, local execution, and explicit downstream validation by scientists act as the main safeguards.",
+  "policy_relevance": "Relevant to AI-for-science governance because it shows how autonomous ideation systems can influence research direction without directly executing experiments, raising questions about provenance, attribution, and validation standards.",
+  "uncertain": [
+    "benchmarks_used",
+    "metrics",
+    "baselines",
+    "product_url",
+    "leaderboard_url",
+    "successors",
+    "competes_with_or_complements",
+    "version_history",
+    "adoption_signals",
+    "supersession_notes",
+    "cost_and_runtime"
+  ]
+}

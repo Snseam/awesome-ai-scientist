@@ -1,0 +1,187 @@
+{
+  "id": "core_bench",
+  "name": "CORE-Bench",
+  "aliases": [
+    "CORE-Bench",
+    "Computational Reproducibility Agent Benchmark",
+    "CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark"
+  ],
+  "organization": "Princeton-affiliated academic authorship group",
+  "first_public_release": "2024-09-17",
+  "current_status": "Open-source benchmark, dataset, and harness; the original repository says its current harness is no longer actively maintained and recommends the Holistic Agent Leaderboard harness.",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark",
+    "dataset",
+    "codebase"
+  ],
+  "domains": [
+    "computational reproducibility",
+    "computer science",
+    "social science",
+    "medicine"
+  ],
+  "positioning": "Benchmark for evaluating whether AI agents can computationally reproduce published scientific papers.",
+  "boundary_notes": "Included because it evaluates agents on running real research artifacts, installing dependencies, and extracting published results. It targets research reproducibility rather than novel hypothesis generation or wet-lab science.",
+  "lifecycle_coverage": [
+    "dependency installation",
+    "code execution",
+    "environment configuration",
+    "result extraction",
+    "report writing",
+    "figure and table interpretation"
+  ],
+  "tool_access": [
+    "shell",
+    "Docker",
+    "virtual machines",
+    "vision-language model queries",
+    "Python environments",
+    "R environments",
+    "downloaded research code capsules"
+  ],
+  "execution_environment": "Agents are evaluated in isolated Docker containers or virtual machines that download paper capsules and write a report.json output.",
+  "artifact_outputs": [
+    "report.json answers",
+    "agent traces",
+    "benchmark result files",
+    "leaderboard submission JSON"
+  ],
+  "human_roles": [
+    "Humans define the benchmark tasks and difficulty levels.",
+    "Humans provide API keys and infrastructure setup.",
+    "Humans inspect reproducibility results and submit leaderboard artifacts."
+  ],
+  "autonomy_level": "L2-L3",
+  "autonomy_rationale": "Tasks require multi-step autonomous environment setup, code execution, debugging, and output interpretation, but goals, datasets, and infrastructure are predefined by humans. The agent is autonomous within a bounded reproducibility task rather than fully self-directed research.",
+  "iteration_loop": "Yes. Agents can iteratively inspect failures, install dependencies, rerun code, and repair their reporting until the task completes or the budget is exhausted.",
+  "stopping_and_guardrails": [
+    "Three difficulty levels constrain what information is available to the agent.",
+    "Original evaluation uses isolated virtual machines; local runs can use Docker.",
+    "The paper uses a per-task time limit of 2 hours.",
+    "Programmatic checking ensures report.json uses the correct keys."
+  ],
+  "known_failure_modes": [
+    "Dependency installation failures.",
+    "Incorrect run commands or environment assumptions.",
+    "Failure to inspect figures, HTML, or PDF outputs correctly.",
+    "Writing an invalid or incomplete report.json.",
+    "Benchmark saturation if agents overfit known capsules."
+  ],
+  "benchmarks_used": [
+    "270 tasks from 90 papers across three disciplines.",
+    "CORE-Bench-Easy, CORE-Bench-Medium, and CORE-Bench-Hard.",
+    "Holistic Agent Leaderboard for ongoing external comparison."
+  ],
+  "metrics": [
+    "Accuracy or pass@1 by difficulty level.",
+    "Per-task cost and runtime analyses in the paper.",
+    "Paper headline: best agent scored 58.52% on Easy, 55.56% on Medium, and 19.26% on Hard."
+  ],
+  "baselines": [
+    "AutoGPT with GPT-4o.",
+    "AutoGPT with GPT-4o-mini.",
+    "CORE-Agent with GPT-4o.",
+    "CORE-Agent with GPT-4o-mini."
+  ],
+  "validation_strength": "Benchmarked with open-source code and dataset, plus a paper published in Transactions on Machine Learning Research in January 2025.",
+  "evaluation_limitations": [
+    "Benchmark focuses on code reproducibility rather than full result reproducibility.",
+    "Tasks were selected from CodeOcean under screening criteria, so scope is not all research papers.",
+    "Running untrusted research code requires heavy isolation and infrastructure.",
+    "The original GitHub harness is no longer actively maintained."
+  ],
+  "paper_url": "https://arxiv.org/abs/2409.11363",
+  "code_url": "https://github.com/siegelz/core-bench",
+  "dataset_url": "https://huggingface.co/datasets/siegelz/core-bench",
+  "product_url": "[uncertain] No dedicated product page was identified; the GitHub repository and Hugging Face dataset card are the primary landing pages.",
+  "leaderboard_url": "https://agent-evals-leaderboard.hf.space/",
+  "source_quality": "Primary sources: arXiv paper, TMLR/OpenReview PDF, official GitHub repository, and official Hugging Face dataset card.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "CodeOcean computational reproducibility workflows",
+    "AutoGPT-based research agents [uncertain]"
+  ],
+  "successors": [
+    "Holistic Agent Leaderboard harness integration"
+  ],
+  "components": [
+    "270 benchmark tasks",
+    "90 source papers",
+    "three difficulty levels",
+    "isolated VM or Docker harness",
+    "Hugging Face dataset files",
+    "HAL submission conversion scripts"
+  ],
+  "evaluated_by": [
+    "Holistic Agent Leaderboard"
+  ],
+  "evaluates": [
+    "computational reproducibility",
+    "research artifact execution",
+    "published result validation [uncertain]",
+    "code reproducibility"
+  ],
+  "competes_with_or_complements": [
+    "PaperBench",
+    "MLE-bench",
+    "DiscoveryBench"
+  ],
+  "milestones": [
+    "2024-09-17: arXiv preprint posted.",
+    "2025-01: published in Transactions on Machine Learning Research.",
+    "2026-05-28: repository states the original harness is no longer actively maintained and recommends HAL."
+  ],
+  "version_history": [
+    "Initial benchmark and harness released in 2024.",
+    "Later workflow shifted toward the Holistic Agent Leaderboard harness rather than the original repository harness."
+  ],
+  "adoption_signals": [
+    "GitHub repository shows about 75 stars as of 2026-05-28.",
+    "Hugging Face dataset card shows about 291 downloads in the last month.",
+    "Public leaderboard integration exists through the Holistic Agent Leaderboard."
+  ],
+  "supersession_notes": "The dataset and benchmark remain usable, but the repository says the original harness is superseded operationally by the Holistic Agent Leaderboard harness.",
+  "real_world_applications": [
+    "Testing whether agents can reproduce published computational results.",
+    "Screening research artifacts before publication or review.",
+    "Measuring agent reliability on scientific code execution tasks."
+  ],
+  "users": [
+    "Reproducibility researchers",
+    "conference organizers",
+    "journal editors",
+    "research engineers",
+    "agent evaluation teams"
+  ],
+  "deployment_constraints": [
+    "Python 3.9 environment for the original harness.",
+    "Docker or Azure VM infrastructure.",
+    "Privileged Docker is required for some medium tasks.",
+    "Benchmark downloads external capsules and may require GPU quotas for some tasks."
+  ],
+  "cost_and_runtime": "The paper used a 2-hour per-task limit. Sequential evaluation of all 270 tasks would take over 20 days, while the VM-based harness reduced a full run to a little over two hours by parallelizing across many machines.",
+  "scientific_integrity_risks": [
+    "Mistaking code reproducibility for full scientific validity.",
+    "Benchmark overfitting to fixed capsules.",
+    "Incorrectly claiming paper results are validated when only execution was reproduced."
+  ],
+  "security_and_safety_risks": [
+    "Running arbitrary third-party research code.",
+    "Using privileged Docker or remote virtual machines.",
+    "Handling API keys and downloaded external artifacts."
+  ],
+  "mitigations": [
+    "Isolated VM or Docker execution.",
+    "Programmatic validation of report.json keys.",
+    "Clear benchmark difficulty structure and task prompts.",
+    "Leaderboard workflow requiring logged traces and structured outputs."
+  ],
+  "policy_relevance": "Relevant to reproducibility norms, benchmark governance, and the credibility of claims about AI agents performing research-adjacent work.",
+  "uncertain": [
+    "product_url",
+    "predecessors",
+    "evaluates"
+  ]
+}

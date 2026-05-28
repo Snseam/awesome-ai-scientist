@@ -1,0 +1,192 @@
+{
+  "id": "mmdeepresearch_bench",
+  "name": "MMDeepResearch-Bench",
+  "aliases": [
+    "MMDeepResearch-Bench",
+    "MMDR-Bench",
+    "MMDeepResearch-Bench: A Benchmark for Multimodal Deep Research Agents"
+  ],
+  "organization": "Academic benchmark authors [uncertain exact institution list]",
+  "first_public_release": "2026-01",
+  "current_status": "Recent arXiv benchmark for multimodal deep research agents; public code and leaderboard availability are [uncertain].",
+  "category": "benchmark",
+  "type": [
+    "paper",
+    "benchmark"
+  ],
+  "domains": [
+    "multimodal deep research",
+    "image-text evidence synthesis",
+    "long-form report generation",
+    "general research"
+  ],
+  "positioning": "Benchmark for evaluating deep research agents that must retrieve, reason over, and cite multimodal evidence in long-form reports.",
+  "boundary_notes": "Included because it extends text-oriented deep-research evaluation to multimodal evidence, which is central for scientific and technical research reports using figures, charts, images, and documents.",
+  "lifecycle_coverage": [
+    "research question analysis",
+    "multimodal retrieval",
+    "image and document evidence use",
+    "citation grounding",
+    "long-form report synthesis",
+    "report integrity evaluation"
+  ],
+  "tool_access": [
+    "web search [uncertain exact setup]",
+    "multimodal model inference",
+    "image understanding",
+    "citation extraction",
+    "judge model evaluation"
+  ],
+  "execution_environment": "Benchmark of multimodal deep-research tasks described in arXiv and mirrored on Hugging Face paper pages.",
+  "artifact_outputs": [
+    "long-form research reports",
+    "citations",
+    "multimodal evidence references",
+    "evaluation scores"
+  ],
+  "human_roles": [
+    "Humans define research tasks and expected multimodal evidence criteria.",
+    "Humans inspect report quality and benchmark failures.",
+    "Judge-model outputs require human sanity checks for high-stakes use."
+  ],
+  "autonomy_level": "L2",
+  "autonomy_rationale": "The benchmark evaluates agents that perform multi-step retrieval and synthesis, but tasks remain predefined and validation is benchmark-based rather than real-world scientific validation.",
+  "iteration_loop": "Deep research agents may perform iterative searching and report refinement; the exact benchmark loop is [uncertain].",
+  "stopping_and_guardrails": [
+    "Tasks are bounded to benchmark prompts.",
+    "Reports are evaluated with multimodal evidence and citation-quality metrics.",
+    "Judge-model grading should be audited for critical claims."
+  ],
+  "known_failure_modes": [
+    "Citing sources that do not support the visual claim.",
+    "Ignoring images, figures, or charts despite their relevance.",
+    "Hallucinating evidence in long-form reports.",
+    "Weak cross-modal reasoning.",
+    "Overreliance on text snippets when visual evidence is decisive."
+  ],
+  "benchmarks_used": [
+    "MMDeepResearch-Bench / MMDR-Bench"
+  ],
+  "metrics": [
+    "FLAE visual evidence faithfulness component [uncertain expansion]",
+    "TRACE citation and reasoning component [uncertain expansion]",
+    "MOSAIC multimodal report quality component [uncertain expansion]",
+    "Composite benchmark score [uncertain exact weighting beyond secondary summary]"
+  ],
+  "baselines": [
+    "single-shot LLM/LMM baselines [uncertain exact list]",
+    "web-enabled report generators [uncertain exact list]",
+    "dedicated deep research agents [uncertain exact list]"
+  ],
+  "validation_strength": "Primary arXiv paper and Hugging Face paper metadata; code, data release, and leaderboard were not verified.",
+  "evaluation_limitations": [
+    "Recent benchmark with limited independent replication.",
+    "Judge-model evaluation can inherit model biases.",
+    "Exact code/data availability was not verified.",
+    "Multimodal evidence grading is difficult to audit at scale."
+  ],
+  "paper_url": "https://arxiv.org/abs/2601.12346",
+  "code_url": "[uncertain] No official code repository was verified during this pass.",
+  "dataset_url": "[uncertain] No official dataset page was verified beyond paper metadata.",
+  "product_url": "[uncertain] No associated product was identified.",
+  "leaderboard_url": "[uncertain] No official public leaderboard was identified.",
+  "source_quality": "Primary arXiv paper plus Hugging Face paper metadata; some metric details cross-checked from secondary benchmark summaries.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "DeepResearch Bench",
+    "FutureSearch Deep Research Bench / RetroSearch",
+    "multimodal QA benchmarks [uncertain specific lineage]"
+  ],
+  "successors": [
+    "[uncertain] No successor release was identified."
+  ],
+  "components": [
+    "multimodal research tasks",
+    "long-form report evaluation",
+    "citation grounding checks",
+    "visual evidence scoring"
+  ],
+  "evaluated_by": [
+    "[uncertain] No external benchmark-of-benchmark evaluation was verified."
+  ],
+  "evaluates": [
+    "multimodal deep research",
+    "image-text evidence use",
+    "citation grounding",
+    "report integrity",
+    "retrieval effectiveness"
+  ],
+  "competes_with_or_complements": [
+    "DeepResearch Bench",
+    "Deep Research Bench / RetroSearch",
+    "AstaBench",
+    "MMMU"
+  ],
+  "milestones": [
+    "2026-01: arXiv preprint posted.",
+    "2026: Hugging Face paper page indexed the benchmark.",
+    "2026-05-28: paper source verified."
+  ],
+  "version_history": [
+    "Initial arXiv release in January 2026.",
+    "Formal benchmark versioning is [uncertain]."
+  ],
+  "adoption_signals": [
+    "Hugging Face paper page exists.",
+    "Independent adoption metrics were not verified."
+  ],
+  "supersession_notes": "No official successor or replacement was identified.",
+  "real_world_applications": [
+    "Evaluating research agents that need to analyze figures, charts, screenshots, and documents.",
+    "Testing citation-grounded multimodal report generation.",
+    "Studying failure modes in visual evidence use."
+  ],
+  "users": [
+    "deep research agent developers",
+    "multimodal model evaluation teams",
+    "scientific and technical report automation teams",
+    "AI safety and hallucination evaluation researchers"
+  ],
+  "deployment_constraints": [
+    "Requires multimodal model access.",
+    "Requires retrieval over image-rich sources and citation tracking.",
+    "Needs careful judge-model calibration and human review for high-stakes settings."
+  ],
+  "cost_and_runtime": "[uncertain] Multi-step multimodal research is likely more expensive than text-only deep research, but no canonical budget was verified.",
+  "scientific_integrity_risks": [
+    "False visual evidence claims.",
+    "Citations that support text but not image-derived conclusions.",
+    "Long-form reports masking unsupported claims.",
+    "Benchmark scores overstating reliability in real scientific workflows."
+  ],
+  "security_and_safety_risks": [
+    "Automated browsing and retrieval over untrusted media.",
+    "Misinterpretation of scientific images or charts.",
+    "Use in high-stakes research without expert review."
+  ],
+  "mitigations": [
+    "Require source-level provenance for each visual claim.",
+    "Audit judge-model scores with human reviewers.",
+    "Separate retrieval, visual interpretation, and synthesis scores.",
+    "Retain screenshots or source snapshots for reproducibility."
+  ],
+  "policy_relevance": "Relevant to responsible deployment of deep research agents, citation integrity, and evaluation of multimodal evidence claims.",
+  "uncertain": [
+    "organization",
+    "current_status",
+    "tool_access",
+    "iteration_loop",
+    "metrics",
+    "baselines",
+    "code_url",
+    "dataset_url",
+    "product_url",
+    "leaderboard_url",
+    "predecessors",
+    "successors",
+    "evaluated_by",
+    "version_history",
+    "adoption_signals",
+    "cost_and_runtime"
+  ]
+}

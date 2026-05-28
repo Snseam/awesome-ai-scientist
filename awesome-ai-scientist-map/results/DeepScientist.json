@@ -1,0 +1,154 @@
+{
+  "id": "deep_scientist",
+  "name": "DeepScientist",
+  "aliases": [
+    "DeepScientist: Advancing Frontier-Pushing Scientific Findings Progressively",
+    "ResearAI DeepScientist"
+  ],
+  "organization": "ResearAI",
+  "first_public_release": "2025-09-30",
+  "current_status": "Active local-first open-source AI scientist system with public repository, website, documentation, and install path.",
+  "category": "end_to_end_ai_scientist",
+  "type": [
+    "paper",
+    "codebase",
+    "product"
+  ],
+  "domains": [
+    "machine_learning",
+    "scientific_tasks"
+  ],
+  "positioning": "Local-first autonomous research studio for long-horizon scientific discovery and paper-oriented workflows.",
+  "boundary_notes": "Included because it explicitly claims end-to-end autonomous scientific discovery over month-long timelines, not just literature assistance or code generation. It remains mainly focused on computational research tasks rather than wet-lab automation.",
+  "lifecycle_coverage": [
+    "challenge_framing",
+    "literature_survey",
+    "baseline_setup",
+    "hypothesis_generation",
+    "experiment_design",
+    "experimentation",
+    "analysis",
+    "writing",
+    "review",
+    "frontier_progression"
+  ],
+  "tool_access": [
+    "local web UI",
+    "TUI",
+    "connector entry points",
+    "repository and paper inputs",
+    "built-in runners for Codex",
+    "built-in runners for Claude Code",
+    "built-in runners for Kimi Code",
+    "built-in runners for OpenCode"
+  ],
+  "execution_environment": "Local-first workstation or server environment with browser access, optional local auth, and long-running project state preserved inside a per-quest repository.",
+  "artifact_outputs": [
+    "papers",
+    "experiment traces",
+    "notes",
+    "figures",
+    "reviews",
+    "export-ready research deliverables"
+  ],
+  "human_roles": "Humans provide the research goal and source materials, can take over at any time, choose deployment settings, and remain responsible for final scientific judgments, claims, and experimental results.",
+  "autonomy_level": "L4",
+  "autonomy_rationale": "DeepScientist claims fully autonomous, goal-oriented scientific discovery over month-long timelines with persistent memory, automated validation loops, and thousands of experiment checks, yet still keeps humans in control of initiation, oversight, and final responsibility.",
+  "iteration_loop": "Yes. The core loop combines Findings Memory, Bayesian optimization, hierarchical evaluation, baseline comparison, and repeated experiment validation to turn each result into the next search step.",
+  "stopping_and_guardrails": "The project emphasizes local-first execution, human takeover at any time, optional local auth, non-root deployment guidance, and a roadmap toward stronger permission controls, reduced fabrication, and better auditability.",
+  "known_failure_modes": "Likely failure modes include hallucinated claims, long-horizon drift, weak external reproducibility, excessive compute demands, benchmark overfitting, and unsafe handling of unpublished ideas if operators deploy it carelessly. Some of these remain partially inferred from the public materials. [uncertain]",
+  "benchmarks_used": "The paper reports results on three frontier AI tasks, but the exact benchmark or task names were not fully verified from the retrieved primary snippets. [uncertain]",
+  "metrics": [
+    "about 20,000 GPU hours consumed",
+    "about 5,000 unique scientific ideas generated",
+    "approximately 1,100 ideas experimentally validated",
+    "reported gains over human-designed SOTA of 183.7%, 1.9%, and 7.9% on three frontier AI tasks"
+  ],
+  "baselines": [
+    "human-designed state-of-the-art methods",
+    "one-shot AI Scientist systems",
+    "autoresearch-style systems"
+  ],
+  "validation_strength": "Public paper, repository, website, docs, and install path provide strong artifact transparency for an emerging system, but the central scientific-performance claims still need broader independent reproduction.",
+  "evaluation_limitations": "The system is emerging, benchmark/task details were only partially verified in retrieved snippets, and the high compute budget may make external replication difficult. Public claims should therefore be treated as promising but not yet fully settled.",
+  "paper_url": "https://arxiv.org/abs/2509.26603",
+  "code_url": "https://github.com/ResearAI/DeepScientist/",
+  "dataset_url": "[uncertain] No standalone official dataset URL was verified.",
+  "product_url": "https://deepscientist.cc/",
+  "leaderboard_url": "[uncertain] No dedicated public leaderboard was verified.",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [
+    "AI Scientist system family",
+    "autoresearch-style systems",
+    "Bayesian optimization for research search",
+    "long-horizon agent memory systems"
+  ],
+  "successors": [
+    "DeepScientist v1.5 released on 2026-03-24",
+    "[uncertain] No separately named successor beyond the current public release train was verified."
+  ],
+  "components": [
+    "Findings Memory",
+    "Research Map",
+    "hierarchical evaluation process",
+    "Bayesian optimization loop",
+    "local web interface",
+    "TUI",
+    "connector entry points",
+    "Codex runner",
+    "Claude Code runner",
+    "Kimi Code runner",
+    "OpenCode runner"
+  ],
+  "evaluated_by": [
+    "paper experiments on three frontier AI tasks",
+    "OpenReview / ICLR 2026 paper process"
+  ],
+  "evaluates": [
+    "Not a benchmark; it aims to generate and validate scientific findings rather than score third-party systems."
+  ],
+  "competes_with_or_complements": [
+    "The AI Scientist family",
+    "SciAgents",
+    "Google Co-Scientist",
+    "local-first autonomous research tools"
+  ],
+  "milestones": [
+    "2025-09-30: arXiv preprint submitted.",
+    "2026-02-01: paper went live on OpenReview for ICLR 2026.",
+    "2026-03-24: DeepScientist officially released v1.5.",
+    "2026-05-28: public repository, website, docs, npm install path, and connector references were all still visible."
+  ],
+  "version_history": "Publicly verified milestones include the 2025 arXiv release, 2026 OpenReview visibility, and the 2026-03-24 v1.5 release. Earlier internal versions were not independently verified. [uncertain]",
+  "adoption_signals": "The repository presents public docs, an npm install path, website integration, and an ICLR 2026 Top 10 badge. Exact citation counts, user counts, and repository star counts were not captured in the retrieved sources. [uncertain]",
+  "supersession_notes": "No superseding replacement was verified as of 2026-05-28. The system appears active and still under development.",
+  "real_world_applications": [
+    "ML paper reproduction",
+    "long-horizon experiment loops",
+    "baseline improvement for frontier AI tasks",
+    "paper drafting and review workflows",
+    "research project management inside a local-first workspace"
+  ],
+  "users": [
+    "graduate students",
+    "research engineers",
+    "ML labs",
+    "teams running long computational experiment cycles"
+  ],
+  "deployment_constraints": "Requires Python 3.11+, local or server compute, supported model providers or runners, careful handling of credentials and unpublished ideas, and enough compute budget for serious long-horizon experimentation.",
+  "cost_and_runtime": "The paper abstract reports month-long timelines and more than 20,000 GPU hours, while the product materials advertise roughly 10-minute software setup. Practical research cost therefore ranges from light local setup to very heavy compute depending on the workload.",
+  "scientific_integrity_risks": "Key risks include fabricated novelty, inflated frontier claims, irreproducible large-scale experiments, and confusion between autonomous assistance and human-authored scientific accountability.",
+  "security_and_safety_risks": "Long-running autonomous research agents can expose local credentials, leak unpublished ideas, or take unsafe actions through connected tools if deployment controls are weak.",
+  "mitigations": "Local-first execution, optional auth, takeover power for humans, explicit citation and disclosure guidance, non-root setup advice, and a roadmap for stronger verification and permission controls are the main public mitigations.",
+  "policy_relevance": "DeepScientist is relevant to AI-scientist governance because it operationalizes long-horizon autonomous research with explicit claims of frontier progress, raising issues around attribution, disclosure, reproducibility, and safe local deployment.",
+  "uncertain": [
+    "known_failure_modes",
+    "benchmarks_used",
+    "dataset_url",
+    "leaderboard_url",
+    "successors",
+    "version_history",
+    "adoption_signals"
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "openai_deep_research",
+  "name": "OpenAI Deep Research",
+  "aliases": [
+    "Deep research",
+    "ChatGPT deep research",
+    "o3-deep-research"
+  ],
+  "organization": "OpenAI",
+  "first_public_release": "2025-02-02",
+  "current_status": "Active; available in ChatGPT on select plans and countries, available via API, and partially extended through ChatGPT agent capabilities.",
+  "category": "deep_research_product",
+  "type": [
+    "product",
+    "infrastructure"
+  ],
+  "domains": [
+    "finance",
+    "science",
+    "policy",
+    "engineering",
+    "general_research"
+  ],
+  "positioning": "An agentic deep-research product for multi-step web research, source analysis, and citation-grounded report generation.",
+  "boundary_notes": "Included because OpenAI positions deep research as a research-focused agent that plans and executes multi-step evidence gathering, rather than as a generic chat feature.",
+  "lifecycle_coverage": [
+    "web_search",
+    "source_analysis",
+    "citation_grounded_report_generation",
+    "data_analysis",
+    "file_analysis"
+  ],
+  "tool_access": [
+    "Public web search",
+    "Specific-site restriction or prioritization",
+    "Uploaded file analysis",
+    "Connected ChatGPT apps",
+    "MCP data sources",
+    "Python data analysis in a sandbox",
+    "API background mode and webhooks"
+  ],
+  "execution_environment": "ChatGPT-hosted deep research workflow and OpenAI API deep-research models using long-running background execution.",
+  "artifact_outputs": [
+    "Structured cited reports",
+    "Source lists and links",
+    "Activity history",
+    "Downloaded Markdown, Word, or PDF reports",
+    "Graphs or images embedded in reports"
+  ],
+  "human_roles": [
+    "Users define the research task and desired outcome",
+    "Users choose or constrain sources before execution",
+    "Users can review and modify the proposed research plan",
+    "Users can interrupt and redirect the run",
+    "Admins control access in Enterprise and Edu workspaces"
+  ],
+  "autonomy_level": "L2",
+  "autonomy_rationale": "Deep research autonomously plans and executes multi-step browsing and analysis, but the human still chooses goals, controls sources, can edit the plan, and must verify or act on the output.",
+  "iteration_loop": "Yes. The product proposes a plan, refines searches across sources, and iterates during long-running research tasks; follow-up prompts can extend or redirect the analysis.",
+  "stopping_and_guardrails": "Users stay in control through source selection, plan review, live progress, and interruption. OpenAI also applies safety training, blocklists, privacy protections, sandboxed Python execution, enterprise controls, and API limits such as max tool calls.",
+  "known_failure_modes": "OpenAI documents risks around hallucinated capabilities, privacy-sensitive aggregation of public information, prompt injection from browsed content, unsafe or regulated advice, bias, and residual hallucination despite source grounding.",
+  "benchmarks_used": [
+    "Humanity's Last Exam",
+    "GAIA",
+    "OpenAI deep research safety evaluations",
+    "StrongReject jailbreak evaluation",
+    "PersonQA hallucination evaluation",
+    "Preparedness evaluations"
+  ],
+  "metrics": [
+    "Accuracy on public benchmarks",
+    "Citation quality and source grounding",
+    "Task completion quality",
+    "Safety refusal performance",
+    "Hallucination rate",
+    "Preparedness risk level"
+  ],
+  "baselines": [
+    "GPT-4o",
+    "OpenAI o1",
+    "o3-mini",
+    "Claude 3.5 Sonnet",
+    "Gemini Thinking",
+    "DeepSeek-R1",
+    "Previous GAIA SOTA systems"
+  ],
+  "validation_strength": "Benchmarked on public evaluations, accompanied by an official system card and safety testing, but not presented as a peer-reviewed scientific product paper.",
+  "evaluation_limitations": "OpenAI notes that preparedness evaluations are a lower bound on capability, performance can vary with system prompts and scaffolding, and live-web behavior creates contamination and prompt-injection challenges that are hard to exhaustively measure.",
+  "paper_url": "",
+  "code_url": "",
+  "dataset_url": "",
+  "product_url": "https://openai.com/index/introducing-deep-research/",
+  "leaderboard_url": "",
+  "source_quality": "Primary",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [],
+  "successors": [
+    "ChatGPT agent deep research mode"
+  ],
+  "components": [
+    "ChatGPT deep research",
+    "o3-deep-research API model",
+    "Web search",
+    "Connected apps",
+    "MCP support",
+    "Sandboxed Python analysis",
+    "Background mode",
+    "Webhooks"
+  ],
+  "evaluated_by": [
+    "Humanity's Last Exam",
+    "GAIA",
+    "OpenAI system card safety and preparedness evaluations"
+  ],
+  "evaluates": [],
+  "competes_with_or_complements": [
+    "Asta",
+    "Elicit",
+    "Perplexity",
+    "Google Deep Research-style products",
+    "ChatGPT search"
+  ],
+  "history": {
+    "milestones": [
+      "2025-02-02: OpenAI launched deep research in ChatGPT.",
+      "2025-02-25: availability expanded to Plus users.",
+      "2025-04-24: higher usage limits and a lightweight version powered by o4-mini were announced.",
+      "2025-07-17: visual-browser access was added as part of ChatGPT agent while the original deep research mode remained available.",
+      "2026-02-10: MCP and app connectivity, trusted-site restriction, and real-time progress refinements were announced."
+    ]
+  },
+  "milestones": [
+    "2025-02-02: OpenAI launched deep research in ChatGPT.",
+    "2025-02-25: availability expanded to Plus users.",
+    "2025-04-24: higher usage limits and a lightweight version powered by o4-mini were announced.",
+    "2025-07-17: visual-browser access was added as part of ChatGPT agent while the original deep research mode remained available.",
+    "2026-02-10: MCP and app connectivity, trusted-site restriction, and real-time progress refinements were announced."
+  ],
+  "version_history": [
+    "Initial ChatGPT-only deep research launch in February 2025.",
+    "Later rollout to more plans and countries.",
+    "Lightweight deep research variant added in April 2025.",
+    "Capabilities broadened through ChatGPT agent integration in July 2025.",
+    "API guidance now recommends background mode for long-running requests."
+  ],
+  "adoption_signals": [
+    "Rolled out across Pro, Plus, Team, Enterprise, Edu, and a lightweight Free-tier mode over time.",
+    "Official API productization via the o3-deep-research model.",
+    "OpenAI Academy and Help Center position it as a standard workflow for research-heavy users."
+  ],
+  "supersession_notes": "Not fully superseded. OpenAI states that deeper and broader capabilities are available via ChatGPT agent, while the original deep research tool remains available in the tools menu.",
+  "real_world_applications": [
+    "Competitive and market research",
+    "Scientific landscape analysis",
+    "Policy briefs",
+    "Engineering technology surveys",
+    "Source-backed due diligence",
+    "Multi-source analysis of uploaded documents"
+  ],
+  "users": [
+    "Knowledge workers",
+    "Analysts",
+    "Researchers",
+    "Policy teams",
+    "Engineers",
+    "Enterprise users"
+  ],
+  "deployment_constraints": [
+    "Availability depends on plan and country or territory",
+    "Long-running tasks may take minutes to tens of minutes",
+    "Sensitive workflows may require disabling web search when paired with private MCP data",
+    "Connected-app access depends on workspace configuration",
+    "API users should manage tool-call budgets and background execution"
+  ],
+  "cost_and_runtime": "ChatGPT help and academy materials say deep research typically runs for several minutes, often around 5 to 30 minutes, while API docs warn requests can take tens of minutes and recommend background mode. Usage allowances and effective cost vary by plan, model variant, and tool-call budget. [uncertain]",
+  "scientific_integrity_risks": [
+    "Hallucinated synthesis or incorrect claims despite citations",
+    "Overconfident reports on ambiguous evidence",
+    "Hidden source-quality variation across the open web",
+    "Prompt injection from browsed content",
+    "Outdated or low-quality sources affecting conclusions"
+  ],
+  "security_and_safety_risks": [
+    "Aggregation of personal information from public sources",
+    "Unsafe or regulated advice at higher scale than plain chat",
+    "Prompt-injection attacks in browsed pages",
+    "Potential misuse of long-horizon browsing for harmful tasks"
+  ],
+  "mitigations": [
+    "User-controlled source selection and site restriction",
+    "Plan review before execution",
+    "Interruptibility and live progress visibility",
+    "Sandboxed Python environment without direct internet access",
+    "Safety training, blocklists, and post-deployment monitoring",
+    "Admin controls for enterprise access"
+  ],
+  "policy_relevance": "Directly relevant to web-agent governance, privacy and personal-data aggregation, safety of autonomous research tools, enterprise source-control policies, and the evaluation of frontier-agent capabilities.",
+  "uncertain": [
+    "cost_and_runtime"
+  ]
+}

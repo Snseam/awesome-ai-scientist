@@ -1,0 +1,173 @@
+{
+  "id": "consensus",
+  "name": "Consensus",
+  "aliases": [
+    "Consensus AI",
+    "ResearchGPT"
+  ],
+  "organization": "Consensus",
+  "first_public_release": "2021",
+  "current_status": "Active commercial product with free, paid, team, enterprise, API, and ChatGPT app offerings.",
+  "category": "literature_review_product",
+  "type": [
+    "product"
+  ],
+  "domains": [
+    "general_academic_research"
+  ],
+  "positioning": "AI academic search and evidence-synthesis workspace for scientific research.",
+  "boundary_notes": "Included because it is purpose-built for scientific literature search, paper summarization, and evidence synthesis. It is distinct from general-purpose chatbots because it grounds outputs in retrieved academic papers and citations.",
+  "lifecycle_coverage": [
+    "literature search",
+    "paper summarization",
+    "evidence synthesis",
+    "citation export",
+    "research question exploration",
+    "literature review support"
+  ],
+  "tool_access": [
+    "semantic search",
+    "keyword search",
+    "citation-grounded summarization",
+    "study metadata extraction",
+    "reference manager export",
+    "ChatGPT app integration",
+    "API access by application"
+  ],
+  "execution_environment": "Product-hosted web application with official integrations in ChatGPT and a separate API offering.",
+  "artifact_outputs": [
+    "paper lists",
+    "cited summaries",
+    "study snapshots",
+    "consensus meter views",
+    "research briefs",
+    "citation exports",
+    "literature reviews"
+  ],
+  "human_roles": "Users choose research questions, inspect cited papers, manage saved libraries, decide whether summaries are trustworthy, and use the outputs in their own research or writing workflows.",
+  "autonomy_level": "L1",
+  "autonomy_rationale": "Consensus automates retrieval and synthesis of scientific literature, but the user still frames the task, reviews evidence, and decides how to use the result.",
+  "iteration_loop": "Supports iterative follow-up through Threads, and the 2026 Research Agent feature can plan searches, chain tools, and return citation-backed answers for multi-step research questions.",
+  "stopping_and_guardrails": "Every AI-generated response starts with literature search; summaries are constrained to retrieved papers, relevance thresholds and checker models are used before synthesis, and cited papers remain directly inspectable by the user.",
+  "known_failure_modes": [
+    "misread-source summarization errors",
+    "limited corpus coverage",
+    "consensus meter misclassification when evidence is sparse or mixed",
+    "over-reliance on summaries without reading the underlying papers"
+  ],
+  "benchmarks_used": "[uncertain] No public benchmark or peer-reviewed evaluation protocol was identified in the consulted official product documentation.",
+  "metrics": "[uncertain] Public documentation emphasizes citation grounding, relevance ranking, synthesis quality, and user adoption rather than a disclosed benchmark metric suite.",
+  "baselines": "[uncertain] Official materials compare Consensus conceptually with general AI tools, Google Scholar, and PubMed, but do not publish a formal baseline table.",
+  "validation_strength": "Real-world deployed commercial product with primary-source documentation and large-scale usage, but no external benchmark validation was identified in the consulted sources [uncertain].",
+  "evaluation_limitations": "Consensus documentation states that the corpus does not include every scientific paper and that AI summaries can still misinterpret papers, even when sources are real and cited.",
+  "paper_url": "[uncertain] No primary research paper or official whitepaper was identified in the consulted sources.",
+  "code_url": "[uncertain] No public open-source repository for the core product was identified in the consulted sources.",
+  "dataset_url": "[uncertain] No standalone public dataset URL was identified; the product searches an aggregated scholarly corpus built from sources such as Semantic Scholar, OpenAlex, web crawling, and publisher partnerships.",
+  "product_url": "https://consensus.app/",
+  "leaderboard_url": "[uncertain] No official public leaderboard was identified.",
+  "source_quality": "Primary sources: official product pages, help-center documentation, official changelog, and official about page.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": "[uncertain] Consensus is positioned as an AI-native alternative to traditional academic search engines such as Google Scholar and PubMed, but a precise product lineage is not stated in the consulted primary sources.",
+  "successors": [
+    "Consensus 2.0",
+    "Consensus GPT / ChatGPT App integration",
+    "Research Agent"
+  ],
+  "components": [
+    "semantic and keyword search pipeline",
+    "Pro Analysis",
+    "Consensus Meter",
+    "Study Snapshot",
+    "Ask Paper",
+    "Advanced Search Filters",
+    "Threads",
+    "My Library",
+    "Search History",
+    "Consensus API",
+    "Research Agent"
+  ],
+  "evaluated_by": "[uncertain] No external benchmark or public leaderboard specific to the product was identified in the consulted sources.",
+  "evaluates": "[uncertain] Not a benchmark; the product helps users search, summarize, and compare scientific evidence rather than formally evaluate agent systems.",
+  "competes_with_or_complements": [
+    "Elicit",
+    "Google Scholar",
+    "PubMed",
+    "ChatGPT with the Consensus app"
+  ],
+  "milestones": [
+    "2021: Consensus founded by Christian Salem and Eric Olson.",
+    "2022-02-08: Public introduction of Consensus.",
+    "2023-11-01: Consensus 2.0 launched with hybrid search across 200 million papers.",
+    "2024-01-15: Consensus Meter launched.",
+    "2024-01-10: Consensus GPT launched in ChatGPT.",
+    "2025-05-01: Threads launched.",
+    "2025-03-24: Research Hub for uploaded PDFs launched.",
+    "2026-05-06: Consensus became available as a ChatGPT App.",
+    "2026-05-12: Research Agent launched.",
+    "2026-05-13: Consensus expanded integration across ChatGPT, Claude, Codex, Claude Code, and the API."
+  ],
+  "version_history": [
+    "Consensus 2.0 improved hybrid search and answer extraction in November 2023.",
+    "The product added ChatGPT integration, Consensus Meter, advanced filters, search history, Teams, Ask Paper, and Threads during 2024-2025.",
+    "In May 2026, the product added the ChatGPT App, Research Agent, improved external integrations, and broader API positioning."
+  ],
+  "adoption_signals": [
+    "10+ million researchers, students, and clinicians choose Consensus.",
+    "12,500+ universities are represented among users.",
+    "20+ million papers from Consensus have been shared with others.",
+    "150+ million research questions have been handled to date.",
+    "The product offers Free, Pro, Deep, Teams, and Enterprise plans."
+  ],
+  "supersession_notes": "The core product remains active. Older surfaces such as Consensus GPT / plugin-style usage have been superseded by newer app-style integrations, but the main product is not superseded.",
+  "real_world_applications": [
+    "literature review",
+    "finding supporting citations for papers",
+    "comparing evidence across studies",
+    "identifying gaps in the literature",
+    "building research briefs",
+    "faster academic search for researchers, students, and clinicians"
+  ],
+  "users": [
+    "academic researchers",
+    "students",
+    "clinicians",
+    "research organizations",
+    "universities",
+    "knowledge workers needing evidence-backed answers"
+  ],
+  "deployment_constraints": "Requires internet access and a Consensus account. Deeper usage depends on subscription tier, full-text availability, and for API usage, application-based access and pricing.",
+  "cost_and_runtime": "As of 2026-05-28, the Free tier is $0, Pro is $15 per month or $120 per year, Deep is $65 per month or $540 per year, Teams is custom priced, Enterprise is quote-based, and API pricing starts at $0.10 per call plus a platform fee.",
+  "scientific_integrity_risks": [
+    "misinterpreting retrieved papers",
+    "over-trusting synthesized summaries",
+    "missing relevant evidence outside the indexed corpus",
+    "using quick summaries in place of full critical reading"
+  ],
+  "security_and_safety_risks": [
+    "privacy concerns around uploaded PDFs and connected integrations [uncertain]",
+    "misuse of generated summaries in high-stakes settings without source review"
+  ],
+  "mitigations": [
+    "search before synthesis",
+    "citations to real papers in every response",
+    "relevance thresholds before summary features can run",
+    "checker models for relevance verification",
+    "direct links back to underlying papers",
+    "user feedback and support channels for corrections"
+  ],
+  "policy_relevance": "Relevant to evidence-grounded AI, citation integrity, responsible AI for research workflows, and institutional deployment of AI-assisted academic search tools.",
+  "uncertain": [
+    "benchmarks_used",
+    "metrics",
+    "baselines",
+    "validation_strength",
+    "paper_url",
+    "code_url",
+    "dataset_url",
+    "leaderboard_url",
+    "predecessors",
+    "evaluated_by",
+    "evaluates",
+    "security_and_safety_risks"
+  ]
+}

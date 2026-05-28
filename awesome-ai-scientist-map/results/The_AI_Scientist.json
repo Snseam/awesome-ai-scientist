@@ -1,0 +1,183 @@
+{
+  "id": "sakana_ai_scientist_v1",
+  "name": "The AI Scientist",
+  "aliases": [
+    "AI Scientist",
+    "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery"
+  ],
+  "organization": [
+    "Sakana AI",
+    "University of British Columbia",
+    "University of Oxford",
+    "Vector Institute"
+  ],
+  "first_public_release": "2024-08-12",
+  "current_status": "Open-source research system; still public, but the broader successor is The AI Scientist-v2.",
+  "category": "end_to_end_ai_scientist",
+  "type": [
+    "paper",
+    "codebase",
+    "product"
+  ],
+  "domains": [
+    "machine_learning"
+  ],
+  "positioning": "Autonomous scientist for end-to-end machine learning paper generation.",
+  "boundary_notes": "Included because it closes the machine-learning research loop from idea generation through coding, experiments, figures, manuscript drafting, and simulated review. It excludes general coding agents that do not produce and evaluate full research artifacts.",
+  "lifecycle_coverage": [
+    "idea_generation",
+    "code_writing",
+    "experiment_execution",
+    "visualization",
+    "paper_writing",
+    "automated_review"
+  ],
+  "tool_access": [
+    "Semantic Scholar search",
+    "LLM-based code editing",
+    "Shell and process execution",
+    "Experiment execution on GPU-backed ML code",
+    "Plot generation",
+    "LaTeX and PDF generation",
+    "Automated paper review"
+  ],
+  "execution_environment": "Local or server-side Linux environment with NVIDIA GPUs, CUDA, PyTorch, API-accessed frontier models, and LaTeX tooling.",
+  "artifact_outputs": [
+    "Research ideas",
+    "Modified code",
+    "Experiment runs",
+    "Plots and figures",
+    "LaTeX manuscripts and PDFs",
+    "Automated reviews"
+  ],
+  "human_roles": [
+    "Humans provide the starting template or codebase and choose the research area",
+    "Humans supply API keys, compute, and infrastructure",
+    "Humans are expected to sandbox runs and inspect outputs before external dissemination"
+  ],
+  "autonomy_level": "L4",
+  "autonomy_rationale": "It autonomously covers idea generation, coding, experiment execution, plotting, manuscript drafting, and simulated reviewing inside a bounded machine-learning workflow, but humans still choose scope, provide infrastructure, and control publication or submission.",
+  "iteration_loop": "Open-ended loop over idea generation, novelty checking, experiment iteration, automated review, and archive growth.",
+  "stopping_and_guardrails": [
+    "User-provided templates and topics bound the search space",
+    "Authors recommend containerization and restricted web access",
+    "Timeouts and reproducible saved artifacts act as operational checks",
+    "Human review is still needed before publication or submission"
+  ],
+  "known_failure_modes": [
+    "Unreadable plots or broken paper layout because the first version lacks vision capabilities",
+    "Incorrect implementations or unfair baseline comparisons",
+    "Numerical reasoning mistakes when interpreting results",
+    "Self-modifying behavior such as relaunching or extending its own execution path",
+    "Reviewer-workload inflation if used to mass-produce submissions"
+  ],
+  "benchmarks_used": [
+    "Internal template-based machine-learning research tasks: NanoGPT, 2D Diffusion, and Grokking",
+    "Automated reviewer aligned to top-tier machine-learning conference review standards"
+  ],
+  "metrics": [
+    "Automated reviewer described as near-human for generated-paper evaluation",
+    "Under strong models, generated papers can reach automated 'Weak Accept' judgments",
+    "Approximate generation cost: about 15 USD per paper"
+  ],
+  "baselines": [
+    "Strong frontier foundation models used as backbones rather than a standalone benchmark",
+    "Template baseline runs inside NanoGPT, 2D Diffusion, and Grokking workflows",
+    "Human top-tier machine-learning conference review conventions as the review target [uncertain]"
+  ],
+  "validation_strength": "Benchmarked and internally reviewed; later official follow-up work added stronger human-review evidence.",
+  "evaluation_limitations": [
+    "Evaluation is concentrated in machine-learning templates rather than broad science",
+    "Automated review is not a substitute for human peer review",
+    "The early version lacks multimodal figure understanding",
+    "Success depends heavily on the underlying foundation model"
+  ],
+  "paper_url": "https://arxiv.org/abs/2408.06292",
+  "code_url": "https://github.com/SakanaAI/AI-Scientist",
+  "dataset_url": "None.",
+  "product_url": "https://sakana.ai/ai-scientist",
+  "leaderboard_url": "None.",
+  "source_quality": "Primary paper, official repository, and official Sakana AI post.",
+  "last_verified_at": "2026-05-28",
+  "predecessors": [],
+  "successors": [
+    "sakana_ai_scientist_v2"
+  ],
+  "components": [
+    "Idea generation",
+    "Novelty checking via Semantic Scholar",
+    "Experimental iteration",
+    "Paper write-up",
+    "Automated reviewer",
+    "Template codebases for NanoGPT, 2D Diffusion, and Grokking"
+  ],
+  "evaluated_by": [
+    "automated_reviewer_internal",
+    "Follow-up human review in later official analyses [uncertain]"
+  ],
+  "evaluates": [],
+  "competes_with_or_complements": [
+    "The AI Scientist-v2",
+    "AI Co-Scientist / Co-Scientist"
+  ],
+  "milestones": [
+    "2024-08-12: arXiv v1 submitted",
+    "2024-08-13: Sakana AI launch post and repository release",
+    "2024-09-01: arXiv v3 revision posted",
+    "2025-03-12: Sakana AI announced the peer-review milestone achieved by the improved v2 system",
+    "2026-03-26: Sakana AI reported the broader AI Scientist line in Nature"
+  ],
+  "version_history": [
+    "v1 arXiv release on 2024-08-12",
+    "arXiv v2 on 2024-08-15",
+    "arXiv v3 on 2024-09-01",
+    "Later superseded in breadth by the template-free v2 line"
+  ],
+  "adoption_signals": [
+    "GitHub repository had about 13.8k stars and about 2k forks when checked on 2026-05-28",
+    "Community-contributed templates are listed in the repository",
+    "Generated example papers and run artifacts were publicly released"
+  ],
+  "supersession_notes": "Not obsolete, but v2 is the more general successor because it removes reliance on human-authored templates and adds agentic tree search.",
+  "real_world_applications": [
+    "Machine-learning method ideation and ablation generation",
+    "Automated experimentation on existing ML codebases",
+    "Drafting research papers and reviewer-style feedback"
+  ],
+  "users": [
+    "Machine-learning researchers",
+    "AI research engineers",
+    "Autonomous-science researchers"
+  ],
+  "deployment_constraints": [
+    "Linux plus NVIDIA GPU and CUDA stack",
+    "Frontier-model API access",
+    "Template preparation and baseline runs",
+    "LaTeX and PDF tooling",
+    "Safe sandboxing because the system executes LLM-written code"
+  ],
+  "cost_and_runtime": "Official sources describe roughly 15 USD per paper in the first release; runtime depends on the template and hardware, and CPU-only use is described as likely infeasible.",
+  "scientific_integrity_risks": [
+    "Fabricated or misattributed citations",
+    "Misleading claims from flawed implementations or unfair baselines",
+    "Automated review being mistaken for real peer review",
+    "Submission spam that burdens reviewers"
+  ],
+  "security_and_safety_risks": [
+    "Execution of LLM-written code",
+    "Potential use of dangerous packages",
+    "Unrestricted web access",
+    "Unexpected process spawning and self-modification"
+  ],
+  "mitigations": [
+    "Containerize the environment",
+    "Restrict web access",
+    "Store reproducible artifacts for executed experiments",
+    "Require human inspection before publication or submission"
+  ],
+  "policy_relevance": "Relevant to responsible publication of AI-generated science, disclosure norms, benchmark governance for automated reviewers, and safe sandboxing of autonomous research agents.",
+  "uncertain": [
+    "baselines",
+    "evaluated_by"
+  ]
+}
